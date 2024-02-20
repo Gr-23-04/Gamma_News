@@ -1,0 +1,11 @@
+﻿@model Weather
+
+<h2>Weather for @Model.City</h2>
+<div>
+	<p>Summary:@Model.Summary</p>
+	<p>Temperature:@Model.TemperatureC°C(Model.TemperatureF°F)</p>
+	<p>Humidity: @Model.Humidity%</p>
+	<p>Wind Speed: @Model.WindSpeed km/h</p>
+	<p>Date:@Model.Date</p>
+	<img src="@Model.Icon.Url" alt="@Model.Summary" />
+</div>

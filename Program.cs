@@ -1,6 +1,9 @@
 using Gamma_News.Data;
+using Gamma_News.Services;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using System.Net.Http;
 
 namespace Gamma_News
 {
@@ -19,6 +22,11 @@ namespace Gamma_News
             builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
             builder.Services.AddControllersWithViews();
+
+            //register http
+            builder.Services.AddHttpClient();
+            //Register WeatherService and configure it to use HttpClient
+            builder.Services.AddHttpClient<WeatherService>();
 
             var app = builder.Build();
 
