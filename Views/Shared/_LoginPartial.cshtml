@@ -2,7 +2,20 @@
 @inject SignInManager<IdentityUser> SignInManager
 @inject UserManager<IdentityUser> UserManager
 <!-- Profile dropdown -->
+
+<!--THE THINGS BELOW HERE SHOULD BE IMPLEMENTED LATER-->
+
+@if (SignInManager.IsSignedIn(User))
+{
 <div class="relative lg:flex" style="">
+    <li class="nav-item">
+        <a  class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Hello @User.Identity?.Name!</a>
+    </li>
+    <li class="nav-item">
+        <form  class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
+            <button  type="submit" class="nav-link btn btn-link text-dark">Logout</button>
+        </form>
+    </li>
     <div class="mx-auto max-w-7x">
 
         <div id="profile_container" class="">
@@ -38,33 +51,12 @@
         <a href="#" class="block text-sm font-bold text-white px-4 py-2 rounded-lg hover:bg-white hover:text-slate-900" role="menuitem" tabindex="-1" id="user-menu-item-0">Your Profile</a>
     </div>
 </div>
-
-<!--THE THINGS BELOW HERE SHOULD BE IMPLEMENTED LATER-->
-
-@* <ul class="navbar-nav">
-@if (SignInManager.IsSignedIn(User))
-{
-    <li class="nav-item">
-        <a  class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Hello @User.Identity?.Name!</a>
-    </li>
-    <li class="nav-item">
-        <form  class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
-            <button  type="submit" class="nav-link btn btn-link text-dark">Logout</button>
-        </form>
-    </li>
 }
 else
 {
-
-       
-
-       @*  <li class="nav-item rounded-lg shadow-md transition transform hover:scale-105" style="width: 50px">
-            <a class="nav-link text-sm font-semibold leading-6 text-gray-900" asp-area="Identity" asp-page="/Account/Register">Register</a>
-    </li>
-        <li class="nav-item rounded-lg shadow-md transition transform hover:scale-105" style="width: 50px">
-            <a class="nav-link text-sm font-semibold leading-6 text-gray-900" asp-area="Identity" asp-page="/Account/Login">Login</a>
-    </li> 
+            <a class="nav-link text-sm font-semibold leading-6 text-slate-300 relative flex transition transform hover:" style="left: 75%; bottom: 80px;" asp-area="Identity" asp-page="/Account/Register">Register</a>
+            <a class="nav-link text-sm font-semibold leading-6 text-slate-300 relative flex transition transform hover:" style="left: 75%; bottom: 80px;" asp-area="Identity" asp-page="/Account/Login">Login</a>
 }
 </ul>
-    *@
+   
  
