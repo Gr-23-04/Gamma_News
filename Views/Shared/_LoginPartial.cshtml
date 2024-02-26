@@ -1,10 +1,13 @@
 ﻿@using Microsoft.AspNetCore.Identity
 @inject SignInManager<IdentityUser> SignInManager
 @inject UserManager<IdentityUser> UserManager
+<!-- Profile dropdown -->
 
-<ul class="navbar-nav">
+<!--THE THINGS BELOW HERE SHOULD BE IMPLEMENTED LATER-->
+
 @if (SignInManager.IsSignedIn(User))
 {
+<div class="relative lg:flex" style="">
     <li class="nav-item">
         <a  class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Hello @User.Identity?.Name!</a>
     </li>
@@ -13,14 +16,47 @@
             <button  type="submit" class="nav-link btn btn-link text-dark">Logout</button>
         </form>
     </li>
+    <div class="mx-auto max-w-7x">
+
+        <div id="profile_container" class="">
+
+            <button id="drop_profile_button_desktop" type="button" class="relative flex transition transform hover:scale-105" style="left: 1000%; bottom: 80px;" aria-expanded="false" aria-haspopup="false">
+            <img class="relative h-14 w-14 rounded-full" style="" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
+        </button>
+
+            <div class="relative flex" style="left: 1085%; bottom: 139px;">
+            <span class="relative">
+                <span class="absolute animate-ping inline-flex h-4 w-4 rounded-full bg-blue-400 opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-4 w-4 bg-green-400"></span>
+            </span>
+            </div>
+        </div>
+    </div>
+
+    <!--
+      Dropdown menu, show/hide based on menu state.
+
+      Entering: "transition ease-out duration-100"
+        From: "transform opacity-0 scale-95"
+        To: "transform opacity-100 scale-100"
+      Leaving: "transition ease-in duration-75"
+        From: "transform opacity-100 scale-100"
+        To: "transform opacity-0 scale-95"
+    -->
+
+    <div id="drop_profile_desktop" class="hidden absolute flex z-10 w-48 rounded-md bg-gradient-to-b from-gray-800 from-0% via-sky-950 via-50% to-gray-800 to-100% text-while font-sans py-3 shadow-lg group-hover:bg-white" style="margin-left: 70%;" role="menu" aria-orientation="vertical" aria-labelledby="drop_profile_desktop" tabindex="-1">
+        <!-- Active: "bg-gray-100", Not Active: "" -->
+        <a href="#" class="block text-sm font-bold text-white px-4 py-2 rounded-lg hover:bg-white hover:text-slate-900" role="menuitem" tabindex="-1" id="user-menu-item-1">Settings</a>
+        <a href="#" class="block text-sm font-bold text-white px-4 py-2 rounded-lg hover:bg-white hover:text-slate-900" role="menuitem" tabindex="-1" id="user-menu-item-2">Sign out</a>
+        <a href="#" class="block text-sm font-bold text-white px-4 py-2 rounded-lg hover:bg-white hover:text-slate-900" role="menuitem" tabindex="-1" id="user-menu-item-0">Your Profile</a>
+    </div>
+</div>
 }
 else
 {
-    <li class="nav-item">
-        <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Register">Register</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Login">Login</a>
-    </li>
+            <a class="nav-link text-sm font-semibold leading-6 text-slate-300 relative flex transition transform hover:" style="left: 75%; bottom: 80px;" asp-area="Identity" asp-page="/Account/Register">Register</a>
+            <a class="nav-link text-sm font-semibold leading-6 text-slate-300 relative flex transition transform hover:" style="left: 75%; bottom: 80px;" asp-area="Identity" asp-page="/Account/Login">Login</a>
 }
 </ul>
+   
+ 

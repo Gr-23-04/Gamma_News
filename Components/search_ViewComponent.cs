@@ -2,15 +2,16 @@
 
 namespace Gamma_News.Components
 {
+    [ViewComponent(Name = "search")]
     public class search_ViewComponent : ViewComponent
     {
 
-        public async Task<IViewComponentResult> async_search_viewcomp( )
+        public async Task<IViewComponentResult> InvokeAsync()
         {
             var some_function = 1;
 
 
-            return View( );
+            return View();
         }
 
 

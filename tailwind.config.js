@@ -1,4 +1,5 @@
 module.exports = {
+    tailwindConfig: './styles/tailwind.config.js',
     content: [
        './Pages/**/*.cshtml',
        './Views/**/*.cshtml'
@@ -6,5 +7,10 @@ module.exports = {
     theme: {
         extend: {},
     },
-    plugins: [],
+    plugins: [
+        ['prettier-plugin-tailwindcss'],
+        require('tailwindcss'),
+        require('@headlessui/tailwindcss'),
+
+    ],
 }
