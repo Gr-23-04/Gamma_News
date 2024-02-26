@@ -8,11 +8,11 @@
     <a class="" asp-controller="Weather" asp-action="Index">
 
         <div id="menu_weather_container" class="mx-auto max-w-7xl items-center justify-between lg:px-8">
-        <div class="flex-auto transition transform hover:scale-105 hover:" style="width: 40%">
-            <p class=" p-2 text-gray-900 font-bold">@Model.City</p>
+        <div class="flex-auto transition transform hover:scale-105" style="width: 40%">
+            <p class="relative p-2 text-slate-300 font-bold" style="margin-left:-21%; margin-top: -27%;">@Model.City</p>
             <div class="relative" style="">
-            <img class="relative -right-8"src="@Model.Icon.Url" style="margin-top: -35%; margin-left: -37%" />
-            <p class="relative text-gray-900 font-bold" style="margin-left: 37%; margin-top: -20%">@Model.TemperatureC°C<p />
+            <img class="relative -right-8"src="@Model.Icon.Url" style="margin-top: -35%; margin-left: -60%" />
+            <p class="relative text-slate-300 font-bold" style="margin-left: 13%; margin-top: -20%">@Model.TemperatureC°C<p />
             </div>
         </div>
         </div>
