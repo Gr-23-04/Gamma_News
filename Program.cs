@@ -36,10 +36,13 @@ namespace Gamma_News
             builder.Services.AddControllersWithViews();
 
 
+
             //register http
             builder.Services.AddHttpClient();
             //Register WeatherService and configure it to use HttpClient
             builder.Services.AddHttpClient<WeatherService>();
+            builder.Services.AddScoped<IArticleService, ArticleService>();
+
 
             var app = builder.Build();
 
