@@ -27,5 +27,8 @@ $(document).ready(function() {
     $("#open_menu_button_mobile").click(function () {
         $("#open_menu_mobile").slideToggle("medium");
     });
+    $("#drop_weather_container").click(function () {
+        $("#weather_cpntainer").slideToggle("medium");
+    });
 
 });
