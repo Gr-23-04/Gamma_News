@@ -1,4 +1,4 @@
-﻿@page
+@page
 @model RegisterModel
 @{
     ViewData["Title"] = "";
@@ -17,6 +17,7 @@
                     <label asp-for="Input.Email"></label>
                     <input asp-for="Input.Email" class="form-control w-full rounded-md border-sky-900 shadow-inner shadow-gray-700 text-black" style="" autocomplete="username" aria-required="true" placeholder=" Email@example.com" />
                 <span asp-validation-for="Input.Email" class="text-danger"></span>
+
                 </div>
                 <div class="static form-floating mb-3 block text-sm font-medium leading-6">
                     <label asp-for="Input.Password"></label>
@@ -38,6 +39,7 @@
                 @{
                     if ( ( Model.ExternalLogins?.Count ?? 0 ) == 0 )
                     {
+
                         <div>
                             <p class="text-slate-300">There are no external authentication services configured. See this <a href="https://go.microsoft.com/fwlink/?LinkID=532715">article about setting up this ASP.NET application to support logging in via external services</a>.</p>
                         </div>

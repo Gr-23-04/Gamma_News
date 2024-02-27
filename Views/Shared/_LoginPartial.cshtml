@@ -1,9 +1,12 @@
-﻿@using Microsoft.AspNetCore.Identity
-@inject SignInManager<IdentityUser> SignInManager
-@inject UserManager<IdentityUser> UserManager
+@using Microsoft.AspNetCore.Identity
+
+@inject SignInManager<User> SignInManager
+@inject UserManager<User> UserManager
+
 <!-- Profile dropdown -->
 
 <!--THE THINGS BELOW HERE SHOULD BE IMPLEMENTED LATER-->
+
 
 @if (SignInManager.IsSignedIn(User))
 {

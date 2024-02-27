@@ -2,6 +2,8 @@
 // for details on configuring this project to bundle and minify static web assets.
 
 // Write your JavaScript code.
+
+
 $(document).ready(function() {
         //int menu = 1;
     $("#drop_menu_button_desktop").click(function () {
@@ -29,6 +31,7 @@ $(document).ready(function() {
     });
     $("#drop_weather_container").click(function () {
         $("#weather_cpntainer").slideToggle("medium");
+
     });
 
 });
