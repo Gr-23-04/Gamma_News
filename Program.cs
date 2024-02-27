@@ -3,22 +3,40 @@ using Gamma_News.Models;
 using Gamma_News.Services;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.DependencyInjection;
-using System.Net.Http;
+
 
 namespace Gamma_News
 {
     public class Program
-    {
-        public static void Main( string [ ] args )
-        {
-            var builder = WebApplication.CreateBuilder( args );
 
+    {
+        public static void Main(string[] args)
+        {
+            var builder = WebApplication.CreateBuilder(args);
+
+            //Add service to the ability to build razorpages during runtime.
+            //We do this to establish Browser Link
+            //builder.Services.AddRazorPages().AddRazorRuntimeCompilation();
+            //var mvcBuilder = builder.Services.AddRazorPages();
+
+            //builder.Services.Configure<MvcRazorRuntimeCompilationOptions>(options =>
+            //{
+            //    var libraryPath = Path.GetFullPath(
+            //        Path.Combine(builder.Environment.ContentRootPath, "Views", "Shared"));
+
+            //    options.FileProviders.Add(new PhysicalFileProvider(libraryPath));
+            //});
             // Add services to the container.
-            var connectionString = builder.Configuration.GetConnectionString( "DefaultConnection" ) ?? throw new InvalidOperationException( "Connection string 'DefaultConnection' not found." );
-            builder.Services.AddDbContext<ApplicationDbContext>( options =>
-                options.UseSqlServer( connectionString ) );
-            builder.Services.AddDatabaseDeveloperPageExceptionFilter( );
+            var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
+            builder.Services.AddDbContext<ApplicationDbContext>(options =>
+                options.UseSqlServer(connectionString));
+            builder.Services.AddDatabaseDeveloperPageExceptionFilter();
+
+          
+          /*Is this needed? If program doesn't run, try to delete
+            builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+                .AddEntityFrameworkStores<ApplicationDbContext>();
+            builder.Services.AddControllersWithViews(); */
 
             builder.Services.AddDefaultIdentity<User>( options => options.SignIn.RequireConfirmedAccount = false )
                 .AddRoles<IdentityRole>()
@@ -50,35 +68,40 @@ namespace Gamma_News
             builder.Services.AddHttpClient();
             //Register WeatherService and configure it to use HttpClient
             builder.Services.AddHttpClient<WeatherService>();
+            builder.Services.AddScoped<IArticleService, ArticleService>();
+
 
             var app = builder.Build();
 
-
+            //if (builder.Environment.IsDevelopment())
+            //{
+            //    mvcBuilder.AddRazorRuntimeCompilation();
+            //}
             // Configure the HTTP request pipeline.
-            if ( app.Environment.IsDevelopment( ) )
+            if (app.Environment.IsDevelopment())
             {
-                app.UseMigrationsEndPoint( );
+                app.UseMigrationsEndPoint();
             }
             else
             {
-                app.UseExceptionHandler( "/Home/Error" );
+                app.UseExceptionHandler("/Home/Error");
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-                app.UseHsts( );
+                app.UseHsts();
             }
 
-            app.UseHttpsRedirection( );
-            app.UseStaticFiles( );
+            app.UseHttpsRedirection();
+            app.UseStaticFiles();
+            // app.UseBrowserLink();
+            app.UseRouting();
 
-            app.UseRouting( );
-
-            app.UseAuthorization( );
+            app.UseAuthorization();
 
             app.MapControllerRoute(
-                name: "default" ,
-                pattern: "{controller=Home}/{action=Index}/{id?}" );
-            app.MapRazorPages( );
+                name: "default",
+                pattern: "{controller=Home}/{action=Index}/{id?}");
+            app.MapRazorPages();
 
-            app.Run( );
+            app.Run();
         }
     }
 }

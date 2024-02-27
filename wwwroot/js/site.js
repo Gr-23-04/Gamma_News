@@ -3,15 +3,35 @@
 
 // Write your JavaScript code.
 
+
 $(document).ready(function() {
-    $("#dropdown_menu_button_desktop").click(function () {
-        $("#menu_drop_desktop").slideToggle("fast");
+        //int menu = 1;
+    $("#drop_menu_button_desktop").click(function () {
+        $("#drop_menu_desktop").slideToggle("medium");
+        //$if (menu != 0) {
+        //    menu = 1
+        //$("#drop_profile_desktop").slideToggle("medium");
+        //}
     });
-    $("#dropdown_menu_button_mobile").click(function () {
-        $("#menu_drop_mobile").slideToggle("fast");
+    $("#drop_profile_button_desktop").click(function () {
+        $("#drop_profile_desktop").slideToggle("medium");
+        //$if (menu != 1) {
+        //    menu = 0;
+        //$("#drop_menu_desktop").slideToggle("medium");
+        //}
     });
-    $("#close_menu_button_mobile").click(function () {
-        $("close_menu_mobile").slideToggle("fast");
+    $("#menu_button_mobile").click(function () {
+        $("#menu_mobile").slideToggle("medium");
+    });
+    $("#drop_menu_button_mobile").click(function () {
+        $("#drop_menu_mobile").slideToggle("medium");
+    });
+    $("#open_menu_button_mobile").click(function () {
+        $("#open_menu_mobile").slideToggle("medium");
+    });
+    $("#drop_weather_container").click(function () {
+        $("#weather_cpntainer").slideToggle("medium");
+
     });
 
 });
