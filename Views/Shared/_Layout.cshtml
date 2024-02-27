@@ -22,11 +22,11 @@
     <partial name="_search_partial"></partial>
     
     
-    <div class="container">
+    <div class="container flex justify-center mx-auto w-1/2">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
-    </div>
+    </>
 
     <footer class="absolute footer text-muted text-slate-300">
         <div class="relative" style="left: 44.5%;">
@@ -37,4 +37,5 @@
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
+</html>
 
