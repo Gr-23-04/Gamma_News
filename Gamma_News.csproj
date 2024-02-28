@@ -19,6 +19,7 @@
 
 	  <UpToDateCheckBuilt Include="wwwroot/css/site.css" Set="Css" />
 	  <UpToDateCheckBuilt Include="tailwind.config.js" Set="Css" />
+	  <PackageReference Include="MailKit" Version="4.3.0" />
     <PackageReference Include="Microsoft.AspNetCore.Components.QuickGrid.EntityFrameworkAdapter" Version="8.0.2" />
     <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="8.0.1" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="8.0.1" />
@@ -34,6 +35,7 @@
 
     <PackageReference Include="Microsoft.VisualStudio.Web.BrowserLink" Version="2.2.0" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="8.0.1" />
+    <PackageReference Include="MimeKit" Version="4.3.0" />
 
   </ItemGroup>
 
