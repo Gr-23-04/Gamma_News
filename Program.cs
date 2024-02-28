@@ -72,6 +72,9 @@ namespace Gamma_News
             //need to change the name based on the class in helper folder
             builder.Services.AddTransient<IEmailSender , EmailHelper>( );
 
+            //need to change the name based on the class in helper folder
+            builder.Services.AddTransient<IEmailSender, EmailHelper>();
+
 
             var app = builder.Build( );
 
