@@ -1,7 +1,9 @@
 using Gamma_News.Data;
+using Gamma_News.Helper_DONT_REMOVE_;
 using Gamma_News.Models;
 using Gamma_News.Services;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.EntityFrameworkCore;
 
 
@@ -66,6 +68,9 @@ namespace Gamma_News
             //Register WeatherService and configure it to use HttpClient
             builder.Services.AddHttpClient<WeatherService>();
             builder.Services.AddScoped<IArticleService, ArticleService>();
+
+            //need to change the name based on the class in helper folder
+            builder.Services.AddTransient<IEmailSender, EmailHelper>();
 
 
             var app = builder.Build();
