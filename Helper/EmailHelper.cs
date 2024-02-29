@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Identity.UI.Services;
 using MimeKit;
 using MimeKit.Text;
 
-namespace Gamma_News.Helper_DONT_REMOVE_
+namespace Gamma_News.Helper
 {
     public class EmailHelper : IEmailSender
     {
