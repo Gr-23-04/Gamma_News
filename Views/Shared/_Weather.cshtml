@@ -1,0 +1,12 @@
+﻿@using Gamma_News.Services;
+@model Gamma_News.Models.Weather
+
+<h2>@Model.City</h2>
+
+<a class="navbar-brand" asp-controller="Weather" asp-action="Index">
+
+<div class="p-6 rounded-lg shadow-md transition transform hover:scale-105" style="width: 200px">
+		<img src="https://openweathermap.org/img/wn/{@new()Model.Icon.Code}4x.png" />
+	<p>@Model.TemperatureC°C<p/>
+</div>
+</a>

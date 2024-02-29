@@ -1,0 +1,11 @@
+﻿@model  Weather
+
+<div class="py-10 pl-12" style="color:aliceblue">
+<h2>@Model.City</h2>
+	<p>@Model.TemperatureC°C<p/>
+	<p>Humidity: @Model.Humidity%</p>
+	<p>Wind Speed: @Model.WindSpeed km/h</p>
+	<p>Date: @Model.Date.ToString("dd-MM-yyyy")</p>
+	<p>@Model.Summary</p>
+	<img class="" src="@Model.Icon.Url" alt="@Model.Summary" />
+</div>
