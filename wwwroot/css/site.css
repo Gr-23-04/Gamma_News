@@ -691,6 +691,7 @@ video {
     --tw-border-opacity: 0.55
 }
 
+
 .left-3\/4 {
     left: 75%
 }
@@ -990,6 +991,7 @@ video {
         line-height: 1.5rem
     }
 }
+
 
 @media (min-width: 640px) {
     .container {
