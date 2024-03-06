@@ -1,11 +1,8 @@
 @using Microsoft.AspNetCore.Identity
-
+@using Gamma_News.Models;
 @inject SignInManager<User> SignInManager
 @inject UserManager<User> UserManager
 
-<!-- Profile dropdown -->
-
-<!--THE THINGS BELOW HERE SHOULD BE IMPLEMENTED LATER-->
 
 
 @if (SignInManager.IsSignedIn(User))
@@ -54,10 +51,13 @@
 else
 {
 
+    <div class="relative container mx-auto" style="bottom: 168px; left: 150px">
 
-    <div class="relative mx-auto left-3/4">
-        <a class="nav-link hover: right-0 flex transform text-sm font-semibold leading-6 text-black" style="" asp-area="Identity" asp-page="/Account/Register">Register</a>
-        <a class="nav-link hover: right-0 flex transform text-sm font-semibold leading-6 text-black" style="" asp-area="Identity" asp-page="/Account/Login">Login</a>
+        <div class="relative top-20 left-3/4" style="">
+            <a class="relative flex w-20 nav-link btn btn-lg btn-primary justify-center rounded-md border-y-2 border-sky-900 border-opacity-50 text-sm font-bold text-slate-300 shadow-md shadow-gray-900 hover:border-sky-800 leading-10" style="" asp-area="Identity" asp-page="/Account/Register">Register</a>
+            <a class="relative flex w-20 top-2 nav-link btn btn-lg btn-primary justify-center rounded-md border-y-2 border-sky-900 border-opacity-50 text-sm font-bold text-slate-300 shadow-md shadow-gray-900 hover:border-sky-800 leading-10" style="" asp-area="Identity" asp-page="/Account/Login">Login</a>
+        </div>
+
     </div>
 
 
