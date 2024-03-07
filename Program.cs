@@ -37,7 +37,7 @@ namespace Gamma_News
 
 
 
-            builder.Services.AddDefaultIdentity<User>( options => options.SignIn.RequireConfirmedAccount = false )
+            builder.Services.AddDefaultIdentity<User>( options => options.SignIn.RequireConfirmedAccount = true )
                 .AddRoles<IdentityRole>( )
                 .AddEntityFrameworkStores<ApplicationDbContext>( );
             builder.Services.AddControllersWithViews( );
