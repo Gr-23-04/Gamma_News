@@ -1,0 +1,14 @@
+﻿@using Gamma_News.Models.ViewModels
+@model IEnumerable<Article>
+
+<h2>Subscribed Articles</h2>
+<ul>
+@foreach (var article in Model)
+    {
+        <li>
+            <h3>@article.Headline</h3>
+            <p>@article.Content</p>
+        </li>
+
+    }
+</ul>
