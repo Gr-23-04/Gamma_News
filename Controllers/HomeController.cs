@@ -1,14 +1,22 @@
 using Gamma_News.Models;
+
 using Humanizer;
+
+using Gamma_News.Services;
+
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
+
+
 
 namespace Gamma_News.Controllers
 {
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+
         private object? articleId;
+
 
         public HomeController( ILogger<HomeController> logger )
         {
@@ -42,8 +50,7 @@ namespace Gamma_News.Controllers
         {
             return View( new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier } );
         }
-
-       
+        
         
         
 
