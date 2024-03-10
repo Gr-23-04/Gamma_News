@@ -45,8 +45,10 @@
             <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
                 <button type="submit" class="block w-full text-sm font-bold text-white px-4 py-2 rounded-lg hover:bg-white hover:text-slate-900" role="menuitem" tabindex="-1" id="user-menu-item-2">Sign out</button>
             </form>
+                    <form class="form-inline" asp-area="Identity" asp-page="/Account/Manage/Index" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
+                        <button type="submit" class="block w-full text-sm font-bold text-white px-4 py-2 rounded-lg hover:bg-white hover:text-slate-900" role="menuitem" tabindex="-1" id="user-menu-item-2">Profile</button>
+                    </form>
        
-        <a href="#" class="block text-center text-sm font-bold text-white px-4 py-2 rounded-lg hover:bg-white hover:text-slate-900" role="menuitem" tabindex="-1" id="user-menu-item-0">Your Profile</a>
     </div>
 </div>
     </div>

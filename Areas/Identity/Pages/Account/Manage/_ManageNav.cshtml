@@ -1,15 +1,42 @@
-﻿@inject SignInManager<IdentityUser> SignInManager
+﻿@using Gamma_News.Models;
+@inject SignInManager<User> SignInManager
 @{
     var hasExternalLogins = (await SignInManager.GetExternalAuthenticationSchemesAsync()).Any();
 }
-<ul class="nav nav-pills flex-column">
-    <li class="nav-item"><a class="nav-link @ManageNavPages.IndexNavClass(ViewContext)" id="profile" asp-page="./Index">Profile</a></li>
-    <li class="nav-item"><a class="nav-link @ManageNavPages.EmailNavClass(ViewContext)" id="email" asp-page="./Email">Email</a></li>
-    <li class="nav-item"><a class="nav-link @ManageNavPages.ChangePasswordNavClass(ViewContext)" id="change-password" asp-page="./ChangePassword">Password</a></li>
+    <div class="">
+
+    <a class="nav-link @ManageNavPages.IndexNavClass(ViewContext) relative text-center p-3 mx-auto btn btn-lg btn-primary rounded-md border-y-2 border-sky-900 border-opacity-50 text-sm font-bold text-slate-300 shadow-md shadow-gray-900 hover:border-sky-800 leading-10" id="profile" asp-page="./Index">Profile</a>
+
+    </div>
+
+    <div class="">
+
+    <a class="nav-link @ManageNavPages.EmailNavClass(ViewContext) relative text-center p-3 mx-auto btn btn-lg btn-primary rounded-md border-y-2 border-sky-900 border-opacity-50 text-sm font-bold text-slate-300 shadow-md shadow-gray-900 hover:border-sky-800 leading-10" id="email" asp-page="./Email">Email</a>
+
+    </div>
+
+    <div class="">
+
+    <a class="nav-link @ManageNavPages.ChangePasswordNavClass(ViewContext) relative text-center p-3 mx-auto btn btn-lg btn-primary rounded-md border-y-2 border-sky-900 border-opacity-50 text-sm font-bold text-slate-300 shadow-md shadow-gray-900 hover:border-sky-800 leading-10" id="change-password" asp-page="./ChangePassword">Password</a>
+
+    </div>
+
     @if (hasExternalLogins)
     {
-        <li id="external-logins" class="nav-item"><a id="external-login" class="nav-link @ManageNavPages.ExternalLoginsNavClass(ViewContext)" asp-page="./ExternalLogins">External logins</a></li>
+        <div class="">
+
+        <a id="external-login" class="nav-link @ManageNavPages.ExternalLoginsNavClass(ViewContext) relative text-center p-3 mx-auto btn btn-lg btn-primary rounded-md border-y-2 border-sky-900 border-opacity-50 text-sm font-bold text-slate-300 shadow-md shadow-gray-900 hover:border-sky-800 leading-10" asp-page="./ExternalLogins">External logins</a>
+
+        </div>
     }
-    <li class="nav-item"><a class="nav-link @ManageNavPages.TwoFactorAuthenticationNavClass(ViewContext)" id="two-factor" asp-page="./TwoFactorAuthentication">Two-factor authentication</a></li>
-    <li class="nav-item"><a class="nav-link @ManageNavPages.PersonalDataNavClass(ViewContext)" id="personal-data" asp-page="./PersonalData">Personal data</a></li>
-</ul>
+    <div class="">
+
+    <a class="nav-link @ManageNavPages.TwoFactorAuthenticationNavClass(ViewContext) relative text-center p-3 mx-auto btn btn-lg btn-primary rounded-md border-y-2 border-sky-900 border-opacity-50 text-sm font-bold text-slate-300 shadow-md shadow-gray-900 hover:border-sky-800 leading-10" id="two-factor" asp-page="./TwoFactorAuthentication">Two-factor</a>
+
+    </div>
+
+    <div class="">
+
+    <a class="nav-link @ManageNavPages.PersonalDataNavClass(ViewContext) relative text-center p-3 mx-auto btn btn-lg btn-primary rounded-md border-y-2 border-sky-900 border-opacity-50 text-sm font-bold text-slate-300 shadow-md shadow-gray-900 hover:border-sky-800 leading-10" id="personal-data" asp-page="./PersonalData">Personal data</a>
+
+    </div>
