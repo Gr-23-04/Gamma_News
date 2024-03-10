@@ -506,7 +506,9 @@ video {
 .transform {
     transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
 }
-
+.left-3\/4 {
+    left: 75%
+}
 .mx-auto {
     margin-left: auto;
     margin-right: auto

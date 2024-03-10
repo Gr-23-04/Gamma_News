@@ -23,20 +23,20 @@
   @*   <partial name="_search_partial"></partial> *@
     
     
-    <div class="container flex justify-center mx-auto w-1/2">
-        <main role="main" class="pb-3">
+    
+        <main role="main">
             @RenderBody()
         </main>
-    </>
+   
 
    
 
 
-    <footer class="absolute container text-center footer text-muted text-slate-300">
-        <div class="relative justify-center" style="">
+    @* <footer class="relative container mx-auto justify-center my-auto text-center footer text-muted text-slate-300">
+        <div class="relative mx-auto text-center justify-center" style="">
             &copy; 2024 - Omega News - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
-    </footer>
+    </footer> *@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
