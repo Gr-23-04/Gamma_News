@@ -7,7 +7,7 @@
 
 @if (SignInManager.IsSignedIn(User))
 {
-    <div class="lg:relative md:grid-cols-3 left-40 container mx-auto">
+    <div class="lg:relative left-40 container mx-auto">
 
 <div class="relative lg:flex left-3/4 bottom-24 mx-auto my-auto" style="margin-top: 10px">
         @* <a  class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Hello @User.Identity?.Name!</a> *@
@@ -57,12 +57,11 @@
 else
 {
 
-    <div class="relative container mx-auto" style="bottom: 168px; left: 150px">
+    <div class="relative container mx-auto" style="bottom: 168px; left: 155px">
 
-        <div class="relative top-20 left-3/4" style="">
-            <a class="relative flex w-20 nav-link btn btn-lg btn-primary justify-center rounded-md border-y-2 border-sky-900 border-opacity-50 text-sm font-bold text-slate-300 shadow-md shadow-gray-900 hover:border-sky-800 leading-10" style="" asp-area="Identity" asp-page="/Account/Register">Register</a>
-            <a class="relative flex w-20 top-2 nav-link btn btn-lg btn-primary justify-center rounded-md border-y-2 border-sky-900 border-opacity-50 text-sm font-bold text-slate-300 shadow-md shadow-gray-900 hover:border-sky-800 leading-10" style="" asp-area="Identity" asp-page="/Account/Login">Login</a>
-        </div>
+        <div class="relative w-14 h-14 top-20 left-3/4 rounded-full nav-link btn btn-lg btn-primary text-center border-y-2 border-sky-900 border-opacity-50 font-bold text-slate-300 shadow-md shadow-gray-900 hover:border-sky-400 bg-gradient-to-br from-emerald-600 to-emerald-800" style="">
+            <a class="relative top-3 leading-1" style="" asp-area="Identity" asp-page="/Account/Login">Login</a>
+        </div> 
 
     </div>
 
