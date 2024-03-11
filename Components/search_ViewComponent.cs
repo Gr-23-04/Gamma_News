@@ -1,18 +1,24 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Gamma_News.Services;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Gamma_News.Components
 {
-    [ViewComponent(Name = "search")]
+    [ViewComponent(Name = "Search")]
     public class search_ViewComponent : ViewComponent
     {
-
+		private readonly IArticleService _articleService;
+		public search_ViewComponent(IArticleService articleService) 
+        {
+            _articleService = articleService;
+        }
         public async Task<IViewComponentResult> InvokeAsync()
         {
-            var some_function = 1;
+            string searchTerm = HttpContext.Request.Query["searchTerm"];
 
-
-            return View();
+            return View((object)searchTerm);
         }
+
+        
 
 
     }

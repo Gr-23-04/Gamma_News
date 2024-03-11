@@ -5,11 +5,12 @@
     ViewData["Title"] = "";
 }
 
+<div class="container flex justify-center mx-auto w-1/2">
 
     <div class="relative">
 
 
-        <div class="relative bg-gradient-to-r from-gray-800 from-0% via-sky-950 via-50% to-gray-800 to-100% px-6 py-12 shadow-2xl" style="">
+        <div class="relative border-4 border-opacity-55 border-emerald-800 border-double bg-gradient-to-r from-gray-800 from-0% via-sky-950 via-50% to-gray-800 to-100% p-6 shadow-2xl shadow-gray-700 lg:flex-auto lg:px-8" style="">
             <div class="sm:mx-auto sm:w-full sm:max-w-sm">
                 <a class="relative justify-center" style="" asp-controller="Home" asp-action="Index">
                     <img class="mx-auto w-14" src="~/Image/Vector1.png" alt="" />
@@ -23,7 +24,7 @@
                         <!---Email validation --->
                         <label asp-for="Input.Email" class="block form-label mb-2 text-sm font-medium leading-6 text-slate-300">Email address</label>
                         <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
-                        <input id="email" name="email" type="email" autocomplete="email" required class="block w-full rounded-md border-0 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" placeholder="  Email" />
+                        <input asp-for="Input.Email" type="email" autocomplete="email" required class="block w-full rounded-md border-0 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" placeholder="  Email" />
                         <span asp-validation-for="Input.Email" class="text-danger"></span>
                     </div>
 
@@ -99,6 +100,7 @@
         </div>
     </div>
 
+</div>
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />
 }

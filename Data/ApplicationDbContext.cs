@@ -15,5 +15,6 @@ namespace Gamma_News.Data
 
         public DbSet<Article> Articles { get; set; }
         public DbSet<Category> Categories { get; set; }
+        public DbSet<User> Subscriptions { get; set; }
     }
 }
