@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="~/css/styles.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/src/output.css" asp-append-version="true" />
 </head>
-<body class="bg-gradient-to-r  from-[#04193ab4] from-0% via-sky-900 via-50% to-[#04193ab4] to-100% text-while font-sans">
+<body class="bg-gradient-to-r from-[#04193ab4] from-0% via-sky-900 via-50% to-[#04193ab4] to-100% text-while font-sans">
 
     <header class="">
     <partial name="_Menu"></partial>
@@ -20,23 +20,23 @@
     <partial name="_LoginPartial"></partial>
     </header>
    
-    <partial name="_search_partial"></partial>
+  @*   <partial name="_search_partial"></partial> *@
     
     
-    <div class="container flex justify-center mx-auto w-1/2">
-        <main role="main" class="pb-3">
+    
+        <main role="main">
             @RenderBody()
         </main>
-    </>
+   
 
    
 
 
-    <footer class="absolute container text-center footer text-muted text-slate-300">
-        <div class="relative" style="">
+    @* <footer class="relative container mx-auto justify-center my-auto text-center footer text-muted text-slate-300">
+        <div class="relative mx-auto text-center justify-center" style="">
             &copy; 2024 - Omega News - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
-    </footer>
+    </footer> *@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
