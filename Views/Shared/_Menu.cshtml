@@ -8,10 +8,16 @@
                 <span class="sr-only">Omega News</span>
             </a>
         </div>
-
-        <div id="weather" class="absolute lg:flex lg:flex-1 justify-center">
+        <div id="weather" class="absolute mx-auto lg:left-10 left-72 sm:left- z-50">
             @await Component.InvokeAsync( "weather" )
             @*   @await Html.PartialAsync("_Weather", new Weather()) *@
+        </div>
+        <div dir="rtl">
+        <div class="relative">
+        <div class="absolute lg:right-44 sm:right-40 z-50">
+        <partial name="_LoginPartial"></partial>
+        </div>
+        </div>
         </div>
         <div class="lg:hidden">
             <button id="open_menu_button_mobile" type="button" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700">
@@ -136,9 +142,9 @@
             </div>
             <a href="#" class="w-100 btn btn-lg btn-primary flex min-h-14 min-w-32 items-center justify-center rounded-full border-y-2 border-sky-900 border-opacity-55 text-lg font-bold text-slate-300 shadow-md shadow-gray-900 bg-gradient-to-r via-sky-900 font-sans hover:border-emerald-700">Features</a>
 
-            <a asp-controller="Home" asp-action="Index">
-                <img class="relative w-14" src="~/Image/Vector1.png" alt="" />
-            </a>
+             <a asp-controller="Home" asp-action="Index">
+                 <img class="absolute mx-auto w-14" src="~/Image/Vector1.png" alt="" />
+             </a>
 
             <a href="#" class="w-100 btn btn-lg btn-primary flex min-h-14 min-w-32 items-center justify-center rounded-full border-y-2 border-sky-900 border-opacity-55 text-lg font-bold text-slate-300 shadow-md shadow-gray-900 bg-gradient-to-r via-sky-900 font-sans hover:border-emerald-700">Market</a>
             <a href="#" class="w-100 btn btn-lg btn-primary flex min-h-14 min-w-32 items-center justify-center rounded-full border-y-2 border-sky-900 border-opacity-55 text-lg font-bold text-slate-300 shadow-md shadow-gray-900 bg-gradient-to-r via-sky-900 font-sans hover:border-emerald-700">About</a>
@@ -147,15 +153,11 @@
 
 
     <!-- Mobile menu, show/hide based on menu open state. -->
-    <div id="menu_mobile" class="lg:hidden " role="dialog" aria-modal="true">
+    <div id="menu_mobile" class="lg:hidden z-40 " role="dialog" aria-modal="true">
         <!-- Background backdrop, show/hide based on slide-over state. -->
         <div class="fixed inset-0 z-10"></div>
         <div class="absolute inset-y-0 right-0 z-10 w-full overflow-y-auto  rounded-md bg-gradient-to-b from-gray-800 from-0% via-sky-950 via-50% to-gray-800 to-100% text-white font-sans rounded-2 shadow-lg px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
             <div class="flex items-center justify-between">
-                <a asp-controller="Home" asp-action="Index" class="-m-1.5 p-1.5 hover: bg-red-400">
-                    <span class="sr-only">Omega News</span>
-                    <img class="w-8" src="~/Image/Vector1.png" alt="" />
-                </a>
                 <button id="menu_button_mobile" type="button" class="-m-2.5 rounded-md p-2.5 text-gray-600">
                     <span class="sr-only">Close menu</span>
                     <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
@@ -174,7 +176,7 @@
 
                                   Open: "rotate-180", Closed: ""
                                 -->
-                                <svg class=" h-5 w-5 flex-none" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                <svg class=" h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                                     <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
                                 </svg>
                             </button>
@@ -194,7 +196,7 @@
                         <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base font-bold leading-7 text-white hover:bg-gray-50 hover:text-slate-900">Comp</a>
                     </div>
                     <div class="py-6">
-                        <a href="#" class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-bold leading-7 text-whire hover:bg-gray-50 hover:text-slate-900">Log in</a>
+                        <a href="#" class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-bold leading-7 hover:bg-gray-50 hover:text-slate-900">Log in</a>
                     </div>
                 </div>
             </div>
