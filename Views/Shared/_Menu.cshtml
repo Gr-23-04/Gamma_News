@@ -8,13 +8,15 @@
                 <span class="sr-only">Omega News</span>
             </a>
         </div>
-        <div id="weather" class="absolute mx-auto lg:left-10 left-72 sm:left- z-50">
+        <div dir="md:rtl">
+        <div id="weather" class="absolute lg:left-10 md:left-3/4 z-50">
             @await Component.InvokeAsync( "weather" )
             @*   @await Html.PartialAsync("_Weather", new Weather()) *@
         </div>
+        </div>
         <div dir="rtl">
-        <div class="relative">
-        <div class="absolute lg:right-44 sm:right-40 z-50">
+        <div class="">
+        <div class="absolute lg:right-48 md:right-48 z-50">
         <partial name="_LoginPartial"></partial>
         </div>
         </div>
@@ -143,7 +145,7 @@
             <a href="#" class="w-100 btn btn-lg btn-primary flex min-h-14 min-w-32 items-center justify-center rounded-full border-y-2 border-sky-900 border-opacity-55 text-lg font-bold text-slate-300 shadow-md shadow-gray-900 bg-gradient-to-r via-sky-900 font-sans hover:border-emerald-700">Features</a>
 
              <a asp-controller="Home" asp-action="Index">
-                 <img class="absolute mx-auto w-14" src="~/Image/Vector1.png" alt="" />
+                 <img class="mx-auto w-14" src="~/Image/Vector1.png" alt="" />
              </a>
 
             <a href="#" class="w-100 btn btn-lg btn-primary flex min-h-14 min-w-32 items-center justify-center rounded-full border-y-2 border-sky-900 border-opacity-55 text-lg font-bold text-slate-300 shadow-md shadow-gray-900 bg-gradient-to-r via-sky-900 font-sans hover:border-emerald-700">Market</a>

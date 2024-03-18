@@ -5,17 +5,17 @@
 @using Gamma_News.Services;
 @model Gamma_News.Models.Weather;
 
-    <a class="" asp-controller="Weather" asp-action="Index">
 
         <div id="menu_weather_container" class="mx-auto max-w-7xl items-center justify-between px-8">
             <div class="flex-auto transition transform hover:scale-105" style="width: 40%">
+         <a class="" asp-controller="Weather" asp-action="Index">
                 <p class="relative p-2 text-slate-300 font-bold" style="margin-left:-21%; margin-top: -27%;">@Model.City</p>
                 <div class="relative" style="">
                     <img class="relative sm:shrink-1 -right-8" src="@Model.Icon.Url" style="margin-top: -35%; margin-left: -60%" />
                     <p class="relative text-slate-300 font-bold" style="margin-left: 13%; margin-top: -20%">@Model.TemperatureC°C<p />
+            </a>
                 </div>
             </div>
-        </div>
-    </a>
+        
 
 }
