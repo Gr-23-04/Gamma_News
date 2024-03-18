@@ -6,7 +6,6 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - Omega News</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/Gamma_News.styles.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/styles.css" asp-append-version="true" />
@@ -16,8 +15,13 @@
 
     <header class="">
     <partial name="_Menu"></partial>
+    <div class="absolute mx-auto w-screen sm:top-44 md:left-3/4 z-50">
 
-    <partial name="_LoginPartial"></partial>
+    @await Component.InvokeAsync("Search")
+
+    
+    
+    </div>
     </header>
    
   @*   <partial name="_search_partial"></partial> *@
@@ -40,7 +44,6 @@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
-    @await Component.InvokeAsync("Search")
 </body>
 </html>
 
