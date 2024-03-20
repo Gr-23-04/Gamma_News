@@ -6,9 +6,9 @@ namespace Gamma_News.Controllers
 {
     public class ArticleController : Controller
     {
-       
+
         private readonly IArticleService _articleService;
-       public ArticleController(IArticleService articleService)
+        public ArticleController(IArticleService articleService)
         {
             _articleService = articleService;
 

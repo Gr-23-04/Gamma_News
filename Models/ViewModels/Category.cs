@@ -1,6 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations;
-
-namespace Gamma_News.Models.ViewModels
+﻿namespace Gamma_News.Models.ViewModels
 {
     public class Category
     {
