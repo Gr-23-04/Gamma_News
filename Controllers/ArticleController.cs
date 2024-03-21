@@ -28,9 +28,11 @@ namespace Gamma_News.Controllers
         public IActionResult Create(Article newArticle)
         {
             newArticle.CreatedDate = DateTime.Now;
+            newArticle.ImageLink = _articleService.UploadImage(newArticle.Image).Result;
             _articleService.CreateArticle(newArticle);
             return View();
         }
 
     }
 }
+

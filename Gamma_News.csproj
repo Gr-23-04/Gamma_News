@@ -28,14 +28,16 @@
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="8.0.3" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="8.0.3" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.3" />
-
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.3">
+	  <PackageReference Include="Azure.Storage.Blobs" Version="12.19.1" />
+     
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-
+     
     <PackageReference Include="Microsoft.VisualStudio.Web.BrowserLink" Version="2.2.0" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="8.0.2" />
+
     <PackageReference Include="MimeKit" Version="4.4.0" />
 
   </ItemGroup>
@@ -47,4 +49,5 @@
 		<Exec Command="npm run css:build" />
 	</Target>
 
+	
 </Project>
