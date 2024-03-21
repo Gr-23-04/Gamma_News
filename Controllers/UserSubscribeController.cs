@@ -2,18 +2,19 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Gamma_News.Models;
 
 namespace Gamma_News.Controllers
 {
 
     public class UserSubscribeController : Controller
     {
-        private UserManager<IdentityUser> _userManager;
+        private UserManager<User> _userManager;
         private readonly RoleManager<IdentityRole> _roleManager;
 
         //public object Roles { get; private set; }
 
-        public UserSubscribeController(UserManager<IdentityUser> userManager,
+        public UserSubscribeController(UserManager<User> userManager,
             RoleManager<IdentityRole> roleManager
         )
         {
@@ -30,7 +31,7 @@ namespace Gamma_News.Controllers
                 await _userManager.DeleteAsync(existingUser);
 
             }
-            var user = new IdentityUser
+            var user = new User
             {
                 UserName = "user@localhost",
                 Email = "user@localhost",
@@ -121,10 +122,17 @@ namespace Gamma_News.Controllers
             return View();
         }
 
+        public IActionResult Subscribe()
+        {
+            return View();        
+        }
+       
         public IActionResult Create() //handles the logic when a user subscribes to an article. This action will
                                       //create a new Subscription instance linking the user with the article.
         {
             return View();
         }
+
+        
     }
 }
