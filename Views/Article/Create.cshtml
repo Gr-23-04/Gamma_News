@@ -6,35 +6,46 @@
 
 
 <div class="row relative flex min-h-full flex-col justify-center bg-gradient-to-r from-gray-800 from-0% via-sky-950 via-50% to-gray-800 to-100% px-6 py-12 shadow-2xl lg:px-8" style="margin-left: 10%">
-<h1 class="form-group text-indigo-300 shadow-2xl">Create Article</h1>
-<hr />
+    <h1 class="text-center text-lg text-indigo-300 ">CREATE ARTICLE</h1>
+    <hr class="" />
     <div class="">
-        <form asp-action="Create">
+        <form asp-action="Create" enctype="multipart/form-data">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group text-slate-900">
                 <label asp-for="Headline" class="control-label text-indigo-300"></label>
-                <input asp-for="Headline" class="form-control" />
+                <input asp-for="Headline" class="form-control w-full rounded-md border-sky-900 shadow-inner shadow-gray-700 text-black" />
                 <span asp-validation-for="Headline" class="text-danger"></span>
             </div>
-            <div class="form-group text-slate-900">
+            <div class="form-group">
                 <label asp-for="Content" class="control-label text-indigo-300"></label>
-                <input asp-for="Content" class="form-control " />
-                <span asp-validation-for="Content" class="text-danger"></span>
+               
+                <textarea class="form-control" asp-for="Content" rows="10"></textarea>
+                <span asp-validation-for="Content" class=text-danger></span>
             </div>
+            <div id="editor"></div>
+
+            <script src="/index.js"></script>
+            
             <div class="form-group text-slate-900">
                 <label asp-for="CreatedDate" class="control-label text-indigo-300"></label>
-                <input asp-for="CreatedDate" class="form-control" />
+                <input asp-for="CreatedDate" class="form-control w-full rounded-md border-sky-900 shadow-inner shadow-gray-700 text-black" />
                 <span asp-validation-for="CreatedDate" class="text-danger"></span>
             </div>
             <div class="form-group text-slate-900">
                 <label asp-for="FileName" class="control-label text-indigo-300"></label>
-                <input asp-for="FileName" class="form-control" />
+                <input asp-for="FileName" class="form-control w-full rounded-md border-sky-900 shadow-inner shadow-gray-700 text-black" />
                 <span asp-validation-for="FileName" class="text-danger"></span>
             </div>
+            <div class="form-group text-slate-900">
+                <label asp-for="Image" class="control-label text-indigo-300"></label>
+                <input asp-for="Image" type="file" class="form-control " />
+              
 
-            <div class="form-group text-indigo-300 border-1 shadow-2xl">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
+             </div>
+
+                <div class="form-group text-indigo-300 border-1 shadow-2xl">
+                    <input type="submit" value="Create" class="btn btn-primary" />
+                </div>
         </form>
     </div>
 </div>

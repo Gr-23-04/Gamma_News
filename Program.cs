@@ -14,8 +14,8 @@ namespace Gamma_News
     {
         public static void Main(string[] args)
         {
-            var builder = WebApplication.CreateBuilder(args);
 
+            var builder = WebApplication.CreateBuilder(args);
             //Add service to the ability to build razorpages during runtime.
             //We do this to establish Browser Link
             //builder.Services.AddRazorPages().AddRazorRuntimeCompilation();
@@ -29,16 +29,14 @@ namespace Gamma_News
             //    options.FileProviders.Add(new PhysicalFileProvider(libraryPath));
             //});
             // Add services to the container.
+
             var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
             builder.Services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(connectionString));
             builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
-
-
-
             builder.Services
-                .AddDefaultIdentity<User>(options => options.SignIn.RequireConfirmedAccount = true)
+                .AddDefaultIdentity<User>(options => options.SignIn.RequireConfirmedAccount = false)
                 .AddRoles<IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>();
             builder.Services.AddControllersWithViews();
@@ -67,8 +65,11 @@ namespace Gamma_News
             //register http
             builder.Services.AddHttpClient();
             //Register WeatherService and configure it to use HttpClient
-            builder.Services.AddHttpClient<WeatherService>();
-            builder.Services.AddScoped<IArticleService, ArticleService>();
+
+            builder.Services.AddHttpClient<WeatherService>( );
+            builder.Services.AddScoped<IArticleService , ArticleService>( );
+            builder.Services.AddScoped<IStorageService, StorageService>();
+
 
             //need to change the name based on the class in helper folder
             builder.Services.AddTransient<IEmailSender, EmailHelper>();
