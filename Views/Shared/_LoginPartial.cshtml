@@ -21,8 +21,8 @@
         </button>
 
             <div class="relative container bottom-16 left-5" style="">
-            <span class="relative">
-                <span class="absolute animate-ping inline-flex h-4 w-4 rounded-full bg-slate-300 opacity-75 top-1"></span>
+            <span class="relative right-1">
+                <span class="absolute animate-ping inline-flex h-4 w-4 rounded-full bg-slate-300 opacity-75"></span>
                 <span class="absolute rounded-full h-4 w-4 bg-green-400"></span>
             </span>
             </div>
@@ -41,12 +41,12 @@
 
                 <div id="drop_profile_desktop" class="hidden absolute z-10 w-48 rounded-md max-w-md overflow-hidden border-t-2 border-double border-teal-600 border-opacity-50 bg-gradient-to-b from-gray-800 from-0% via-sky-950 via-50% to-gray-800 to-100% font-sans right-10" style="" role="menu" aria-orientation="vertical" aria-labelledby="drop_profile_desktop" tabindex="-1">
         <!-- Active: "bg-gray-100", Not Active: "" -->
-                    <a href="#" class="block text-center text-sm font-bold text-white px-4 py-2 rounded-lg hover:bg-white hover:text-slate-900" role="menuitem" tabindex="-1" id="user-menu-item-1">Settings</a>
+                    <a href="#" class="block text-center text-sm font-bold text-white px-4 py-2 rounded-lg hover:bg-white hover:text-slate-900" role="menuitem" id="user-menu-setting">Settings</a>
             <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
-                <button type="submit" class="block w-full text-sm font-bold text-white px-4 py-2 rounded-lg hover:bg-white hover:text-slate-900" role="menuitem" tabindex="-1" id="user-menu-item-2">Sign out</button>
+                <button type="submit" class="block w-full text-sm font-bold text-white px-4 py-2 rounded-lg hover:bg-white hover:text-slate-900" role="menuitem" id="user-menu-sign-out">Sign out</button>
             </form>
                     <form class="form-inline" asp-area="Identity" asp-page="/Account/Manage/Index" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
-                        <button type="submit" class="block w-full text-sm font-bold text-white px-4 py-2 rounded-lg hover:bg-white hover:text-slate-900" role="menuitem" tabindex="-1" id="user-menu-item-2">Profile</button>
+                        <button type="submit" class="block w-full text-sm font-bold text-white px-4 py-2 rounded-lg z-50 hover:bg-white hover:text-slate-900" role="menuitem" id="user-menu-profile">Profile</button>
                     </form>
        
     </div>

@@ -619,12 +619,12 @@ video {
   right: -2rem;
 }
 
-.bottom-10 {
-  bottom: 2.5rem;
-}
-
 .bottom-16 {
   bottom: 4rem;
+}
+
+.bottom-24 {
+  bottom: 6rem;
 }
 
 .left-2 {
@@ -651,16 +651,16 @@ video {
   right: 0px;
 }
 
+.right-1 {
+  right: 0.25rem;
+}
+
 .right-10 {
   right: 2.5rem;
 }
 
 .right-4 {
   right: 1rem;
-}
-
-.top-1 {
-  top: 0.25rem;
 }
 
 .top-14 {
@@ -926,6 +926,10 @@ video {
 
 .flex-none {
   flex: none;
+}
+
+.shrink-0 {
+  flex-shrink: 0;
 }
 
 .translate-y-0 {
@@ -1501,6 +1505,10 @@ video {
 
 .font-semibold {
   font-weight: 600;
+}
+
+.leading-3 {
+  line-height: .75rem;
 }
 
 .leading-6 {
@@ -2816,6 +2824,12 @@ video {
   box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
 }
 
+.focus\:ring-1:focus {
+  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+}
+
 .group:hover .group-hover\:bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
@@ -2827,8 +2841,12 @@ video {
 }
 
 @media (min-width: 640px) {
-  .sm\:top-44 {
-    top: 11rem;
+  .sm\:left-0 {
+    left: 0px;
+  }
+
+  .sm\:left-24 {
+    left: 6rem;
   }
 
   .sm\:col-span-5 {
@@ -2838,6 +2856,10 @@ video {
   .sm\:mx-auto {
     margin-left: auto;
     margin-right: auto;
+  }
+
+  .sm\:w-2\/4 {
+    width: 50%;
   }
 
   .sm\:max-w-lg {
@@ -2883,16 +2905,32 @@ video {
 }
 
 @media (min-width: 768px) {
-  .md\:left-3\/4 {
-    left: 75%;
+  .md\:left-0 {
+    left: 0px;
+  }
+
+  .md\:left-24 {
+    left: 6rem;
   }
 
   .md\:right-48 {
     right: 12rem;
   }
+
+  .md\:m-auto {
+    margin: auto;
+  }
+
+  .md\:w-5 {
+    width: 1.25rem;
+  }
 }
 
 @media (min-width: 1024px) {
+  .lg\:left-0 {
+    left: 0px;
+  }
+
   .lg\:left-10 {
     left: 2.5rem;
   }
@@ -2901,12 +2939,20 @@ video {
     right: 12rem;
   }
 
+  .lg\:top-0 {
+    top: 0px;
+  }
+
   .lg\:flex {
     display: flex;
   }
 
   .lg\:hidden {
     display: none;
+  }
+
+  .lg\:w-full {
+    width: 100%;
   }
 
   .lg\:flex-1 {
