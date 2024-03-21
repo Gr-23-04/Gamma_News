@@ -6,8 +6,8 @@ namespace Gamma_News.Components
     [ViewComponent(Name = "Search")]
     public class search_ViewComponent : ViewComponent
     {
-		private readonly IArticleService _articleService;
-		public search_ViewComponent(IArticleService articleService) 
+        private readonly IArticleService _articleService;
+        public search_ViewComponent(IArticleService articleService)
         {
             _articleService = articleService;
         }
@@ -18,7 +18,7 @@ namespace Gamma_News.Components
             return View((object)searchTerm);
         }
 
-        
+
 
 
     }
