@@ -2,8 +2,8 @@
 
 namespace Gamma_News.Services
 {
-
-    public interface IArticleService
+	
+	public interface IArticleService
     {
         void CreateArticle(Article newArticle);
 
@@ -15,11 +15,8 @@ namespace Gamma_News.Services
 
      Task<IEnumerable<Article>> SearchArticlesAsync(string searchTerm);
 
-     Task<IEnumerable<Article>> SearchArticlesAsync(string searchTerm);
-
-
     }
+   
 
-
-
+      
 }
