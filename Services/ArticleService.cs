@@ -5,6 +5,7 @@ using Gamma_News.Models.ViewModels;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json.Linq;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Gamma_News.Services
 {
@@ -25,41 +26,52 @@ namespace Gamma_News.Services
         }
 
         
-            public List<Category> GetAllCategories()
+        public List<Category> GetAllCategories()
         {
-            return _db.Categories.ToList();
+            var categories = _db.Categories.ToList();
+            return categories;
+
+
         }
 
         public void AddCategories()
         {
             List<Category> categories = new List<Category>();
-            Category category = new Category();
-            category.Name = "Local";
-            category.Name = "Entertainment";
-            category.Name = "Sport";
-            category.Name = "Politics";
-            category.Name = "Sweden";
-            category.Name = "World";
-            
+            Category category = new Category()
+            {
+               Name = "World"
+        };
+            categories.Add(category);
+            //category.Name = "Entertainment";
+            //category.Name = "Sport";
+            //category.Name = "Politics";
+            //category.Name = "Sweden";
+            //category.Name = "World";
+
 
             _db.AddRange(categories);
+            
+            
+            
+            
+            
             _db.SaveChanges();
 
         }
-        //public Article Article()
-        //{
+        public Article Article()
+        {
 
-        //    Article newArticle = new();
+            Article newArticle = new();
 
-        //    newArticle.Categories.Add(new SelectListItem { Text = "Local", Value = "1" });
-        //    newArticle.Categories.Add(new SelectListItem { Text = "Enterainment", Value = "2" });
-        //    newArticle.Categories.Add(new SelectListItem { Text = "Sport", Value = "3" });
-        //    newArticle.Categories.Add(new SelectListItem { Text = "Politics", Value = "4" });
-        //    newArticle.Categories.Add(new SelectListItem { Text = "Sweden", Value = "5" });
-        //    newArticle.Categories.Add(new SelectListItem { Text = "World", Value = "6" });
+            newArticle.Categories.Add(new SelectListItem { Text = "Local", Value = "1" });
+            newArticle.Categories.Add(new SelectListItem { Text = "Enterainment", Value = "2" });
+            newArticle.Categories.Add(new SelectListItem { Text = "Sport", Value = "3" });
+            newArticle.Categories.Add(new SelectListItem { Text = "Politics", Value = "4" });
+            newArticle.Categories.Add(new SelectListItem { Text = "Sweden", Value = "5" });
+            newArticle.Categories.Add(new SelectListItem { Text = "World", Value = "6" });
 
-        //    return newArticle;
-        //}
+            return newArticle;
+        }
 
 
         public void CreateArticle(Article newArticle)

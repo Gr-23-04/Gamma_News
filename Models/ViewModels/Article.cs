@@ -19,7 +19,8 @@ namespace Gamma_News.Models.ViewModels
         public DateTime CreatedDate { get; set; }
 
         public string FileName { get; set; }
-        public IFormFile File { get; set; }
+      
+        
 
         public string ImageLink { get; set; }
         // public virtual ICollection<Uri> ListTest { get; set; }
@@ -31,6 +32,7 @@ namespace Gamma_News.Models.ViewModels
         [ForeignKey("Category")]
         public int? CategoryId { get; set; }
 
+        [NotMapped]
         public List<SelectListItem> Categories { get; set; }
         public virtual Category Category { get; set; }
         

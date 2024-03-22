@@ -24,6 +24,9 @@ namespace Gamma_News.Controllers
 
         public IActionResult Create()
         {
+            //_articleService.AddCategories();
+            var Category = _articleService.GetAllCategories();
+            ViewBag.Categories = new SelectList(Category, "Id", "Name");
             return View();
         }
         [HttpPost]
@@ -32,11 +35,20 @@ namespace Gamma_News.Controllers
             newArticle.CreatedDate = DateTime.Now;
             newArticle.ImageLink = _articleService.UploadImage(newArticle.Image).Result;
             _articleService.CreateArticle(newArticle);
-            var Categories = _articleService.GetAllCategories();
-            ViewBag.Categories = new SelectList(Categories, "Id", "Name");
-            return View(Categories);
+            return View();
            
         }
+        [HttpGet]
+        public IActionResult AddArticle()
+        {
+            var Category = _articleService.GetAllCategories();
+            ViewBag.Categories = new SelectList(Category, "Id", "Name");
+            return View();
+
+
+        }
+
+
      
         
 
