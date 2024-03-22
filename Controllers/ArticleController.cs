@@ -1,6 +1,8 @@
 ﻿using Gamma_News.Models.ViewModels;
 using Gamma_News.Services;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.VisualStudio.Web.CodeGenerators.Mvc.Templates.Blazor;
 
 namespace Gamma_News.Controllers
 {
@@ -30,8 +32,14 @@ namespace Gamma_News.Controllers
             newArticle.CreatedDate = DateTime.Now;
             newArticle.ImageLink = _articleService.UploadImage(newArticle.Image).Result;
             _articleService.CreateArticle(newArticle);
-            return View();
+            var Categories = _articleService.GetAllCategories();
+            ViewBag.Categories = new SelectList(Categories, "Id", "Name");
+            return View(Categories);
+           
         }
+     
+        
+
 
     }
 }
