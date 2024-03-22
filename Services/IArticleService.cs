@@ -8,12 +8,19 @@ namespace Gamma_News.Services
         void CreateArticle(Article newArticle);
 
         Task<string> UploadImage(IFormFile file);
+        void AddCategories();
+
+        List<Category> GetAllCategories();
 
 
 
 
 
-     Task<IEnumerable<Article>> SearchArticlesAsync(string searchTerm);
+
+
+
+
+        Task<IEnumerable<Article>> SearchArticlesAsync(string searchTerm);
 
     }
    
