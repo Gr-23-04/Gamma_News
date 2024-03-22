@@ -2,7 +2,10 @@
 using Azure.Storage.Blobs;
 using Gamma_News.Data;
 using Gamma_News.Models.ViewModels;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json.Linq;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Gamma_News.Services
 {
@@ -12,12 +15,64 @@ namespace Gamma_News.Services
         private readonly ApplicationDbContext _db; 
         private readonly BlobServiceClient _blobServiceClient;
         private readonly IConfiguration _configuration;
+        private readonly IStorageService _storageService;
+        private readonly IArticleService _articleService;
+
         public ArticleService(ApplicationDbContext applicationDbContext,IConfiguration configuration)
         {
             _db = applicationDbContext;
             _configuration = configuration;
             _blobServiceClient = new BlobServiceClient(_configuration["AzureWebJobsStorage"]);
         }
+
+        
+        public List<Category> GetAllCategories()
+        {
+            var categories = _db.Categories.ToList();
+            return categories;
+
+
+        }
+
+        public void AddCategories()
+        {
+            List<Category> categories = new List<Category>();
+            Category category = new Category()
+            {
+               Name = "World"
+        };
+            categories.Add(category);
+            //category.Name = "Entertainment";
+            //category.Name = "Sport";
+            //category.Name = "Politics";
+            //category.Name = "Sweden";
+            //category.Name = "World";
+
+
+            _db.AddRange(categories);
+            
+            
+            
+            
+            
+            _db.SaveChanges();
+
+        }
+        public Article Article()
+        {
+
+            Article newArticle = new();
+
+            newArticle.Categories.Add(new SelectListItem { Text = "Local", Value = "1" });
+            newArticle.Categories.Add(new SelectListItem { Text = "Enterainment", Value = "2" });
+            newArticle.Categories.Add(new SelectListItem { Text = "Sport", Value = "3" });
+            newArticle.Categories.Add(new SelectListItem { Text = "Politics", Value = "4" });
+            newArticle.Categories.Add(new SelectListItem { Text = "Sweden", Value = "5" });
+            newArticle.Categories.Add(new SelectListItem { Text = "World", Value = "6" });
+
+            return newArticle;
+        }
+
 
         public void CreateArticle(Article newArticle)
         {
