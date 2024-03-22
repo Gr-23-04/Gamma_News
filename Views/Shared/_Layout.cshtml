@@ -11,35 +11,26 @@
     <link rel="stylesheet" href="~/css/styles.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/src/output.css" asp-append-version="true" />
 </head>
+
 <body class="bg-gradient-to-r from-[#04193ab4] via-sky-900 to-[#04193ab4] font-sans">
 
     <header class="">
     <partial name="_Menu"></partial>
+
     <div class="absolute mx-auto w-screen sm:top-44 md:left-3/4 z-50">
     @await Component.InvokeAsync("Search")
     </div>
 
     <div class="">
-
             <partial name="_article_partial"></partial>
-    
     </div>
     </header>
    
   @*   <partial name="_search_partial"></partial> *@
-    
-    
-    
         <main role="main">
-
-               
-
             @RenderBody()
         </main>
    
-
-   
-
 
     @* <footer class="relative container mx-auto justify-center my-auto text-center footer text-muted text-slate-300">
         <div class="relative mx-auto text-center justify-center" style="">
@@ -49,6 +40,9 @@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
+
+
+
 </body>
 </html>
 

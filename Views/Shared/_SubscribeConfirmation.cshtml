@@ -1,0 +1,58 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<!-- content of the partial view -->
+<div style="display:flex;flex-direction:row;padding:16px;border-radius:2px;background-color:#3B69F2">
+
+    @* picture about the news *@
+    <div style="display:flex;flex-direction:column;height:fit-content" class="h-64 bg-cover bg-center">
+        <img src="c:\users\ägare\github\2103\views\usersubscribe\pictures\readnewspaper.jpg" />
+    </div>
+    
+    @* information about subscribe or not *@
+    <div style="display:flex;flex-direction:column">
+        @* the icon of not subscribe *@
+        <div style="display:flex;flex-direction:column">
+                <button id="confirmNo" style="display:flex;flex-direction:column;color:white">
+                    x
+                </button>
+        </div>
+        @* text               input box and button *@
+        <div style="display:flex;flex-direction:column">
+            <div>
+                <h4 style="font-size:xx-large;color:black;">Subscribe to our newsletter!</h4>
+            </div>
+            <div>
+                <p>Read our news in your email everyday</p>
+            </div>
+
+            <div style="display:flex;flex-direction:row" class="subscripion-section bg-yelllow-400 rounded-lg p-8 max-w-sm mx-auto">
+                <input type="email" class="subscribe-input mt-0 mb-4 p-2 w-full border-gray-300" placeholder="Enter e-mail" aria-label="Email">
+                <div style="display:flex;flex-direction:row;">
+                    <div class="container mx-auto px-4">
+                        <button class="inline-block bg-blue-500 text-black font-bold py-2 px-4 rounded hover:bg-blue-700 transition duration-150 ease-in-out"
+                                onclick="location.href='@Url.Action("Subscribe", "UserSubscribe")'">
+                            Subscribe
+                        </button>
+                        <script>
+                            document.getElementById('featureButton').addEventListener('click', function () {
+                                // Use Razor syntax to generate the URL for the Subscribe page
+                                window.location.href = '@Url.Page("/Subscribe")'; // For Razor Pages
+                                // Or for MVC: window.location.href = '@Url.Action("ActionName", "ControllerName")';
+                            });
+                        </script>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div style="display:flex;flex-direction:column;padding:10px;width:250px;height:100px;">
+ 
+
+    </div>
+</div>
+
