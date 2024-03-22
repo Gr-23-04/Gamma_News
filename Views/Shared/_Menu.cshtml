@@ -1,15 +1,14 @@
 ﻿@using Gamma_News.Components;
 @using Gamma_News.Controllers;
 @{
-    <nav class="relative mx-auto max-w-7xl items-center justify-between rounded-b-3xl border-b-2 border-double border-sky-500 border-opacity-30 bg-gradient-to-r from-gray-800 from-0% via-sky-950 via-50% to-gray-800 to-100% p-6 shadow-2xl lg:flex-auto lg:px-8" style=" box-sizing:content-box" aria-label="Global">
-        <div id="weather" class="absolute justify-center lg:flex lg:flex-1"></div>
+    <nav class="mx-auto items-center justify-between rounded-b-3xl border-b-2 border-double border-sky-500 border-opacity-30 bg-gradient-to-r from-gray-800 from-0% via-sky-950 via-50% to-gray-800 to-100% p-6 shadow-2xl lg:flex-auto lg:px-8" style=" box-sizing:content-box" aria-label="Global">
         <div class="absolute justify-center lg:flex lg:flex-1">
             <a href="#" class="-m-1.5 p-1.5">
                 <span class="sr-only">Omega News</span>
             </a>
         </div>
-        <div dir="relative">
-            <div id="weather" class="absolute lg:left-10 md:m-auto ">
+        <div dir="auto">
+            <div id="weather" class="absolute lg:scale-100 lg:left-10 lg:top-4 sm:left-3/4 md:scale-150 sm:top-3/4 sm: z-20 shrink-0" style="">
             @await Component.InvokeAsync( "weather" )
             @*   @await Html.PartialAsync("_Weather", new Weather()) *@
         </div>
@@ -146,7 +145,7 @@
           
             <a asp-controller="Home" asp-action="Index">
                 
-                 <img class="mx-auto w-14" src="~/Image/Vector1.png" alt="" />
+                 <img class="mx-auto w-14 drop-shadow-lg bg-gradient-to-r from-orange-800 via-orange-600 to-orange-800 border-2 border-sky-950 bg-clip-content rounded-2xl bg-blend-luminosity" src="~/Image/Vector1.png" alt="" />
              </a>
 
             <a href="#" class="w-100 btn btn-lg btn-primary flex min-h-14 min-w-32 items-center justify-center rounded-full border-y-2 border-sky-900 border-opacity-55 text-lg font-bold text-slate-300 shadow-md shadow-gray-900 bg-gradient-to-r via-sky-900 font-sans hover:border-emerald-700">Market</a>

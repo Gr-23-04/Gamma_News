@@ -7,8 +7,8 @@ namespace Gamma_News.Models.ViewModels
         //articles information
         public int Id { get; set; }
         public string Headline { get; set; } = string.Empty;
-         
-        public string Content { get; set; }= string.Empty;
+
+        public string Content { get; set; } = string.Empty;
 
         public DateTime CreatedDate { get; set; }
 
@@ -18,12 +18,12 @@ namespace Gamma_News.Models.ViewModels
         // public virtual ICollection<Uri> ListTest { get; set; }
 
         [NotMapped]
-        public IFormFile? Image {  get; set; }
+        public IFormFile? Image { get; set; }
 
 
         [ForeignKey("Category")]
         public int? CategoryId { get; set; }
         public virtual Category Category { get; set; }
-        
+
     }
 }

@@ -2849,6 +2849,10 @@ video {
     left: 6rem;
   }
 
+  .sm\:top-80 {
+    top: 20rem;
+  }
+
   .sm\:col-span-5 {
     grid-column: span 5 / span 5;
   }
@@ -2909,6 +2913,10 @@ video {
     left: 0px;
   }
 
+  .md\:left-2\/4 {
+    left: 50%;
+  }
+
   .md\:left-24 {
     left: 6rem;
   }
@@ -2941,6 +2949,10 @@ video {
 
   .lg\:top-0 {
     top: 0px;
+  }
+
+  .lg\:top-4 {
+    top: 1rem;
   }
 
   .lg\:flex {
