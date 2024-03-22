@@ -1,7 +1,7 @@
-﻿using MimeKit;
-using MailKit.Net.Smtp;
-using MimeKit.Text;
+﻿using MailKit.Net.Smtp;
 using Microsoft.AspNetCore.Identity.UI.Services;
+using MimeKit;
+using MimeKit.Text;
 
 namespace Gamma_News.Helper_DONT_REMOVE_
 {

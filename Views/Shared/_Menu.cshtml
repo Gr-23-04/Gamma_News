@@ -142,9 +142,10 @@
                     </div>
                 </div>
             </div>
-            <a href="#" class="w-100 btn btn-lg btn-primary flex min-h-14 min-w-32 items-center justify-center rounded-full border-y-2 border-sky-900 border-opacity-55 text-lg font-bold text-slate-300 shadow-md shadow-gray-900 bg-gradient-to-r via-sky-900 font-sans hover:border-emerald-700">Features</a>
-
-             <a asp-controller="Home" asp-action="Index">
+            <a src="c:\users\ägare\github\1803\views\usersubscribe\index.cshtml" class="w-100 btn btn-lg btn-primary flex min-h-14 min-w-32 items-center justify-center rounded-full border-y-2 border-sky-900 border-opacity-55 text-lg font-bold text-slate-300 shadow-md shadow-gray-900 bg-gradient-to-r via-sky-900 font-sans hover:border-emerald-700">Features</a>
+          
+            <a asp-controller="Home" asp-action="Index">
+                
                  <img class="mx-auto w-14" src="~/Image/Vector1.png" alt="" />
              </a>
 
@@ -204,5 +205,25 @@
             </div>
         </div>
     </div>
+
+
+    // Subscribtion Button
+    <body class="bg-gray-100">
+        <div class="container mx-auto px-4">
+            
+            <button class="inline-block bg-blue-500 text-white font-bold py-2 px-4 rounded hover:bg-blue-700 transition duration-150 ease-in-out"
+                    onclick="location.href='@Url.Action("Subscribe", "UserSubscribe")'">
+                Subscribe
+            </button>
+
+        </div>
+        <script>
+            document.getElementById('featureButton').addEventListener('click', function () {
+                // Use Razor syntax to generate the URL for the Subscribe page
+                window.location.href = '@Url.Page("/Subscribe")'; // For Razor Pages
+                // Or for MVC: window.location.href = '@Url.Action("ActionName", "ControllerName")';
+            });
+        </script>
+    </body>
 
 }

@@ -1,6 +1,4 @@
 using Gamma_News.Models;
-using Humanizer;
-using Gamma_News.Services;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
@@ -16,7 +14,7 @@ namespace Gamma_News.Controllers
 
 
 
-        public HomeController( ILogger<HomeController> logger )
+        public HomeController(ILogger<HomeController> logger)
 
         {
             _logger = logger;

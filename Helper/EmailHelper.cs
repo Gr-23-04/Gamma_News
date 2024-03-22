@@ -10,34 +10,34 @@ namespace Gamma_News.Helper
         private readonly IConfiguration _configuration;
         private string content;
 
-        public EmailHelper( IConfiguration configuration )
+        public EmailHelper(IConfiguration configuration)
         {
             _configuration = configuration;
         }
 
-        public Task SendEmailAsync( string email , string subject , string htmlMessage )
+        public Task SendEmailAsync(string email, string subject, string htmlMessage)
         {
             string response = "";
 
-            var message = new MimeMessage( );
+            var message = new MimeMessage();
 
-            message.Sender = MailboxAddress.Parse( _configuration [ "SenderEmail" ] );
+            message.Sender = MailboxAddress.Parse(_configuration["SenderEmail"]);
 
-            message.Sender.Name = _configuration [ "SenderName" ];
+            message.Sender.Name = _configuration["SenderName"];
 
-            message.To.Add( MailboxAddress.Parse( email ) );
+            message.To.Add(MailboxAddress.Parse(email));
 
-            message.From.Add( message.Sender );
+            message.From.Add(message.Sender);
 
             message.Subject = subject;
 
             //We will say we are sending HTML. But there are options for plaintext etc.
 
-            message.Body = new TextPart( TextFormat.Html ) { Text = content };
+            message.Body = new TextPart(TextFormat.Html) { Text = content };
 
             //Be careful that the SmtpClient class is the one from Mailkit not the framework!
 
-            using ( var emailClient = new SmtpClient( ) )
+            using (var emailClient = new SmtpClient())
 
             {
 
@@ -47,51 +47,51 @@ namespace Gamma_News.Helper
 
                     //The last parameter here is to use SSL (Which you should!)
 
-                    emailClient.Connect( _configuration [ "SmtpServer" ] , Convert.ToInt32( _configuration [ "SmtpPort" ] ) , true );
+                    emailClient.Connect(_configuration["SmtpServer"], Convert.ToInt32(_configuration["SmtpPort"]), true);
 
                 }
 
-                catch ( SmtpCommandException ex )
+                catch (SmtpCommandException ex)
 
                 {
 
                     response = "Error trying to connect:" + ex.Message + " StatusCode: " + ex.StatusCode;
 
-                    return Task.FromResult( response );
+                    return Task.FromResult(response);
 
                 }
 
-                catch ( SmtpProtocolException ex )
+                catch (SmtpProtocolException ex)
 
                 {
 
                     response = "Protocol error while trying to connect:" + ex.Message;
 
-                    return Task.FromResult( response );
+                    return Task.FromResult(response);
 
                 }
 
                 //Remove any OAuth functionality as we won't be using it.
 
-                emailClient.AuthenticationMechanisms.Remove( "XOAUTH2" );
+                emailClient.AuthenticationMechanisms.Remove("XOAUTH2");
 
-                emailClient.Authenticate( _configuration [ "SmtpUsername" ] , _configuration [ "SmtpPassword" ] );
+                emailClient.Authenticate(_configuration["SmtpUsername"], _configuration["SmtpPassword"]);
 
                 try
 
                 {
 
-                    emailClient.Send( message );
+                    emailClient.Send(message);
 
                 }
 
-                catch ( SmtpCommandException ex )
+                catch (SmtpCommandException ex)
 
                 {
 
                     response = "Error sending message: " + ex.Message + " StatusCode: " + ex.StatusCode;
 
-                    switch ( ex.ErrorCode )
+                    switch (ex.ErrorCode)
 
                     {
 
@@ -105,7 +105,7 @@ namespace Gamma_News.Helper
 
                             response += " Sender not accepted: " + ex.Mailbox;
 
-                            Console.WriteLine( "\tSender not accepted: {0}" , ex.Mailbox );
+                            Console.WriteLine("\tSender not accepted: {0}", ex.Mailbox);
 
                             break;
 
@@ -119,7 +119,7 @@ namespace Gamma_News.Helper
 
                 }
 
-                emailClient.Disconnect( true );
+                emailClient.Disconnect(true);
 
             }
 
