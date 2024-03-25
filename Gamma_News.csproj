@@ -41,6 +41,7 @@
 
   <ItemGroup>
     <Folder Include="Models\Helpers\" />
+    <Folder Include="Views\UserSubscribe\pictures\" />
   </ItemGroup>
 	<Target Name="Tailwind" BeforeTargets="Build">
 		<Exec Command="npm run css:build" />
