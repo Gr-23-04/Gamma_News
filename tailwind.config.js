@@ -15,6 +15,8 @@ module.exports = {
         ['prettier-plugin-tailwindcss'],
         require('tailwindcss'),
         require('@headlessui/tailwindcss'),
+        require('tailwindcss-animated'),
+        require('@tailwindcss/forms'),
 
 
     ],

@@ -147,6 +147,28 @@ pre {
     font-size: 1em;
     /* 4 */
 }
+.img-c{
+    position: relative;
+    background: linear-gradient(to right, #EB6E4B, orange, #EB6E4B);
+}
+
+    .img-c::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url("https://newssitestorage220.blob.core.windows.net/newssitespictures/logo-vector-w-transparent-omega.svg") no-repeat center;
+        background-size: contain;
+        mask-border-mode: alpha;
+        mask-border: url("https://newssitestorage220.blob.core.windows.net/newssitespictures/logo-vector-w-transparent-omega.svg");
+        -webkit-mask-composite: inherit;
+        mask-clip: border-box;
+        mask-size: cover;
+        mask-repeat: no-repeat;
+        mask-position: inherit;
+    }
 
 /*
 Add the correct font size in all browsers.
@@ -453,6 +475,7 @@ video {
     vertical-align: baseline;
 }
 }
+
 
 ::backdrop {
     --tw-border-spacing-x: 0;

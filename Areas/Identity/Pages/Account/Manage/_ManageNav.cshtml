@@ -1,7 +1,7 @@
 ﻿@using Gamma_News.Models;
 @inject SignInManager<User> SignInManager
 
-<div class="absolute border-4 rounded-full left-1/2 border-opacity-55 border-emerald-800 border-double bg-gradient-to-r from-gray-800 from-0% via-sky-950 via-50% to-gray-800 to-100% p-6 drop-shadow-2xl shadow-gray-700 lg:flex-auto lg:px-8">
+<div class=" border-4 rounded-full relative top-6 left-1/2 border-opacity-55 border-emerald-800 border-double bg-gradient-to-r from-gray-800 via-sky-950 to-gray-800 p-6 drop-shadow-2xl shadow-gray-700 lg:flex-auto lg:px-8">
 
 @{
     var hasExternalLogins = (await SignInManager.GetExternalAuthenticationSchemesAsync()).Any();
@@ -11,19 +11,19 @@
 
 <div class="pl-3">
 
-    <a class="nav-link @ManageNavPages.IndexNavClass(ViewContext) relative text-center p-3 mx-auto btn btn-lg btn-primary rounded-md border-y-2 border-sky-900 border-opacity-50 text-sm font-bold text-slate-300 shadow-md shadow-gray-900 hover:border-sky-800 leading-10 top-10" id="profile" asp-page="./Index">Profile</a>
+    <a class="nav-link @ManageNavPages.IndexNavClass(ViewContext) relative px-6 text-center p-3 mx-auto btn btn-lg btn-primary rounded-md border-y-2 border-sky-900 border-opacity-50 text-sm font-bold text-slate-300 shadow-md shadow-gray-900 hover:border-sky-800 leading-10 top-10" id="profile" asp-page="./Index">Profile</a>
 
 </div>
 
     <div class="pl-3">
 
-    <a class="nav-link @ManageNavPages.EmailNavClass(ViewContext) relative text-center p-3 mx-auto btn btn-lg btn-primary rounded-md border-y-2 border-sky-900 border-opacity-50 text-sm font-bold text-slate-300 shadow-md shadow-gray-900 hover:border-sky-800 leading-10 top-10" id="email" asp-page="./Email">Email</a>
+    <a class="nav-link @ManageNavPages.EmailNavClass(ViewContext) relative px-6 text-center p-3 mx-auto btn btn-lg btn-primary rounded-md border-y-2 border-sky-900 border-opacity-50 text-sm font-bold text-slate-300 shadow-md shadow-gray-900 hover:border-sky-800 leading-10 top-10" id="email" asp-page="./Email">Email</a>
 
 </div>
 
     <div class="pl-3">
 
-        <a class="nav-link @ManageNavPages.ChangePasswordNavClass(ViewContext) relative text-center p-3 mx-auto btn btn-lg btn-primary rounded-md border-y-2 border-sky-900 border-opacity-50 text-sm font-bold text-slate-300 shadow-md shadow-gray-900 hover:border-sky-800 leading-10 top-10" id="change-password" asp-page="./ChangePassword">Password</a>
+        <a class="nav-link @ManageNavPages.ChangePasswordNavClass(ViewContext) relative px-3 text-center p-3 mx-auto btn btn-lg btn-primary rounded-md border-y-2 border-sky-900 border-opacity-50 text-sm font-bold text-slate-300 shadow-md shadow-gray-900 hover:border-sky-800 leading-10 top-10" id="change-password" asp-page="./ChangePassword">Password</a>
 
 </div>
 
