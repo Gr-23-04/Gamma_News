@@ -32,7 +32,7 @@
                 <span asp-validation-for="CreatedDate" class="text-danger"></span>
             </div>
             <div class="form-group text-slate-900">
-                <label asp-for="CategoryId" class="control-label text-indigo-300"></label>
+                <label asp-for="Category" class="control-label text-indigo-300"></label>
                 <select asp-for="CategoryId" asp-items="ViewBag.Categories"></select>
                 <span asp-validation-for="CategoryId" class="text-danger"></span>
             </div>
@@ -65,11 +65,19 @@
                 <input asp-for="Image" type="file" class="form-control " />
               
 
-             </div>
+             </div >
 
-                <div class="form-group text-indigo-300 border-1 shadow-2xl">
-                    <input type="submit" value="Create" class="btn btn-primary" />
-                </div>
+            <div class="form-group text-indigo-300 border-1 shadow-2xl mt-6 flex items-center">
+                
+                <button class="inline-block bg-blue-500 text-white font-bold py-2 px-4 rounded hover:bg-blue-700 transition duration-150 ease-in-out">CREATE</button>
+            </div>
+              
+                
+
+
+                
+
+            
         </form>
     </div>
 </div>
