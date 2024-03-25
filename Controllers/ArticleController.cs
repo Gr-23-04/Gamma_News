@@ -1,11 +1,14 @@
-﻿using Gamma_News.Models.ViewModels;
+﻿using Gamma_News.Data;
+using Gamma_News.Models.ViewModels;
 using Gamma_News.Services;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace Gamma_News.Controllers
 {
     public class ArticleController : Controller
     {
+        private readonly ApplicationDbContext _db;
 
         private readonly IArticleService _articleService;
         public ArticleController(IArticleService articleService)
@@ -14,10 +17,13 @@ namespace Gamma_News.Controllers
 
         }
 
+        
 
-        public IActionResult Index()
-        {
-            return View();
+
+		public IActionResult Index()
+		{
+            
+			return View();
         }
 
         public IActionResult Create()
@@ -32,6 +38,9 @@ namespace Gamma_News.Controllers
             _articleService.CreateArticle(newArticle);
             return View();
         }
+
+        
+
 
     }
 }

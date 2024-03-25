@@ -15,6 +15,8 @@ namespace Gamma_News.Models.ViewModels
         public string FileName { get; set; }
 
         public string ImageLink { get; set; }
+
+        public string Preview { get; set; }
         // public virtual ICollection<Uri> ListTest { get; set; }
 
         [NotMapped]

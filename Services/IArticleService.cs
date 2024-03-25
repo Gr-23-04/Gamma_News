@@ -15,6 +15,9 @@ namespace Gamma_News.Services
 
      Task<IEnumerable<Article>> SearchArticlesAsync(string searchTerm);
 
+
+     Task<IEnumerable<Article>> GetAllArticles();
+
     }
    
 
