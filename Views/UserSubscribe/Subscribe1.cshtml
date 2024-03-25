@@ -1,0 +1,163 @@
+﻿@{
+    Layout = null;
+}
+
+@* Using a Model
+If your view is strongly-typed to a model that
+includes ArticleId, you would simply use the model's property:
+*@
+
+
+
+
+
+Payment
+<div class="flex w-full"style="display:flex;flex-direction:row;background-color:black;padding:16px;">
+
+    column1 signed in/specific infor for subscribe *
+    <div class="flex-1"style="width:60%;display:flex;flex-direction:column;background-color:#0D6EFD;padding:16px;border-radius:2px;">
+   
+       <div style="display:flex;flex-direction:row;">
+
+           <div class=" width: 100px; height: 100px;background-color: #3498db; border-radius: 50%;">1</div>
+            <div class="bg-gray-400 w-10 h-10 rounded-full flex items-center justify-center">
+                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+            </div>
+
+           <div style="display:flex;flex-direction:column;">
+                <h3>Signed in</h3>
+                <p class="text-white text-xs">
+                    This users email address.Not you? Log out
+                </p>
+           </div>
+            <div>
+                <form action="/Subscriptions/Create" method="post">
+                    <input type="hidden" name="ArticleId" value="@ViewData["ArticleId"]" />
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+            
+        </div>
+
+       
+        <div class="flex-2" style="width:40%;display:flex;flex-direction:column;">
+            <div class="text-white font-bold text-xl mb-2">
+                2, Payment
+            </div>
+            <div style="display:flex;flex-direction:column;">
+                <button class="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" style="padding:16px;">
+                    Name on card
+                </button>
+
+                <div style="display:flex;flex-direction:row">
+
+                    <button class="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" style="padding:16px;">
+                        Card number
+                    </button>
+                    <button class="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" style="padding:16px;">
+                        Exp
+                    </button>
+                    <button class="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" style="padding:16px;">
+                        CVV
+                    </button>
+                    <button class="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" style="padding:16px;">
+                        Zip
+                    </button>
+                </div>
+
+            </div>
+
+            <div style="display:flex;flex-direction:column;">
+                <button class="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                    Swish
+                </button>
+                <button class="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                    Pay using your Swish account or credit card
+                </button>
+            </div>
+        </div>
+
+
+        <div style="display:flex;flex-direction:row;">
+        </div>
+
+       <div class="max-w-sm rounded overflow-hidden shadow-lg bg-blue-400 p-5">
+            
+
+        </div>
+
+        <form action="/Subscriptions/Create" method="post">
+            <input type="hidden" name="ArticleId" value="@ViewData["ArticleId"]" />
+            <button type="submit">Subscribe</button>
+        </form>
+
+
+   </div>
+
+   @* column2 order summary to subscribe *@
+
+    <div style="display:flex;flex-direction:column;padding:16px;border-radius:2px;background-color:cornflowerblue;">
+
+        <div style="display:flex;flex-direction:column;padding:10px;width:250px;height:100px;">
+            <div>
+                <h2 style="font-size:xx-large;color:#ffffff;" class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Order Summary</h2>
+                <p style="color:white;"class="mt-6 text-base leading-7 text-gray-600">Lorem ipsum dolor sit amet consect etur adipisicing elit. Itaque amet indis perferendis blanditiis repellendus etur quidem assumenda.</p>
+            </div>
+
+           
+            <div class="bg-white py-24 sm:py-32">
+                <div class="mx-auto max-w-7xl px-6 lg:px-8">
+                    <div class="mx-auto mt-16 max-w-2xl rounded-3xl ring-1 ring-gray-200 sm:mt-20 lg:mx-0 lg:flex lg:max-w-none">
+                        <div class="p-8 sm:p-10 lg:flex-auto">
+                            <div class="mt-10 flex items-center gap-x-4"></div>
+                        </div>
+                        <div class="-mt-2 p-2 lg:mt-0 lg:w-full lg:max-w-md lg:flex-shrink-0">
+                            <div class="rounded-2xl bg-gray-50 py-10 text-center ring-1 ring-inset ring-gray-900/5 lg:flex lg:flex-col lg:justify-center lg:py-16">
+                                <div class="mx-auto max-w-xs px-8">
+                                    <h3 class="text-2xl font-bold tracking-tight text-gray-900">Subscribe Plan</h3>
+                                    <p class="text-base font-semibold text-gray-600">Pay once, own it forever</p>
+                                    <p class="mt-6 flex items-baseline justify-center gap-x-2">
+                                        <span class="text-5xl font-bold tracking-tight text-gray-900">$99.9</span>
+                                        <span class="text-sm font-semibold leading-6 tracking-wide text-gray-600">KR</span>
+                                    </p>
+                                    <a href="#" class="mt-10 block w-full rounded-md bg-indigo-600 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Subscribe now</a>
+                                    <p class="mt-6 text-xs leading-5 text-gray-600">Invoices and receipts available for you</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        @*  Payment Button *@
+
+        @*  <div class="container mx-auto px-4">
+
+        <button class="inline-block bg-blue-500 text-white font-bold py-2 px-4 rounded hover:bg-blue-700 transition duration-150 ease-in-out"
+        onclick="location.href='@Url.Action("Subscribe", "UserSubscribe")'">
+        Choose your way to pay
+        </button>
+
+        </div> *@
+        @*  // <script>
+        //     document.getElementById('featureButton').addEventListener('click', function () {
+        //         // Use Razor syntax to generate the URL for the Subscribe page
+        //         window.location.href = '@Url.Page("/Subscribe")'; // For Razor Pages
+        //         // Or for MVC: window.location.href = '@Url.Action("ActionName", "ControllerName")';
+        //     });
+        // </script> *@
+    </div>
+
+
+
+   
+
+    
+</div> 
+
+
+
+
+ 
