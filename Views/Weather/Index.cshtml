@@ -1,18 +1,6 @@
-﻿@model  Weather
+﻿@model Weather
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    
-
-
-    <title>Weather</title>
-    <style>
-
-
-    </style>
+ 
     <script>
         
         document.addEventListener('DOMContentLoaded', function () //This is an event listener that waits for the content of the web page to be fully loaded. Once the loading is complete (i.e., the Document Object Model (DOM) content is fully loaded), it will execute the function inside the curly braces.
@@ -22,7 +10,7 @@
         });
 
         function updateWeather() {
-            fetch('https://weatherapi.dreammaker-it.se/Forecast?city=linöping&lang=English')
+            fetch('https://weatherapi.dreammaker-it.se/Forecast?city=linköping&lang=English')
                 .then(response => response.json())
                 .then(data => {
                     document.querySelector('.weather-info h2').textContent = `${data.TemperatureC}°C`;
@@ -78,9 +66,7 @@
         }
         
     </script>
-</head>
-<body>
-    <main class="container">
+
         <div class="grid">
             <section class="weather-card">
                 <div class="weather-icon"></div>
@@ -97,8 +83,3 @@
             </section>
         </div>
 
-    </main>
-    <footer class="container">
-    </footer>
-</body>
-</html>

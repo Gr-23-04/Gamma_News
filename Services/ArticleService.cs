@@ -1,12 +1,8 @@
-﻿
-using Azure;
-using Azure.Storage.Blobs;
+﻿using Azure.Storage.Blobs;
 using Gamma_News.Data;
 using Gamma_News.Models.ViewModels;
-using Newtonsoft.Json;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using Newtonsoft.Json.Linq;
-using System.ComponentModel.DataAnnotations.Schema;
 
 
 namespace Gamma_News.Services
@@ -21,7 +17,7 @@ namespace Gamma_News.Services
         private readonly IStorageService _storageService;
         private readonly IArticleService _articleService;
 
-        public ArticleService(ApplicationDbContext applicationDbContext,IConfiguration configuration)
+        public ArticleService(ApplicationDbContext applicationDbContext, IConfiguration configuration)
 
         {
             _db = applicationDbContext;
@@ -30,7 +26,7 @@ namespace Gamma_News.Services
         }
 
 
-        
+
         public List<Category> GetAllCategories()
         {
             var categories = _db.Categories.ToList();
@@ -44,8 +40,8 @@ namespace Gamma_News.Services
             List<Category> categories = new List<Category>();
             Category category = new Category()
             {
-               Name = "World"
-        };
+                Name = "World"
+            };
             categories.Add(category);
             //category.Name = "Entertainment";
             //category.Name = "Sport";
@@ -55,11 +51,11 @@ namespace Gamma_News.Services
 
 
             _db.AddRange(categories);
-            
-            
-            
-            
-            
+
+
+
+
+
             _db.SaveChanges();
 
         }
