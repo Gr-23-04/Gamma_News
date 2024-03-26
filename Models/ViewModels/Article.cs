@@ -9,7 +9,7 @@ namespace Gamma_News.Models.ViewModels
         {
             Categories = new List<SelectListItem>();
         }
-      
+
         //articles information
         public int Id { get; set; }
         public string Headline { get; set; } = string.Empty;
@@ -19,8 +19,6 @@ namespace Gamma_News.Models.ViewModels
         public DateTime CreatedDate { get; set; }
 
         public string FileName { get; set; }
-      
-        
 
         public string ImageLink { get; set; }
 

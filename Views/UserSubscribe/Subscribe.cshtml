@@ -13,40 +13,28 @@ includes ArticleId, you would simply use the model's property:
 
 
 
+<div class="relative left-40" style="display:flex;/* flex-direction:row; */background-color:#1C82CA;/* padding:16px; */padding:32px;">
 
-Payment
-<div class="flex w-full" style="display:flex;flex-direction:row;background-color:#1C82CA;padding:16px;padding:32px;">
-
-   @*  column1 signed in/specific infor for subscribe  *@
-    <div class="flex-1" style="width:60%;display:flex;flex-direction:column;padding:16px;border-radius:2px;">
+    <div class="" style="width:60%;display:flex;flex-direction:column;/* padding:16px; */border-radius:2px;">
 
         <div style="display:flex;flex-direction:row;">
-            <div style="display:flex;flex-direction:column;">
-               @*  <div class="bg-gray-400 w-10 h-10 rounded-full flex items-center justify-center">
-                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                </div> *@
-                <div class="text-white font-bold text-xl mb-2">
+            <div style="display:flex;/* flex-direction:column; */">
+                <div class="font-bold text-white text-xl">
                     Signed in
                 </div>
                 <p class="text-white text-xs">
                     This users email address.                             Not you? Log out
                 </p>
             </div>
-            @* <div>
-                <form action="/Subscriptions/Create" method="post">
-                    <input type="hidden" name="ArticleId" value="@ViewData["ArticleId"]" />
-                    <button type="submit">Subscribe</button>
-                </form>
-            </div> *@
         </div>
         <div class="flex-2" style="width:40%;display:flex;flex-direction:column;">
             <div class="text-white font-bold text-xl mb-2">
-               Payment
+                Payment
             </div>
-            <div class="isolate bg-white px-6 py-24 sm:py-32 lg:px-8">
+            <div class="isolate py-24 sm:py-32">
 
                 <div class="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
- 
+
                     <div class="sm:col-span-2">
                         <label for="email" class="block text-lg font-semibold leading-6 text-white">First name</label>
                         <div class="mt-2.5">
@@ -66,23 +54,23 @@ Payment
                         <div class="mt-2.5">
                             <input type="email" name="email" id="email" autocomplete="email" class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
                         </div>
-                    </div> 
-                    <div class="sm:col-span-2" style="display:flex;flex-direction:row">
+                    </div>
+                    <div class="sm:col-span-2" style="display:flex;flex-direction:row;">
                         <div>
-                            <label for="email" class="block text-lg font-semibold leading-6 text-white">EXP</label>
-                            <div class="mt-2.5">
+                            <label for="email" class="block font-semibold leading-6 text-center text-lg text-white">EXP</label>
+                            <div class="mt-2.5 px-3">
                                 <input type="email" name="email" id="email" autocomplete="email" class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
                             </div>
                         </div>
                         <div>
-                            <label for="email" class="block text-lg font-semibold leading-6 text-white">CVV</label>
-                            <div class="mt-2.5">
+                            <label for="email" class="block font-semibold leading-6 text-center text-lg text-white">CVV</label>
+                            <div class="mt-2.5 px-3">
                                 <input type="email" name="email" id="email" autocomplete="email" class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
                             </div>
                         </div>
                         <div>
-                            <label for="email" class="block text-lg font-semibold leading-6 text-white">ZIP</label>
-                            <div class="mt-2.5">
+                            <label for="email" class="block font-semibold leading-6 text-center text-lg text-white">ZIP</label>
+                            <div class="mt-2.5 px-3">
                                 <input type="email" name="email" id="email" autocomplete="email" class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
                             </div>
                         </div>
@@ -95,7 +83,7 @@ Payment
                         </div>
                     </div>
 
-                   
+
                 </div>
             </div>
             <div style="display:flex;flex-direction:row;">
@@ -109,20 +97,19 @@ Payment
         </div>
     </div>
 
-    @* column2 order summary to subscribe *@
 
     <div style="display:flex;flex-direction:column;padding:16px;border-radius:2px;">
 
         <div style="display:flex;flex-direction:column;padding:10px;width:250px;height:100px;">
-          
+
             <div class="bg-white py-24 sm:py-32">
                 <div class="mx-auto max-w-7xl px-6 lg:px-8">
-                    <div class="mx-auto mt-16 max-w-2xl rounded-3xl ring-1 ring-gray-200 sm:mt-20 lg:mx-0 lg:flex lg:max-w-none">
-                        <div class="p-8 sm:p-10 lg:flex-auto">
-                            <div class="mt-10 flex items-center gap-x-4"></div>
+                    <div class="lg:max-w-none lg:mx-0 max-w-2xl mx-auto ring-1 ring-gray-200 rounded-3xl">
+                        <div class="lg:flex-auto">
+                            <div class="flex gap-x-4 items-center mt-10"></div>
                         </div>
-                        <div class="-mt-2 p-2 lg:mt-0 lg:w-full lg:max-w-md lg:flex-shrink-0">
-                            <div class="rounded-2xl bg-gray-50 py-10 text-center ring-1 ring-inset ring-gray-900/5 lg:flex lg:flex-col lg:justify-center lg:py-16">
+                        <div class="lg:max-w-md">
+                            <div class="bg-gray-50 lg:flex-col lg:py-16 ring-gray-900/5 ring-inset rounded-2xl text-center">
                                 <div class="mx-auto max-w-xs px-8">
                                     <h3 class="text-2xl font-bold tracking-tight text-gray-900">Subscribe Plan</h3>
                                     <p class="text-base font-semibold text-gray-600">Pay once, own it forever</p>
@@ -143,6 +130,11 @@ Payment
             </div>
 
         </div>
+
+
+    </div>
+
+</div>
 
         @*  Payment Button *@
 
