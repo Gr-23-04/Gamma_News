@@ -6,12 +6,17 @@
 
 <h1>@ViewData["Title"]</h1>
 
-<div class="relative bg-gradient-to-r from-gray-800 from-0% via-sky-950 via-50% to-gray-800 to-100% px-6 py-12 shadow-2xl" style="">
+<div class="mx-auto relative size-5/6">
+
+<div class="relative w-full mx-auto p-9 top-6">
+
+
+<div class="relative top-6  border-4 border-opacity-55 border-emerald-800 border-double bg-gradient-to-r from-gray-800 from-0% via-sky-950 via-50% to-gray-800 to-100% p-6 shadow-2xl shadow-gray-700 lg:flex-auto lg:px-8 z-50" style="">
     <a class="relative justify-center" style="" asp-controller="Home" asp-action="Index">
         <img class="mx-auto w-14" src="~/Image/Vector1.png" alt="" />
     </a>
     <div class="min-h-full justify-center px-6 py-12 lg:px-8">
-        <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
+        <div class="sm:mx-auto sm:w-full sm:max-w-sm">
             <form id="registerForm" class="block space-y-6 text-sm font-medium leading-6 text-slate-300" asp-route-returnUrl="@Model.ReturnUrl" method="post">
                 <h2 class="text-center text-lg">Create a new account</h2>
                 <hr class="" />
@@ -62,6 +67,8 @@
                     }
                 }
             </section>
+</div>
+</div>
         </div>
     </div>
 </div>

@@ -1,15 +1,15 @@
 ﻿@model string
-<div class="relative container mx-auto my-auto bottom-10">
+<div class="">
 
 <form asp-area="" asp-controller="Search" asp-action="Index" method="get" class="justify-center mx-auto gap-x-8 gap-y-8">
-    <div class="flex justify-center lg:flex mx-auto gap-x-8 gap-y-8" style="">
-        <div class="sm:col-span-5" style="width: 45%">
-            <label for="Search" class="block text-sm font-medium leading-6 text-slate-300"></label>
-            <div class="mt-1">
-                <div class="rounded-md border-teal-600 border-2 border-opacity-50 bg-gradient-to-r from-[#0c266865] from-0%  to-[#0c266865] shadow-inner shadow-gray-700 text-black" style="">
+    <div class="flex justify-center mx-auto gap-x-8 gap-y-8" style="">
+        <div class="md:w-5 " style="width:45%">
+            <label for="Search" class="block text-sm font-medium leading-3 text-slate-300"></label>
+            <div class="">
+                <div class="rounded-md border-teal-600 border-2 border-opacity-50 bg-gradient-to-r from-[#0c266865] from-0%  to-[#0c266865] shadow-inner shadow-gray-700" style="">
 
                     <span class="flex select-none items-center pl-3 text-gray-500 sm:text-sm"></span>
-                    <input type="text" name="search" id="search" autocomplete="" class="block w-full border-0 bg-transparent  py-1.5 pl-2 text-slate-100 placeholder:text-gray-100 focus:ring-0 sm:text-sm sm:leading-7" placeholder="Search">
+                    <input type="text" name="search" id="search" autocomplete="" class="bg-transparent w-full py-1.5 pl-2 text-slate-100 focus:ring-1 sm:text-sm sm:leading-7" placeholder="Search">
                 </div>
             </div>
         </div>
