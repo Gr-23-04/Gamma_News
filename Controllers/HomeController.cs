@@ -1,5 +1,6 @@
 using Gamma_News.Data;
 using Gamma_News.Models;
+using Gamma_News.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Diagnostics;
@@ -13,23 +14,22 @@ namespace Gamma_News.Controllers
     {
         private readonly ILogger<HomeController> _logger;
 
-        private object? articleId;
-
         private readonly ApplicationDbContext _db;
+        private readonly IArticleService _articleService;
 
 
-        public HomeController(ILogger<HomeController> logger, ApplicationDbContext db)
+        public HomeController(ILogger<HomeController> logger, ApplicationDbContext db, IArticleService articleService)
 
         {
-            _db = db;
+            _articleService = articleService;
             _logger = logger;
 
         }
 
-        public async Task<IEnumerable<object>> Index()
+        public IActionResult Index()
         {
-            var articles = await _db.Articles.ToListAsync();
-            return articles;
+            var articles = _articleService.GetAllArticles().Result.ToList();
+            return View(articles);
         }
 
 
