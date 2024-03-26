@@ -16,18 +16,24 @@
 
     <header class="">
     <partial name="_Menu"></partial>
+    <div class="relative w-screen md:left-0 lg:top-36 lg:w-full sm:w-2/4 sm:left-24">
 
-    <div class="absolute mx-auto w-screen sm:top-44 md:left-3/4 z-50">
+
     @await Component.InvokeAsync("Search")
     </div>
 
-    <div class="">
-            <partial name="_article_partial"></partial>
+    <div class="">t
     </div>
     </header>
    
   @*   <partial name="_search_partial"></partial> *@
-        <main role="main">
+    
+   
+        <main>
+
+               
+
+
             @RenderBody()
         </main>
    
