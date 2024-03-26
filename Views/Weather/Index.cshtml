@@ -1,11 +1,104 @@
 ﻿@model  Weather
 
-<div class="py-10 pl-12" style="color:aliceblue">
-<h2>@Model.City</h2>
-	<p>@Model.TemperatureC°C<p/>
-	<p>Humidity: @Model.Humidity%</p>
-	<p>Wind Speed: @Model.WindSpeed km/h</p>
-	<p>Date: @Model.Date.ToString("dd-MM-yyyy")</p>
-	<p>@Model.Summary</p>
-	<img class="" src="@Model.Icon.Url" alt="@Model.Summary" />
-</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+
+
+    <title>Weather</title>
+    <style>
+
+
+    </style>
+    <script>
+        
+        document.addEventListener('DOMContentLoaded', function () //This is an event listener that waits for the content of the web page to be fully loaded. Once the loading is complete (i.e., the Document Object Model (DOM) content is fully loaded), it will execute the function inside the curly braces.
+        {
+            updateWeather();//call updateweather when the page loads
+            setInterval(updateWeather, 600000);//update weather every 10 min
+        });
+
+        function updateWeather() {
+            fetch('https://weatherapi.dreammaker-it.se/Forecast?city=linöping&lang=English')
+                .then(response => response.json())
+                .then(data => {
+                    document.querySelector('.weather-info h2').textContent = `${data.TemperatureC}°C`;
+                    document.querySelector('.weather-info h3').textContent = data.city;
+                    document.querySelector('.weather-info p').textContent = data.summary;
+                    document.querySelector('.weather-info').innerHTML += `<p>Humidity: ${data.Humidity}%</p>`;
+                    document.querySelector('.weather-info').innerHTML += `<p>Wind:${data.WindSpeed}km/h</p>`;
+
+                    //check Correct timestamp value
+                    try {
+                        if (data && Number.isFinite(data.dt)) {
+                            document.querySelector('.weather-info').innerHTML += `<p>Date:${new Date(data.dt * 1000).toLocaleDateString()}</p>`;
+                        } else {
+                            throw new Error('Invalid timestamp');
+                        }
+                    } catch (error) {
+                        console.error(error);
+                        //Handle errors here, such as providing default information or hiding date fields
+                        document.querySelector('.weather-info').innerHTML += `<p>Date:Unavailable</p>`
+                    }
+                    updateBackgroundAndIcon(data.summary);//this is a simplified way of updating the icon based on the weather overview
+
+                })
+                .catch(error => {
+                    console.error('Error fetching weather data:', error);
+                    //Here you can handle the situation when the fetch request fails.
+                });
+        }
+
+        function updateBackgroundAndIcon(condition)
+        {//baseon condition.change the background and icon url
+            let backgroundUrl, iconUrl;// used to store  background image and icon based on the weather conditions.
+            switch (condition) {
+                case 'Clear':
+                    backgroundUrl = 'https://source.unsplash.com/1600x900/?clear-sky';
+                    iconUrl = 'https://source.unsplash.com/80x80/?sun';
+                    break;
+                case 'Rainy':
+                    backgroundUrl = 'https://source.unsplash.com/1600x900/?rain';
+                    iconUrl = 'https://source.unsplash.com/80x80/?rain';
+                    break;
+                case 'snow':
+                    backgroundUrl = 'https://source.unsplash.com/1600x900/?snow';
+                    iconUrl = 'https://source.unsplash.com/80x80/?snow';
+                    break;
+                case 'Cloudy':
+                    backgroundUrl = 'https://source.unsplash.com/1600x900/?cloudy';
+                    iconUrl = 'https://source.unsplash.com/80x80/?cloud';
+                    break;
+            }
+                document.querySelector('.weather-card').style.backgroundImage = `url(${backgroundUrl})`;
+                document.querySelector('.weather-icon').style.backgroundImage = `url(${iconUrl})`;
+        }
+        
+    </script>
+</head>
+<body>
+    <main class="container">
+        <div class="grid">
+            <section class="weather-card">
+                <div class="weather-icon"></div>
+                <div class="weather-info bg-gray-900 bg-opacity-25 w-1/5 h-full">
+                    <h2>@Model.City</h2>
+                    <p>@Model.TemperatureC°C</p>
+                    <p>Humidity: @Model.Humidity%</p>
+                    <p>Wind Speed: @Model.WindSpeed km/h</p>
+                    <p>Date: @Model.Date.ToString("dd-MM-yyyy")</p>
+                    <p>@Model.Summary</p>
+                    <img class="" src="@Model.Icon.Url" alt="@Model.Summary" />
+
+                </div>
+            </section>
+        </div>
+
+    </main>
+    <footer class="container">
+    </footer>
+</body>
+</html>

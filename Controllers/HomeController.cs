@@ -1,6 +1,10 @@
+using Gamma_News.Data;
 using Gamma_News.Models;
+using Gamma_News.Services;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System.Diagnostics;
+
 
 
 
@@ -10,27 +14,24 @@ namespace Gamma_News.Controllers
     {
         private readonly ILogger<HomeController> _logger;
 
-        private object? articleId;
+        private readonly ApplicationDbContext _db;
+        private readonly IArticleService _articleService;
 
 
-
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, ApplicationDbContext db, IArticleService articleService)
 
         {
+            _articleService = articleService;
             _logger = logger;
+
         }
 
         public IActionResult Index()
         {
-            //Using ViewData or ViewBag
-
-            // Assuming 'articleId' is the ID of the article you want to subscribe to
-            //ViewData["ArticleId"] = articleId;
-            // Or using ViewBag
-            //ViewBag.ArticleId = articleId;
-
-            return View();
+            var articles = _articleService.GetAllArticles().Result.ToList();
+            return View(articles);
         }
+
 
 
         public IActionResult Privacy()
@@ -43,6 +44,20 @@ namespace Gamma_News.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
+        //Get article data 
+        public async Task<IActionResult> GetArticle()
+        {
+            var articles = await _db.Articles
+                .OrderByDescending(a => a.Id)
+                .Take(5)
+                .ToListAsync();
+            ViewData["Articles"] = articles;
+
+            return View();
+
+        }
+
 
     }
 }
