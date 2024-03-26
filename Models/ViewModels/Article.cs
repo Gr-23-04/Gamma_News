@@ -23,6 +23,15 @@ namespace Gamma_News.Models.ViewModels
         
 
         public string ImageLink { get; set; }
+
+        public string Preview
+        {
+            get
+            {
+                return Content.Length > 100 ? Content.Substring(0, 100) : Content;
+            }
+
+        }
         // public virtual ICollection<Uri> ListTest { get; set; }
 
         [NotMapped]
