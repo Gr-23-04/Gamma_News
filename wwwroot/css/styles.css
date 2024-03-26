@@ -1238,8 +1238,8 @@ select {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
-.skew-x-6 {
-  --tw-skew-x: 6deg;
+.skew-y-6 {
+  --tw-skew-y: 6deg;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
@@ -2293,6 +2293,10 @@ select {
 
 .animate-alternate-reverse {
   animation-direction: alternate-reverse;
+}
+
+.animate-duration-\[10000ms\] {
+  animation-duration: 10000ms;
 }
 
 .animate-duration-\[20000ms\] {
