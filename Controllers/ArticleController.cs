@@ -2,7 +2,6 @@
 using Gamma_News.Models.ViewModels;
 using Gamma_News.Services;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 
 namespace Gamma_News.Controllers
 {
@@ -17,13 +16,13 @@ namespace Gamma_News.Controllers
 
         }
 
-        
 
 
-		public IActionResult Index()
-		{
-            
-			return View();
+
+        public IActionResult Index()
+        {
+
+            return View();
         }
 
         public IActionResult Create()
@@ -39,7 +38,7 @@ namespace Gamma_News.Controllers
             return View();
         }
 
-        
+
 
 
     }

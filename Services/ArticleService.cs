@@ -2,11 +2,7 @@
 using Azure.Storage.Blobs;
 using Gamma_News.Data;
 using Gamma_News.Models.ViewModels;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Gamma_News.Controllers;
-using Gamma_News.Services;
-using Microsoft.AspNetCore.Http.HttpResults;
 
 namespace Gamma_News.Services
 {
@@ -62,7 +58,7 @@ namespace Gamma_News.Services
 
         public async Task<IEnumerable<Article>> GetAllArticles()
         {
-            // Assuming _context is your database context
+
             return await _db.Articles.ToListAsync();
         }
 

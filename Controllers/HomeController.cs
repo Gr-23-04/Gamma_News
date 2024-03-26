@@ -1,9 +1,8 @@
 using Gamma_News.Data;
 using Gamma_News.Models;
 using Microsoft.AspNetCore.Mvc;
-using System.Diagnostics;
 using Microsoft.EntityFrameworkCore;
-using Gamma_News.Models.ViewModels;
+using System.Diagnostics;
 
 
 
@@ -15,21 +14,22 @@ namespace Gamma_News.Controllers
         private readonly ILogger<HomeController> _logger;
 
         private object? articleId;
-		
-		private readonly ApplicationDbContext _db;
+
+        private readonly ApplicationDbContext _db;
 
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, ApplicationDbContext db)
 
         {
+            _db = db;
             _logger = logger;
-            
+
         }
 
-        public Task<IEnumerable<object>> Index()
+        public async Task<IEnumerable<object>> Index()
         {
-            var articles = _db.Articles.ToList(); // Fetch articles from database
-            return articles; // Pass articles to view
+            var articles = await _db.Articles.ToListAsync();
+            return articles;
         }
 
 
@@ -46,7 +46,7 @@ namespace Gamma_News.Controllers
         }
 
         //Get article data 
-        public async Task<IActionResult> GetArticle() 
+        public async Task<IActionResult> GetArticle()
         {
             var articles = await _db.Articles
                 .OrderByDescending(a => a.Id)
@@ -54,10 +54,10 @@ namespace Gamma_News.Controllers
                 .ToListAsync();
             ViewData["Articles"] = articles;
 
-			return View();
-          
-        }
-            
+            return View();
 
-	}
+        }
+
+
+    }
 }
