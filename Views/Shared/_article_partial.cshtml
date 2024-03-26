@@ -1,6 +1,6 @@
-﻿@model IEnumerable<Gamma_News.Models.ViewModels.Article>
-
-            @* @if (Model != null) *@
+﻿@model List<Gamma_News.Models.ViewModels.Article>
+@* 
+            @if (Model != null)
 {
             @foreach (var article in Model)
             {
@@ -15,5 +15,7 @@
         </div>
     </div>
 </div>
-            @* } *@
-}
+            }
+} *@
+
+        @* @Model[0].Preview; *@

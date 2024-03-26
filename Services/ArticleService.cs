@@ -1,8 +1,11 @@
 ﻿
+using Azure;
 using Azure.Storage.Blobs;
 using Gamma_News.Data;
 using Gamma_News.Models.ViewModels;
+using Newtonsoft.Json;
 using Microsoft.EntityFrameworkCore;
+
 
 namespace Gamma_News.Services
 {
@@ -58,7 +61,8 @@ namespace Gamma_News.Services
 
         public async Task<IEnumerable<Article>> GetAllArticles()
         {
-
+            //var json = await .Content.ReadAsStringAsync();
+            //var Article_jason= JsonConvert.DeserializeObject<Article>(json);
             return await _db.Articles.ToListAsync();
         }
 
