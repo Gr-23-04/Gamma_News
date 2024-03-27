@@ -5,6 +5,10 @@
 
 
 $(document).ready(function() {
+    var cookie_modal = document.getElementById("cookie_modal")
+    function openModal() {
+        cookie_modal.style.display = "block";
+    }
         //int menu = 1;
     $("#drop_menu_button_desktop").click(function () {
         $("#drop_menu_desktop").slideToggle("fast");
@@ -20,18 +24,23 @@ $(document).ready(function() {
         //$("#drop_menu_desktop").slideToggle("medium");
         //}
     });
+
     $("#menu_button_mobile").click(function () {
         $("#menu_mobile").slideToggle("medium");
     });
+
     $("#drop_menu_button_mobile").click(function () {
         $("#drop_menu_mobile").slideToggle("medium");
     });
+
     $("#open_menu_button_mobile").click(function () {
         $("#open_menu_mobile").slideToggle("medium");
     });
+
     $("#drop_weather_container").click(function () {
         $("#weather_container").slideToggle("medium");
-
+    $("#cookie_modal").click(function () {
+        $("#").slideToggle("medium");
     });
 
 });
