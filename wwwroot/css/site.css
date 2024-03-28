@@ -1552,6 +1552,30 @@ video {
     left: 0;
 }
 
+.parent {
+    position: relative;
+}
+
+.triangle {
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 20px #EB6E4B;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: border-width 0.5s ease-in-out;
+}
+
+    .triangle:hover {
+        border-left-width: 100px;
+        border-right-width: 100px;
+        border-bottom-width: 200px;
+    }
+
+
 @keyframes shine {
     0% {
         transform: rotate(0deg);

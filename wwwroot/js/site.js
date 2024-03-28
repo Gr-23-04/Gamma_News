@@ -4,20 +4,17 @@
 // Write your JavaScript code.
 
 
-$(document).ready(function() {
-    var cookie_modal = document.getElementById("cookie_modal")
-    function openModal() {
-        cookie_modal.style.display = "block";
-    }
-        //int menu = 1;
-    $("#drop_menu_button_desktop").click(function () {
+$(function () {
+
+    //int menu = 1;
+    $("#drop_menu_button_desktop").on("click", function () {
         $("#drop_menu_desktop").slideToggle("fast");
         //$if (menu != 0) {
         //    menu = 1
         //$("#drop_profile_desktop").slideToggle("medium");
         //}
     });
-    $("#drop_profile_button_desktop").click(function () {
+    $("#drop_profile_button_desktop").on("click", function () {
         $("#drop_profile_desktop").slideToggle("fast");
         //$if (menu != 1) {
         //    menu = 0;
@@ -25,22 +22,28 @@ $(document).ready(function() {
         //}
     });
 
-    $("#menu_button_mobile").click(function () {
+    $("#menu_button_mobile").on("click", function () {
         $("#menu_mobile").slideToggle("medium");
     });
 
-    $("#drop_menu_button_mobile").click(function () {
+    $("#drop_menu_button_mobile").on("click", function () {
         $("#drop_menu_mobile").slideToggle("medium");
     });
 
-    $("#open_menu_button_mobile").click(function () {
+    $("#open_menu_button_mobile").on("click", function () {
         $("#open_menu_mobile").slideToggle("medium");
     });
 
-    $("#drop_weather_container").click(function () {
+    $("#drop_weather_container").on("click", function () {
         $("#weather_container").slideToggle("medium");
-    $("#cookie_modal").click(function () {
-        $("#").slideToggle("medium");
     });
 
+    $("#cookie_yes").on("click", function (){
+        $("#cookie_modal").hide("slow");
+    });
+
+
+    $("#cookie_no").on("click", function () {
+        $("#cookie_modal").hide("medium");
+    });
 });
