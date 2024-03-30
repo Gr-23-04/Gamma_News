@@ -6,20 +6,39 @@
 
 $(function () {
 
-    //int menu = 1;
-    $("#drop_menu_button_desktop").on("click", function () {
+    var desk_menu = 0;
+    var prof_menu = 0;
+    $("#drop_menu_button_desktop").on("click", function() {
+        if (prof_menu % 2 === 1 ){
+            prof_menu++;
+          
         $("#drop_menu_desktop").slideToggle("fast");
-        //$if (menu != 0) {
-        //    menu = 1
-        //$("#drop_profile_desktop").slideToggle("medium");
-        //}
+        $("#drop_profile_desktop").slideToggle("fast");
+            desk_menu++;
+   
+        }
+        else
+        {
+            desk_menu++;
+      
+        $("#drop_menu_desktop").slideToggle("fast");
+        }
     });
     $("#drop_profile_button_desktop").on("click", function () {
+        if (desk_menu % 2 === 1 ){
+            desk_menu++;
+       
         $("#drop_profile_desktop").slideToggle("fast");
-        //$if (menu != 1) {
-        //    menu = 0;
-        //$("#drop_menu_desktop").slideToggle("medium");
-        //}
+        $("#drop_menu_desktop").slideToggle("fast");
+            prof_menu++;
+       
+        }
+        else
+        {
+            prof_menu++;
+         
+        $("#drop_profile_desktop").slideToggle("fast");
+        }
     });
 
     $("#menu_button_mobile").on("click", function () {
@@ -42,8 +61,12 @@ $(function () {
         $("#cookie_modal").hide("slow");
     });
 
-
     $("#cookie_no").on("click", function () {
         $("#cookie_modal").hide("medium");
     });
+
+    $(window).on(function (event) {
+
+    });
+
 });
