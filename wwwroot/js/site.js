@@ -6,6 +6,7 @@
 
 $(function () {
 
+    var last_scroll = 0;
     var desk_menu = 0;
     var prof_menu = 0;
     $("#drop_menu_button_desktop").on("click", function() {
@@ -65,8 +66,16 @@ $(function () {
         $("#cookie_modal").hide("medium");
     });
 
-    $(window).on(function (event) {
-
+    $(window).on("scroll", function() {
+        var this_scroll = $(this).scrollTop();
+        if (last_scroll < this_scroll) {
+            $("#main_menu").slideUp("fast");
+        }
+        else {
+            
+            $("#main_menu").slideDown("fast");
+        }
+        last_scroll = this_scroll;
     });
 
 });

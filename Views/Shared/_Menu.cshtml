@@ -1,7 +1,7 @@
 ﻿@using Gamma_News.Components;
 @using Gamma_News.Controllers;
 @{
-    <nav class="relative mx-auto w-screen rounded-b-3xl border-b-2 border-double border-sky-500 border-opacity-30 bg-gradient-to-r from-gray-800 via-sky-950 to-gray-800 sm:py-8 lg:py-16" style="" aria-label="Global">
+    <nav id="main_menu" class="fixed z-20 mx-auto w-screen rounded-b-3xl border-b-2 border-double border-sky-500 border-opacity-30 bg-gradient-to-r from-gray-800 via-sky-950 to-gray-800 sm:py-8 lg:py-16" style="" aria-label="Global">
         <div class="absolute justify-center lg:flex">
             <a href="#" class="-m-1.5 p-1.5">
                 <span class="sr-only">Omega News</span>
@@ -11,6 +11,25 @@
             <div id="weather" class="absolute lg:scale-100 lg:left-10 lg:top-4 sm:left-3/4 md:scale-150 sm:top-3/4 sm: z-20 shrink-0" style="">
             @await Component.InvokeAsync( "weather" )
             @*   @await Html.PartialAsync("_Weather", new Weather()) *@
+
+                <body class="bg-gray-100">
+                    <div class="container mx-auto px-4">
+
+                        <button class="inline-block bg-blue-500 text-white font-bold py-2 px-4 rounded hover:bg-blue-700 transition duration-150 ease-in-out"
+                                onclick="location.href='@Url.Action("Subscribe", "UserSubscribe")'">
+                            Subscribe
+                        </button>
+
+                    </div>
+                    <script>
+                        document.getElementById('featureButton').addEventListener('click', function () {
+                            // Use Razor syntax to generate the URL for the Subscribe page
+                            window.location.href = '@Url.Page("/Subscribe")'; // For Razor Pages
+                            // Or for MVC: window.location.href = '@Url.Action("ActionName", "ControllerName")';
+                        });
+                    </script>
+                </body>
+
         </div>
         </div>
         <div dir="rtl">
@@ -216,22 +235,6 @@
 
 
     // Subscribtion Button
-    <body class="bg-gray-100">
-        <div class="container mx-auto px-4">
-            
-            <button class="inline-block bg-blue-500 text-white font-bold py-2 px-4 rounded hover:bg-blue-700 transition duration-150 ease-in-out"
-                    onclick="location.href='@Url.Action("Subscribe", "UserSubscribe")'">
-                Subscribe
-            </button>
-
-        </div>
-        <script>
-            document.getElementById('featureButton').addEventListener('click', function () {
-                // Use Razor syntax to generate the URL for the Subscribe page
-                window.location.href = '@Url.Page("/Subscribe")'; // For Razor Pages
-                // Or for MVC: window.location.href = '@Url.Action("ActionName", "ControllerName")';
-            });
-        </script>
-    </body>
+    
 
 }
