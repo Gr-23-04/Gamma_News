@@ -7,6 +7,13 @@
 
 @if (SignInManager.IsSignedIn(User))
 {
+
+    <div class="size-60">
+
+        <partial name="_newsletter_partial"></partial>
+
+    </div>
+
     <div class="">
 
 <div class="" style="">
@@ -41,14 +48,17 @@
 
                 <div id="drop_profile_desktop" class="hidden absolute z-10 w-48 rounded-md max-w-md overflow-hidden border-t-2 border-double border-teal-600 border-opacity-50 bg-gradient-to-b from-gray-800 from-0% via-sky-950 via-50% to-gray-800 to-100% font-sans right-10" style="" role="menu" aria-orientation="vertical" aria-labelledby="drop_profile_desktop" tabindex="-1">
         <!-- Active: "bg-gray-100", Not Active: "" -->
-                    <a href="#" class="block text-center text-sm font-bold text-white px-4 py-2 rounded-lg hover:bg-white hover:text-slate-900" role="menuitem" id="user-menu-setting">Settings</a>
-            <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
-                <button type="submit" class="block w-full text-sm font-bold text-white px-4 py-2 rounded-lg hover:bg-white hover:text-slate-900" role="menuitem" id="user-menu-sign-out">Sign out</button>
-            </form>
                     <form class="form-inline" asp-area="Identity" asp-page="/Account/Manage/Index" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
                         <button type="submit" class="block w-full text-sm font-bold text-white px-4 py-2 rounded-lg z-50 hover:bg-white hover:text-slate-900" role="menuitem" id="user-menu-profile">Profile</button>
                     </form>
-       
+
+                    <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
+                    <button type="submit" class="block w-full text-sm font-bold text-white px-4 py-2 rounded-lg hover:bg-white hover:text-slate-900" role="menuitem" id="user-menu-setting">Settings</button>
+                    </form>
+            
+                    <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
+                        <button type="submit" class="block w-full text-sm font-bold text-white px-4 py-2 rounded-lg hover:bg-white hover:text-slate-900" role="menuitem" id="user-menu-sign-out">Sign out</button>
+                    </form>
     </div>
 </div>
     </div>
@@ -58,9 +68,9 @@
 else
 {
 
-    <div class="relative container md:visible" style="left: 130px">
+    <div class="container md:visible" style="left: 130px">
 
-        <div class=" w-14 h-14 text-center rounded-full nav-link btn btn-lg btn-primary border-y-2 border-sky-900 border-opacity-50 font-bold text-slate-300 shadow-md bg-[#EB6E4B] shadow-gray-900 hover:bg-gradient-to-br from-[#EB6E4B] to-[#EB6E4B]" style="">
+        <div class=" w-14 h-14 text-center rounded-full nav-link btn btn-lg btn-primary border-2 border-sky-900 border-opacity-50 font-bold text-slate-300 shadow-md bg-[#EB6E4B] shadow-gray-900 hover:border-sky-300" style="">
             <a class="relative top-3 leading-1 text-center" style="" asp-area="Identity" asp-page="/Account/Login">Login</a>
         </div> 
 

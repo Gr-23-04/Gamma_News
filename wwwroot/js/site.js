@@ -6,9 +6,12 @@
 
 $(function () {
 
+
     var last_scroll = 0;
     var desk_menu = 0;
     var prof_menu = 0;
+    var cookie_choice = sessionStorage;
+ 
     $("#drop_menu_button_desktop").on("click", function() {
         if (prof_menu % 2 === 1 ){
             prof_menu++;
@@ -58,12 +61,26 @@ $(function () {
         $("#weather_container").slideToggle("medium");
     });
 
+    $(window).on('load', function () {
+
+            sessionStorage.getItem('cookie_choice');
+
+        if (cookie_choice != 'true') {
+            $("#cookie_modal").show("medium");
+            sessionStorage.setItem('cookie_choice', 'true');
+            
+        }
+        
+    });
+
     $("#cookie_yes").on("click", function (){
-        $("#cookie_modal").hide("slow");
+        $("#cookie_modal").hide("medium");
+
     });
 
     $("#cookie_no").on("click", function () {
         $("#cookie_modal").hide("medium");
+
     });
 
     $(window).on("scroll", function() {

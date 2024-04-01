@@ -5,9 +5,9 @@
 {
 	@foreach (var article in Model)
 	{
-		<div class="container space-x-5 space-y-5">
-			<div class="size-80 overflow-clip sm:py-8 font-sans text-center mx-auto my-auto border-4 border-b-green-300 border-y-yellow-300 border-sky-600 shadow-2xl shadow-slate-900 border-opacity-15 rounded-3xl">
-				<div class="relative bottom-0 top-auto bg-slate-200 bg-opacity-70 max-h-96 max-w-xl mx-auto my-auto border-4 border-emerald-800 border-opacity-15 shadow-xl">
+		<div class="space-x-5 space-y-5 pb-12">
+			<div class="size-80  sm:py-8  text-center mx-auto my-auto border-4 border-b-green-300 border-y-yellow-300 border-sky-600 shadow-2xl shadow-slate-900 border-opacity-15 rounded-3xl transition hover:scale-105 hover:backdrop-blur-md hover:border-y-[#EB6E4B] hover:border-x-[#EB6E4B] ">
+				<div class="relative bottom-0 top-auto bg-slate-200 max-h-96 max-w-xl mx-auto my-auto border-4 border-emerald-800 border-opacity-15 shadow-xl">
 					<div class="article-preview p-4 border-b border-gray-300">
 						<h2 class="text-xl font-bold">@article.Headline</h2>
 						<p class="text-gray-700">@article.Preview</p>

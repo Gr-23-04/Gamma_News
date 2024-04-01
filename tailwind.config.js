@@ -15,6 +15,7 @@ module.exports = {
         require('@tailwindcss/forms'),
         require('tailwindcss'),
         require('@headlessui/tailwindcss'),
+        require('@headlessui/react'),
         require('tailwindcss-animated'),
         
 
