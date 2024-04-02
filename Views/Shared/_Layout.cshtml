@@ -10,6 +10,9 @@
     <link rel="stylesheet" href="~/Gamma_News.styles.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/styles.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/src/output.css" asp-append-version="true" />
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    
 </head>
 <body class="bg-gradient-to-r from-[#04193ab4] via-sky-900 to-[#04193ab4] font-sans">
 
@@ -45,8 +48,6 @@
             &copy; 2024 - Omega News - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
     </footer> *@
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

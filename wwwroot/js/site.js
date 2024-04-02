@@ -10,6 +10,7 @@ $(function () {
     var last_scroll = 0;
     var desk_menu = 0;
     var prof_menu = 0;
+   
  
  
     $("#drop_menu_button_desktop").on("click", function() {
@@ -61,26 +62,28 @@ $(function () {
         $("#weather_container").slideToggle("medium");
     });
 
-    $(window).on('load', function () {
+    $(window).on("load", function() {
 
-             var cookie_choice = localStorage.getItem('cookie_choice');
+        var cookie_choice = sessionStorage.getItem('cookie_choice');
 
-        if (cookie_choice != 'true') {
-            $("#cookie_modal").show("medium");
-            localStorage.setItem('cookie_choice', 'true');
-            
+        if (cookie_choice === 'true') {
+            $("#cookie_modal").hide();
+
         }
+        else {
+            
+            $("#cookie_modal").show();
+            sessionStorage.setItem('cookie_choice', 'true');
+        };
         
     });
 
     $("#cookie_yes").on("click", function (){
         $("#cookie_modal").hide("medium");
-
     });
 
     $("#cookie_no").on("click", function () {
         $("#cookie_modal").hide("medium");
-
     });
 
     $(window).on("scroll", function() {
