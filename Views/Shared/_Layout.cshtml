@@ -1,5 +1,6 @@
 ﻿@using Gamma_News.Services;
 @using Gamma_News.Models;
+@using Gamma_News.Areas.Identity.Pages.Account.Manage;
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -34,9 +35,20 @@
     
         <main>
 
-               
+        @if (ManageNavPages.Index != ManageNavPages.Index)
+        {
+            <div class="relative top-60">
+                <partial name="_ManageNav" />
+            </div>
+            @RenderBody()
+            ;
+        }
+        else
+        {
 
             @RenderBody()
+            ;
+        }
         </main>
    
 

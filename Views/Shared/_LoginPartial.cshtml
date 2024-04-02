@@ -52,7 +52,7 @@
                         <button type="submit" class="block w-full text-sm font-bold text-white px-4 py-2 rounded-lg z-50 hover:bg-white hover:text-slate-900" role="menuitem" id="user-menu-profile">Profile</button>
                     </form>
 
-                    <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
+                    <form class="form-inline" asp-area="Identity" asp-page="/Account/Manage/Settings" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
                     <button type="submit" class="block w-full text-sm font-bold text-white px-4 py-2 rounded-lg hover:bg-white hover:text-slate-900" role="menuitem" id="user-menu-setting">Settings</button>
                     </form>
             

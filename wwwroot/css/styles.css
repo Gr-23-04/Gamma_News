@@ -892,6 +892,10 @@ select {
   top: 1.5rem;
 }
 
+.top-60 {
+  top: 15rem;
+}
+
 .top-80 {
   top: 20rem;
 }
