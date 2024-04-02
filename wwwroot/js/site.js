@@ -10,7 +10,7 @@ $(function () {
     var last_scroll = 0;
     var desk_menu = 0;
     var prof_menu = 0;
-    var cookie_choice = sessionStorage;
+ 
  
     $("#drop_menu_button_desktop").on("click", function() {
         if (prof_menu % 2 === 1 ){
@@ -63,11 +63,11 @@ $(function () {
 
     $(window).on('load', function () {
 
-            sessionStorage.getItem('cookie_choice');
+             var cookie_choice = localStorage.getItem('cookie_choice');
 
         if (cookie_choice != 'true') {
             $("#cookie_modal").show("medium");
-            sessionStorage.setItem('cookie_choice', 'true');
+            localStorage.setItem('cookie_choice', 'true');
             
         }
         
