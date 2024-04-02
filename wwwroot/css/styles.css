@@ -2644,10 +2644,6 @@ select {
     top: 0.75rem;
   }
 
-  .lg\:top-44 {
-    top: 11rem;
-  }
-
   .lg\:top-full {
     top: 100%;
   }
