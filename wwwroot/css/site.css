@@ -1023,7 +1023,7 @@ video {
 }
 
 
-.img-c{
+.img-c {
     position: relative;
     background: linear-gradient(to right, #EB6E4B, orange, #EB6E4B);
 }
@@ -1350,6 +1350,7 @@ video {
     position: relative;
     vertical-align: baseline;
 }
+
 }
 
 
@@ -1443,6 +1444,7 @@ video {
 .left-3\/4 {
     left: 75%
 }
+
 .mx-auto {
     margin-left: auto;
     margin-right: auto
@@ -1507,6 +1509,7 @@ video {
 .border-opacity-55 {
     --tw-border-opacity: 0.55
 }
+
 
 .px-6 {
     padding-left: 1.5rem;
@@ -1585,7 +1588,8 @@ video {
 @media (min-width: 1024px) {
     .lg\:px-8 {
         padding-left: 2rem;
-        padding-right: 2rem
+        padding-right: 2rem;
+    
     }
 }
 
@@ -1623,6 +1627,7 @@ video {
     border-top-width: 2px;
     border-bottom-width: 2px
 }
+
 .border-opacity-55 {
     --tw-border-opacity: 0.55
 }
@@ -1897,6 +1902,7 @@ video {
 .focus-visible\:outline-indigo-600:focus-visible {
     outline-color: #4f46e5
 }
+
 .container {
     width: 100%
 }
@@ -1906,6 +1912,7 @@ video {
         margin-left: auto;
         margin-right: auto
     }
+
     .container {
         max-width: 640px
     }
@@ -1946,6 +1953,7 @@ video {
         padding-left: 2rem;
         padding-right: 2rem
     }
+
     .container {
         max-width: 1024px
     }
@@ -1957,11 +1965,12 @@ video {
     }
 }
 
-    @media (min-width: 1536px) {
-        .container {
-            max-width: 1536px
-        }
+@media (min-width: 1536px) {
+    .container {
+        max-width: 1536px
     }
+}
+
 .mx-auto {
     margin-left: auto;
     margin-right: auto
@@ -2358,13 +2367,13 @@ video {
         padding-bottom: 4rem
     }
 }
- 
+
 .weather-card {
     background: url('https://source.unsplash.com/1600x900/?sunset') center center;
     background-size: cover;
     position: relative;
     padding: 2rem;
-    top: auto;   
+    top: auto;
     border-width: 4px;
     border-left-color: antiquewhite;
     border-right-color: skyblue;
