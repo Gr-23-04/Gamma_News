@@ -11,15 +11,15 @@ includes ArticleId, you would simply use the model's property:
 *@
 
 
-<div style="display:flex;flex-direction:row; background-color:#104870;">
-    <div style="background-color:#162c3e;display:flex;flex-direction:column;padding:16px;border-radius:2px;margin-right:30px;margin-left:30px;">
-        <div style="border:1px solid #104870;display:flex;flex-direction:row;justify-content:space-between; padding:30px;margin:30px">
+<div style="display:flex;flex-direction:row;margin:auto;padding:30px;">
+    <div style="background-color:#162c3e;display:flex;flex-direction:column;padding:16px;border-radius:2px;margin:auto;">
+        <div style="border-bottom:3px solid #104870;display:flex;flex-direction:row;justify-content:space-between; padding:30px;gap:543px;">
             <div style="display:flex;flex-direction:row; gap: 30px">
                 <button style="background-color:#ffffff; margin:auto" class="bg-blue-500 hover:bg-blue-700 text-white font-bold w-10 h-10 rounded-full">
                 </button>
 
                 <div style="display:flex;flex-direction:column; margin:auto; gap:10px">
-                    <div class="font-bold text-xl text-custom-blue">
+                    <div class="font-bold text-xl text-white">
                         Signed in
                     </div>
 
@@ -38,7 +38,7 @@ includes ArticleId, you would simply use the model's property:
             </button>
         </div>
 
-        <div style="border:1px solid #104870;display:flex;flex-direction:row;justify-content:space-between;padding:30px; margin:30px">
+        <div style="border-bottom:3px solid #104870;display:flex;flex-direction:row;justify-content:space-between;padding:30px;">
             <div style="display:flex;flex-direction:row; gap: 30px">
                 <button style="background-color:#ffffff; margin:auto" class="bg-blue-500 hover:bg-blue-700 text-white font-bold w-10 h-10 rounded-full">
                 </button>
@@ -50,8 +50,9 @@ includes ArticleId, you would simply use the model's property:
             </div>
         </div>
 
-        <div style="border:1px solid #104870;display:flex;flex-direction:column;justify-content:space-between;padding:30px; margin:30px">
-            <div style="display:flex;flex-direction:row;justify-content:space-between;padding:30px; margin:30px;gap: 30px">
+        
+        <div style="border-bottom:3px solid #104870;display:flex;flex-direction:column;justify-content:space-between;">
+            <div style="display:flex;flex-direction:row;justify-content:space-between;padding:30px;margin-left:30px;gap:60px">
                 <div style="display:flex;flex-direction:row; gap: 30px">
                     <button style="background-color:#ffffff; margin:auto" class="bg-blue-500 hover:bg-blue-700 text-white font-bold w-5 h-5 rounded-full">
                     </button>
@@ -84,25 +85,32 @@ includes ArticleId, you would simply use the model's property:
                 </div>
             </div>
 
-            <div style="display:flex;flex-direction:row;justify-content:space-between;padding:30px; margin:30px">
-                <button style="background-color:#162C3E;border:1px solid #ffffff;" class="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-                    Name on card
-                </button>
-                <button style="background-color:#162C3E;border:1px solid #ffffff;" class="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-                    Card number
-                </button>
-                <button style="background-color:#162C3E;border:1px solid #ffffff;" class="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-                    Exp
-                </button>
-                <button style="background-color:#162C3E;border:1px solid #ffffff;" class="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-                    CVV
-                </button>
-                <button style="background-color:#162C3E;border:1px solid #ffffff;" class="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-                    Zip
-                </button>
+            <div style="display:flex;flex-direction:column;justify-content:space-between;margin:auto">
+                <div style="padding-left:145px;padding-right:345px;">
+                    <button style="background-color:#162C3E;border:1px solid #ffffff;" class="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                        Card number
+                    </button>
+                </div>
+
+                <div style="padding-left:145px;padding-right:345px;display:flex;flex-direction:row;gap:20px;">
+                    <button style="background-color:#162C3E;border:1px solid #ffffff;" class="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                        Name on card
+                    </button>
+
+                    <button style="background-color:#162C3E;border:1px solid #ffffff;" class="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                        Exp
+                    </button>
+                    <button style="background-color:#162C3E;border:1px solid #ffffff;" class="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                        CVV
+                    </button>
+                    <button style="background-color:#162C3E;border:1px solid #ffffff;" class="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                        Zip
+                    </button>
+                </div>
+                
             </div>
 
-            <div style="display:flex;flex-direction:row;justify-content:space-between;padding:30px; margin:30px">
+            <div style="display:flex;flex-direction:row;justify-content:space-between;padding:30px; margin-left:30px">
                 <div style="display:flex;flex-direction:row; gap: 30px">
                     <button style="background-color:#ffffff; margin:auto" class="bg-blue-500 hover:bg-blue-700 text-white font-bold w-5 h-5 rounded-full">
                     </button>
@@ -127,8 +135,7 @@ includes ArticleId, you would simply use the model's property:
             </div>
         </div>
 
-
-        <div style="border:1px solid #104870;display:flex;flex-direction:row;justify-content:space-between; padding:30px;margin:30px">
+        <div style="display:flex;flex-direction:row;justify-content:space-between; padding:30px;">
             <div style="display:flex;flex-direction:row; gap: 30px">
                 <button style="background-color:#146094; margin:auto" class="bg-blue-500 hover:bg-blue-700 text-white font-bold w-10 h-10 rounded-full">
                 </button>
@@ -139,169 +146,177 @@ includes ArticleId, you would simply use the model's property:
                 </div>
             </div>
         </div>
-
     </div>
 
 
-    <div style=" background-color:#162c3e;display:flex;flex-direction:column;padding:16px;border-radius:2px;margin-right:30px;margin-left:30px;">
+    <div style="display:flex;flex-direction:column;padding:16px;border-radius:2px;margin-right:30px;margin-bottom:30px;">
 
-        <div style="border:1px solid #104870;background-color:#162c3e;display:flex;flex-direction:row;padding:16px;border-radius:2px;">
-            <div class="font-bold text-xl text-white">
-                Order Summary
-            </div>
-        </div>
-        
-
-        <div style="border:1px solid #104870;background-color:#162c3e;display:flex;flex-direction:row;padding:16px;border-radius:2px;">
-            <button style="background-color:#ffffff" class="mt-4 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-                <div class="font-bold text-xl text-black">
-                    Yearly
-                </div> 
-            </button>
-            <button style="background-color:#176EAB" class="mt-4 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-                <div class="font-bold text-xl text-black">
-                    Monthly
-                </div>
-            </button>
-             
-        </div>
-
-        <div style="border:1px solid #104870;background-color:#162c3e;display:flex;flex-direction:column;padding:16px;border-radius:2px;">
-            <div style="display:flex;flex-direction:row;justify-content:space-between;padding:30px;">
-                <div style="display:flex;flex-direction:row; gap: 30px">
-                    <div style="display:flex;flex-direction:column; margin:auto; gap:10px">
-                        <div class="font-bold text-white text-xl">
-                            Plan:
-                        </div>
-                    </div>
-                    <button style="background-color:#ffffff" class="mt-4 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-                    </button>
-                    <div style="display:flex;flex-direction:column; margin:auto; gap:10px">
-                        <div class="font-bold text-white text-xs">
-                            Edit
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div style="display:flex;flex-direction:row;justify-content:space-between;padding:30px;">
-                <div style="display:flex;flex-direction:row; gap: 30px">
-                    <button style="background-color:#ffffff" class="mt-4 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-                    </button>
-                    <div style="display:flex;flex-direction:column; margin:auto; gap:10px">
-                        <div class="font-bold text-white text-xl">
-                            Unlimited Articles
-                        </div>
-                    </div>
-                   
-                    <div style="display:flex;flex-direction:column; margin:auto; gap:10px">
-                        <div class="font-bold text-white text-xs">
-                            1000+
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div style="background-color:#162c3e;display:flex;flex-direction:column;border-radius:2px;margin-right:30px;">
             
-            <div style="display:flex;flex-direction:row;justify-content:space-between;padding:30px; ">
-                <div style="display:flex;flex-direction:row; gap: 30px">
-                    <button style="background-color:#ffffff" class="mt-4 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-                    </button>
-                    <div style="display:flex;flex-direction:column; margin:auto; gap:10px">
-                        <div class="font-bold text-white text-xl">
-                            Unlimited Articles
-                        </div>
-                    </div>
-
-                    <div style="display:flex;flex-direction:column; margin:auto; gap:10px">
-                        <div class="font-bold text-white text-xs">
-                            1000+
-                        </div>
-                    </div>
+            <div style="border-bottom:3px solid #104870;display:flex;flex-direction:column;padding:26px;border-radius:2px;">
+                <div style="display:flex;flex-direction:row;padding-left:26px;padding-right:214px;padding:30px;" class="font-bold text-xl text-white">
+                    Order Summary
                 </div>
-            </div>
-            <div style="display:flex;flex-direction:row;justify-content:space-between;padding:30px;">
-                <div style="display:flex;flex-direction:row; gap: 30px">
-                    <button style="background-color:#ffffff" class="mt-4 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-                    </button>
-                    <div style="display:flex;flex-direction:column; margin:auto; gap:10px">
-                        <div class="font-bold text-white text-xl">
-                            Unlimited Articles
-                        </div>
+
+                <div style="display:flex;flex-direction:row;margin:auto;">
+                    <div style="display:flex;flex-direction:row;">
+                        <button style="background-color:#ffffff;padding-right:55px;padding-left:55px;padding-bottom:5px;padding-top:5px;" class="mt-4 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                            <div class="font-bold text-xl text-black">
+                                Yearly
+                            </div>
+                        </button>
                     </div>
 
-                    <div style="display:flex;flex-direction:column; margin:auto; gap:10px">
-                        <div class="font-bold text-white text-xs">
-                            1000+
-                        </div>
+                    <div style="display:flex;flex-direction:row;">
+                        <button style="background-color:#176EAB;padding-right:55px;padding-left:55px;padding-bottom:5px;padding-top:5px;" class="mt-4 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                            <div class="font-bold text-xl text-black">
+                                Monthly
+                            </div>
+                        </button>
                     </div>
-                </div>
-            </div>
-            <div style="display:flex;flex-direction:row;justify-content:space-between;padding:30px;">
-                <div style="display:flex;flex-direction:row; gap: 30px">
-                    <button style="background-color:#ffffff" class="mt-4 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-                    </button>
-                    <div style="display:flex;flex-direction:column; margin:auto; gap:10px">
-                        <div class="font-bold text-white text-xl">
-                            Unlimited Articles
-                        </div>
-                    </div>
+                  
 
-                    <div style="display:flex;flex-direction:column; margin:auto; gap:10px">
-                        <div class="font-bold text-white text-xs">
-                            1000+
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-        </div>
-
-        <div style="border:1px solid #104870;background-color:#162c3e;display:flex;flex-direction:column;padding:16px;border-radius:2px;">
-            <div style="display:flex;flex-direction:row;justify-content:space-between;padding:30px;">
-                <div style="display:flex;flex-direction:row; gap: 30px">
-                    <div style="display:flex;flex-direction:column; margin:auto; gap:10px">
-                        <div class="font-bold text-white text-xl">
-                            Regular Price
-                        </div>
-                    </div>
                     
-                    <div style="display:flex;flex-direction:column; margin:auto; gap:10px">
-                        <div class="font-bold text-white text-xs">
-                            99,99kr
+                </div>
+
+                <div style="display:flex;flex-direction:column;padding:16px;padding:30px;">
+                    <div style="display:flex;flex-direction:row;justify-content:space-between;padding:30px;padding:30px;">
+                        <div style="display:flex;flex-direction:row; gap: 209px">
+                            <div style="display:flex;flex-direction:row;gap:30px">
+                                <div style="display:flex;flex-direction:column; margin:auto; gap:10px">
+                                    <div class="font-bold text-white text-xm">
+                                        Plan:
+                                    </div>
+                                </div>
+                                <button style="background-color:#ffffff" class="mt-4 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                                </button>
+                            </div>
+                            
+                            <div style="display:flex;flex-direction:column; margin:auto; gap:10px">
+                                <div class="font-bold text-white text-xs">
+                                    Edit
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="display:flex;flex-direction:row;justify-content:space-between;padding:30px;padding:30px;">
+                        <div style="display:flex;flex-direction:row; gap: 134px">
+                            <div style="display:flex;flex-direction:row; gap: 30px">
+                                <button style="background-color:#ffffff" class="mt-4 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                                </button>
+                                <div style="display:flex;flex-direction:column; margin:auto; gap:10px">
+                                    <div class="font-bold text-white text-xs">
+                                        Unlimited Articles
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div style="display:flex;flex-direction:column; margin:auto; gap:10px">
+                                <div class="font-bold text-white text-xs">
+                                    1000+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="display:flex;flex-direction:row;justify-content:space-between;padding:30px;padding:30px;">
+                        <div style="display:flex;flex-direction:row; gap: 220px">
+                            <div style="display:flex;flex-direction:row; gap: 30px">
+                                <button style="background-color:#ffffff" class="mt-4 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                                </button>
+                                <div style="display:flex;flex-direction:column; margin:auto; gap:10px">
+                                    <div class="font-bold text-white text-xs">
+                                        6 month
+                                    </div>
+                                </div>
+
+                            </div>
+                            
+                           
+                            <div style="display:flex;flex-direction:column; margin:auto; gap:10px">
+                                <div class="font-bold text-white text-xs">
+                                    5
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                   
+                    <div style="display:flex;flex-direction:row;justify-content:space-between;padding:30px;padding:30px;">
+                        <div style="display:flex;flex-direction:row; gap: 154px">
+
+                            <div style="display:flex;flex-direction:row;gap:30px">
+                                <button style="background-color:#ffffff" class="mt-4 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                                </button>
+                                <div style="display:flex;flex-direction:column; margin:auto; gap:10px">
+                                    <div class="font-bold text-white text-xs">
+                                        Points Bonus
+                                    </div>
+                                </div>
+                            </div>
+                           
+
+                            <div style="display:flex;flex-direction:column; margin:auto; gap:10px">
+                                <div class="font-bold text-white text-xs">
+                                    +10000
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div style="display:flex;flex-direction:row;justify-content:space-between;padding:30px;">
-                <div style="display:flex;flex-direction:row; gap: 30px">
-                    <div style="display:flex;flex-direction:column; margin:auto; gap:10px">
-                        <div class="font-bold text-white text-xl">
-                            Discounted Price
+            <div style="border-bottom:3px solid #104870;display:flex;flex-direction:column;padding:26px;border-radius:2px;padding:30px;">
+                <div style="display:flex;flex-direction:row;justify-content:space-between;padding:30px;">
+                    <div style="display:flex;flex-direction:row; gap: 231px">
+                        <div style="display:flex;flex-direction:column; margin:auto; gap:10px">
+                            <div class="font-bold text-white text-xl">
+                                Regular Price
+                            </div>
                         </div>
-                    </div>
 
-                    <div style="display:flex;flex-direction:column; margin:auto; gap:10px">
-                        <div class="font-bold text-white text-xs">
-                            59,99kr
+                        <div style="display:flex;flex-direction:column; margin:auto; gap:10px">
+                            <div class="font-bold text-white text-xs">
+                                99,99kr
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div style="display:flex;flex-direction:row;justify-content:space-between;padding:30px;">
-                <div style="display:flex;flex-direction:row; gap: 30px">
-                    <div style="display:flex;flex-direction:column; margin:auto; gap:10px">
-                        <div class="font-bold text-white text-xl">
-                            Promo Code
+
+                <div style="display:flex;flex-direction:row;justify-content:space-between;padding:30px;">
+                    <div style="display:flex;flex-direction:row; gap: 194px">
+                        <div style="display:flex;flex-direction:column; margin:auto; gap:10px">
+                            <div class="font-bold text-white text-xl">
+                                Discounted Price
+                            </div>
+                        </div>
+
+                        <div style="display:flex;flex-direction:column; margin:auto; gap:10px">
+                            <div class="font-bold text-white text-xs">
+                                59,99kr
+                            </div>
                         </div>
                     </div>
-
-                    <button style="background-color:#ffffff; margin:auto" class="bg-blue-500 hover:bg-blue-700 text-white font-bold w-5 h-5 rounded-full">
-                    </button>
                 </div>
+                <div style="display:flex;flex-direction:row;justify-content:space-between;padding:30px;">
+                    <div style="display:flex;flex-direction:row; gap: 194px">
+                        <div style="display:flex;flex-direction:column; margin:auto; gap:10px">
+                            <div class="font-bold text-white text-xl">
+                                Promo Code
+                            </div>
+                        </div>
+
+                        <button style="background-color:#ffffff; margin:auto" class="bg-blue-500 hover:bg-blue-700 text-white font-bold w-5 h-5 rounded-full">
+                        </button>
+                    </div>
+                </div>
+                
             </div>
-            <div style="display:flex;flex-direction:row;justify-content:space-between;padding:30px;">
-                <div style="display:flex;flex-direction:row; gap: 30px">
+
+            <div style="display:flex;flex-direction:row;padding:30px;">
+                
+                <div style="display:flex;flex-direction:row; gap:205px;padding:30px;">
                     <div style="display:flex;flex-direction:column; margin:auto; gap:10px">
                         <div class="font-bold text-white text-xl">
                             Total
@@ -309,7 +324,7 @@ includes ArticleId, you would simply use the model's property:
                     </div>
 
                     <div style="display:flex;flex-direction:column; margin:auto; gap:10px">
-                        <div class="font-bold text-white text-xs">
+                        <div class="font-bold text-white text-xl">
                             59,99kr
                         </div>
                     </div>
@@ -317,12 +332,19 @@ includes ArticleId, you would simply use the model's property:
             </div>
         </div>
 
-        <button style="background-color:#176EAB" class="mt-4 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-            Pay
-        </button>
+        <div style="display:flex;flex-direction:column;padding:16px;border-radius:2px;margin-right:30px;">
+            <button style="background-color:#176EAB;padding:30px;" class="mt-4 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                Pay
+            </button>
+        </div>
+        
+       
+        
     </div>
 
 </div>
+
+
 
 
 
