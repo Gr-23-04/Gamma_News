@@ -8,7 +8,7 @@ namespace Gamma_News.Components
 
         public async Task<IViewComponentResult> InvokeAsync()
         {
-            var some_function = 2;
+
 
 
             return View();
