@@ -58,6 +58,10 @@ namespace Gamma_News.Controllers
 
         }
 
+        public IActionResult Local()
+        {
+            return View();
+        }
 
     }
 }
