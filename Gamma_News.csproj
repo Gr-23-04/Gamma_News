@@ -8,8 +8,19 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="src\**" />
+    <Content Remove="src\**" />
+    <EmbeddedResource Remove="src\**" />
+    <None Remove="src\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Remove="Views\Shared\_search_partial.cshtml" />
     <Content Remove="Views\Shared\_Weather.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="output.css" />
   </ItemGroup>
 
   <ItemGroup>

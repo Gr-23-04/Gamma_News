@@ -19,6 +19,12 @@ namespace Gamma_News.Areas.Identity.Pages.Account.Manage
         public static string Index => "Index";
 
         /// <summary>
+        /// I've made this one myself to have profile and navbar seperated. i think it improves the user experience
+        /// and adds a more reasonable way to design the newssite. 
+        /// </summary>
+        public static string Settings => "Settings";
+
+        /// <summary>
         ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
         ///     directly from your code. This API may change or be removed in future releases.
         /// </summary>
@@ -65,6 +71,7 @@ namespace Gamma_News.Areas.Identity.Pages.Account.Manage
         ///     directly from your code. This API may change or be removed in future releases.
         /// </summary>
         public static string IndexNavClass(ViewContext viewContext) => PageNavClass(viewContext, Index);
+        public static string SettingsNavClass(ViewContext viewContext) => PageNavClass(viewContext, Settings);
 
         /// <summary>
         ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
