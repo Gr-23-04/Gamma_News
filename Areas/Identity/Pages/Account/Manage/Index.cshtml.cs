@@ -2,6 +2,7 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 #nullable disable
 
+using Azure.Storage.Blobs;
 using Gamma_News.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -14,6 +15,7 @@ namespace Gamma_News.Areas.Identity.Pages.Account.Manage
     {
         private readonly UserManager<User> _userManager;
         private readonly SignInManager<User> _signInManager;
+        private readonly BlobServiceClient _blobServiceClient;
 
         public IndexModel(
             UserManager<User> userManager,
@@ -70,7 +72,18 @@ namespace Gamma_News.Areas.Identity.Pages.Account.Manage
                 PhoneNumber = phoneNumber
             };
         }
+        public async Task<string> UploadImage(IFormFile file)
+        {
+            BlobContainerClient containerClient = _blobServiceClient
+                .GetBlobContainerClient("newssitesprofilepics");
+            BlobClient blobClient = containerClient.GetBlobClient(file.FileName);
+            await using (var stream = file.OpenReadStream())
+            {
+                blobClient.Upload(stream);
 
+            }
+            return blobClient.Uri.AbsoluteUri;
+        }
         public async Task<IActionResult> OnGetAsync()
         {
             var user = await _userManager.GetUserAsync(User);
