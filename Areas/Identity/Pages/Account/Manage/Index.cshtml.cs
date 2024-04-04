@@ -3,10 +3,12 @@
 #nullable disable
 
 using Azure.Storage.Blobs;
+using Gamma_News.Data;
 using Gamma_News.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
 
 namespace Gamma_News.Areas.Identity.Pages.Account.Manage
@@ -14,15 +16,19 @@ namespace Gamma_News.Areas.Identity.Pages.Account.Manage
     public class IndexModel : PageModel
     {
         private readonly UserManager<User> _userManager;
+        private readonly ApplicationDbContext _db;
         private readonly SignInManager<User> _signInManager;
         private readonly BlobServiceClient _blobServiceClient;
+        private readonly IConfiguration _configuration;
 
-        public IndexModel(
-            UserManager<User> userManager,
-            SignInManager<User> signInManager)
+        public IndexModel(UserManager<User> userManager, SignInManager<User> signInManager,
+            ApplicationDbContext applicationDbContext, IConfiguration configuration)
         {
+            _db = applicationDbContext;
             _userManager = userManager;
             _signInManager = signInManager;
+            _configuration = configuration;
+            _blobServiceClient = new BlobServiceClient(_configuration["AzureWebJobsStorage"]);
         }
 
         /// <summary>
@@ -30,6 +36,8 @@ namespace Gamma_News.Areas.Identity.Pages.Account.Manage
         ///     directly from your code. This API may change or be removed in future releases.
         /// </summary>
         public string Username { get; set; }
+
+
 
         /// <summary>
         ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
@@ -58,25 +66,43 @@ namespace Gamma_News.Areas.Identity.Pages.Account.Manage
             [Phone]
             [Display(Name = "Phone number")]
             public string PhoneNumber { get; set; }
+
+            [Url]
+            [Display(Name = "Profile picture")]
+            public string profile_image { get; set; }
         }
 
         private async Task LoadAsync(User user)
         {
             var userName = await _userManager.GetUserNameAsync(user);
             var phoneNumber = await _userManager.GetPhoneNumberAsync(user);
+            string profile_pic = user.profile_image;
 
             Username = userName;
 
             Input = new InputModel
             {
-                PhoneNumber = phoneNumber
+                PhoneNumber = phoneNumber,
+                profile_image = profile_pic
             };
         }
-        public async Task<string> UploadImage(IFormFile file)
+        public async Task<string> upload_image_async(IFormFile file)
         {
-            BlobContainerClient containerClient = _blobServiceClient
-                .GetBlobContainerClient("newssitesprofilepics");
+            var allowedFormats = new[] { "image/jpeg", "image/png", "image/gif", "image/webp", "image/bmp" };
+
+            if (file == null || file.Length == 0)
+            {
+                throw new ArgumentException("No file was uploaded.");
+            }
+
+            if (!allowedFormats.Contains(file.ContentType))
+            {
+                throw new ArgumentException("Invalid file format. Only WEBP, BMP, JPEG, PNG, and GIF images are allowed.");
+            }
+
+            BlobContainerClient containerClient = _blobServiceClient.GetBlobContainerClient("newssitesprofilepics");
             BlobClient blobClient = containerClient.GetBlobClient(file.FileName);
+
             await using (var stream = file.OpenReadStream())
             {
                 blobClient.Upload(stream);
@@ -84,6 +110,21 @@ namespace Gamma_News.Areas.Identity.Pages.Account.Manage
             }
             return blobClient.Uri.AbsoluteUri;
         }
+#nullable enable
+        public async Task<string?> get_profile_image(User user)
+
+        {
+            var profile_image = await _db.Users
+                .Where(u => u.Id == user.Id)
+                .Select(u => u.profile_image)
+                .FirstOrDefaultAsync();
+
+            await LoadAsync(user);
+            return;
+
+        }
+#nullable disable 
+
         public async Task<IActionResult> OnGetAsync()
         {
             var user = await _userManager.GetUserAsync(User);
@@ -93,6 +134,7 @@ namespace Gamma_News.Areas.Identity.Pages.Account.Manage
             }
 
             await LoadAsync(user);
+
             return Page();
         }
 
