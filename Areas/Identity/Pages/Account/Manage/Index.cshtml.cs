@@ -31,12 +31,11 @@ namespace Gamma_News.Areas.Identity.Pages.Account.Manage
             _blobServiceClient = new BlobServiceClient(_configuration["AzureWebJobsStorage"]);
         }
 
+        public string Username { get; set; }
         /// <summary>
         ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
         ///     directly from your code. This API may change or be removed in future releases.
         /// </summary>
-        public string Username { get; set; }
-
 
 
         /// <summary>
@@ -67,26 +66,28 @@ namespace Gamma_News.Areas.Identity.Pages.Account.Manage
             [Display(Name = "Phone number")]
             public string PhoneNumber { get; set; }
 
-            [Url]
             [Display(Name = "Profile picture")]
-            public string profile_image { get; set; }
+            public IFormFile profile_image { get; set; }
+            public string FileName { get; set; }
+            public string image_link { get; set; }
         }
 
         private async Task LoadAsync(User user)
         {
             var userName = await _userManager.GetUserNameAsync(user);
             var phoneNumber = await _userManager.GetPhoneNumberAsync(user);
-            string profile_pic = user.profile_image;
+            var image_Link = await get_profile_image(user);
 
             Username = userName;
 
             Input = new InputModel
             {
                 PhoneNumber = phoneNumber,
-                profile_image = profile_pic
+                image_link = image_Link,
+
             };
         }
-        public async Task<string> upload_image_async(IFormFile file)
+        public async Task<string> upload_image_async(IFormFile file, User user)
         {
             var allowedFormats = new[] { "image/jpeg", "image/png", "image/gif", "image/webp", "image/bmp" };
 
@@ -99,9 +100,11 @@ namespace Gamma_News.Areas.Identity.Pages.Account.Manage
             {
                 throw new ArgumentException("Invalid file format. Only WEBP, BMP, JPEG, PNG, and GIF images are allowed.");
             }
+            string blobName = $"{user.Id}_{file.FileName}";
+
 
             BlobContainerClient containerClient = _blobServiceClient.GetBlobContainerClient("newssitesprofilepics");
-            BlobClient blobClient = containerClient.GetBlobClient(file.FileName);
+            BlobClient blobClient = containerClient.GetBlobClient(blobName);
 
             await using (var stream = file.OpenReadStream())
             {
@@ -114,17 +117,16 @@ namespace Gamma_News.Areas.Identity.Pages.Account.Manage
         public async Task<string?> get_profile_image(User user)
 
         {
-            var profile_image = await _db.Users
+            var profile_image = await _userManager.Users
                 .Where(u => u.Id == user.Id)
                 .Select(u => u.profile_image)
                 .FirstOrDefaultAsync();
 
-            await LoadAsync(user);
-            return;
+            return profile_image;
 
         }
-#nullable disable 
 
+#nullable disable
         public async Task<IActionResult> OnGetAsync()
         {
             var user = await _userManager.GetUserAsync(User);
@@ -162,6 +164,9 @@ namespace Gamma_News.Areas.Identity.Pages.Account.Manage
                     return RedirectToPage();
                 }
             }
+
+
+
 
             await _signInManager.RefreshSignInAsync(user);
             StatusMessage = "Your profile has been updated";
