@@ -32,6 +32,10 @@ namespace Gamma_News.Controllers
             return View(articles);
         }
 
+        public IActionResult Local()
+        {
+            return View();
+        }
 
 
         public IActionResult Privacy()
@@ -58,10 +62,6 @@ namespace Gamma_News.Controllers
 
         }
 
-        public IActionResult Local()
-        {
-            return View();
-        }
 
     }
 }
