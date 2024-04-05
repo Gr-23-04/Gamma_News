@@ -1,15 +1,24 @@
 ﻿@model IEnumerable<Gamma_News.Models.ViewModels.Article>
 @{
     ViewData["Title"] = "Home Page";
+
 }
 
 @* Using a Model
 If your view is strongly-typed to a model that 
 includes ArticleId, you would simply use the model's property: *@
-<div class="relative container p-1 -right-10 -bottom-72 lg:left-96 mx-auto ">
+
+<div class="relative top-80 mx-auto">
+
+<div class="grid grid-cols-2">
 <partial name="_article_partial"></partial>
 </div>
+</div>
 
+<div class="">
+
+<partial name="_cookie_modal_partial"></partial>
+</div>
 
 
 @* Cart1 *@

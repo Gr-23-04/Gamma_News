@@ -4,7 +4,8 @@ module.exports = {
 
     content: [
        './Pages/**/*.cshtml',
-       './Views/**/*.cshtml'
+       './Views/**/*.cshtml',
+       './Manage/**/.cshtml'
 ],
     theme: {
         extend: {},
@@ -12,12 +13,17 @@ module.exports = {
     plugins: [
 
 
-        ['prettier-plugin-tailwindcss'],
         require('@tailwindcss/forms'),
         require('tailwindcss'),
         require('@headlessui/tailwindcss'),
+        require('@headlessui/react'),
         require('tailwindcss-animated'),
+        
 
 
     ],
+
+
+   
+
 }

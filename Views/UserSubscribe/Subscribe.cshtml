@@ -10,97 +10,372 @@ If your view is strongly-typed to a model that
 includes ArticleId, you would simply use the model's property:
 *@
 
+<div class="flex items-center justify-center h-screen">
+    <div style="display:flex;flex-direction:row;height:64vh;padding-left:80px;padding-right:80px;" class="w-full">
+        <div style="width:60vw;background-color:#162c3e;display:flex;flex-direction:column;padding:16px;border-radius:2px;margin:auto;">
+            <div style="border-bottom:3px solid #104870;display:flex;flex-direction:row;justify-content:space-between; padding:30px;gap:543px;">
+                <div style="display:flex;flex-direction:row; gap: 30px">
+                    <button style="background-color:#ffffff; margin:auto" class="bg-blue-500 hover:bg-blue-700 text-white font-bold w-10 h-10 rounded-full">
+                    </button>
 
+                    <div style="display:flex;flex-direction:column; margin:auto; gap:10px">
+                        <div class="font-bold text-xl text-white">
+                            Signed in
+                        </div>
 
-
-<div class="relative left-40" style="display:flex;/* flex-direction:row; */background-color:#1C82CA;/* padding:16px; */padding:32px;">
-
-    <div class="" style="width:60%;display:flex;flex-direction:column;/* padding:16px; */border-radius:2px;">
-
-        <div style="display:flex;flex-direction:row;">
-            <div style="display:flex;/* flex-direction:column; */">
-                <div class="font-bold text-white text-xl">
-                    Signed in
+                        <div class="display:flex;flex-direction:row;">
+                            <p class="text-white text-xs">
+                                This users email address.
+                            </p>
+                            <p class="text-white text-xs">
+                                Not you? Log out.
+                            </p>
+                        </div>
+                    </div>
                 </div>
-                <p class="text-white text-xs">
-                    This users email address.                             Not you? Log out
-                </p>
-            </div>
-        </div>
-        <div class="flex-2" style="width:40%;display:flex;flex-direction:column;">
-            <div class="text-white font-bold text-xl mb-2">
-                Payment
-            </div>
-            <div class="isolate py-24 sm:py-32">
-
-                <div class="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
-
-                    <div class="sm:col-span-2">
-                        <label for="email" class="block text-lg font-semibold leading-6 text-white">First name</label>
-                        <div class="mt-2.5">
-                            <input type="email" name="email" id="email" autocomplete="email" class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
-                        </div>
-                    </div>
-
-                    <div class="sm:col-span-2">
-                        <label for="email" class="block text-lg font-semibold leading-6 text-white">Last name</label>
-                        <div class="mt-2.5">
-                            <input type="email" name="email" id="email" autocomplete="email" class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
-                        </div>
-                    </div>
-
-                    <div class="sm:col-span-2">
-                        <label for="email" class="block text-lg font-semibold leading-6 text-white">Card number</label>
-                        <div class="mt-2.5">
-                            <input type="email" name="email" id="email" autocomplete="email" class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
-                        </div>
-                    </div>
-                    <div class="sm:col-span-2" style="display:flex;flex-direction:row;">
-                        <div>
-                            <label for="email" class="block font-semibold leading-6 text-center text-lg text-white">EXP</label>
-                            <div class="mt-2.5 px-3">
-                                <input type="email" name="email" id="email" autocomplete="email" class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
-                            </div>
-                        </div>
-                        <div>
-                            <label for="email" class="block font-semibold leading-6 text-center text-lg text-white">CVV</label>
-                            <div class="mt-2.5 px-3">
-                                <input type="email" name="email" id="email" autocomplete="email" class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
-                            </div>
-                        </div>
-                        <div>
-                            <label for="email" class="block font-semibold leading-6 text-center text-lg text-white">ZIP</label>
-                            <div class="mt-2.5 px-3">
-                                <input type="email" name="email" id="email" autocomplete="email" class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="sm:col-span-2">
-                        <label for="email" class="block text-lg font-semibold leading-6 text-white">Email</label>
-                        <div class="mt-2.5">
-                            <input type="email" name="email" id="email" autocomplete="email" class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
-                        </div>
-                    </div>
-
-
-                </div>
-            </div>
-            <div style="display:flex;flex-direction:row;">
                 <button style="background-color:#146094" class="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-                    Swish
-                </button>
-                <button style="background-color:#146094" class="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-                    Pay using your Swish account or credit card
+                    BankID
                 </button>
             </div>
+
+            <div style="border-bottom:3px solid #104870;display:flex;flex-direction:row;justify-content:space-between;padding:30px;">
+                <div style="display:flex;flex-direction:row; gap: 30px">
+                    <button style="background-color:#ffffff; margin:auto" class="bg-blue-500 hover:bg-blue-700 text-white font-bold w-10 h-10 rounded-full">
+                    </button>
+                    <div style="display:flex;flex-direction:column; margin:auto; gap:10px">
+                        <div class="font-bold text-white text-xl">
+                            Payment
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div style="border-bottom:3px solid #104870;display:flex;flex-direction:column;justify-content:space-between;">
+                <div style="display:flex;flex-direction:row;justify-content:space-between;padding:30px;margin-left:30px;gap:60px">
+                    <div style="display:flex;flex-direction:row; gap: 30px">
+                        <button style="background-color:#ffffff; margin:auto" class="bg-blue-500 hover:bg-blue-700 text-white font-bold w-5 h-5 rounded-full">
+                        </button>
+
+                        <div style="display:flex;flex-direction:column; margin:auto; gap:10px">
+                            <div class="font-bold text-white text-xl">
+                                Credit Card
+                            </div>
+
+                            <div class="display:flex;flex-direction:row;">
+                                <p class="text-white text-xs">
+                                    Sales and instant payments using your credit or debit card.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="display:flex;flex-direction:row; gap: 8px">
+                        <button style="background-color:#162C3E;border:1px solid #ffffff;" class="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                            xxxx
+                        </button>
+                        <button style="background-color:#162C3E;border:1px solid #ffffff;" class="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                            xxxx
+                        </button>
+                        <button style="background-color:#162C3E;border:1px solid #ffffff;" class="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                            xxxx
+                        </button>
+                        <button style="background-color:#162C3E;border:1px solid #ffffff;" class="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                            xxxx
+                        </button>
+                    </div>
+                </div>
+
+                <div style="display:flex;flex-direction:column;justify-content:space-between;margin:auto">
+                    <div style="padding-left:145px;padding-right:345px;">
+                        <button style="background-color:#162C3E;border:1px solid #ffffff;" class="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                            Card number
+                        </button>
+                    </div>
+
+                    <div style="padding-left:145px;padding-right:345px;display:flex;flex-direction:row;gap:20px;">
+                        <button style="background-color:#162C3E;border:1px solid #ffffff;" class="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                            Name on card
+                        </button>
+
+                        <button style="background-color:#162C3E;border:1px solid #ffffff;" class="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                            Exp
+                        </button>
+                        <button style="background-color:#162C3E;border:1px solid #ffffff;" class="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                            CVV
+                        </button>
+                        <button style="background-color:#162C3E;border:1px solid #ffffff;" class="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                            Zip
+                        </button>
+                    </div>
+
+                </div>
+
+                <div style="display:flex;flex-direction:row;justify-content:space-between;padding:30px; margin-left:30px">
+                    <div style="display:flex;flex-direction:row; gap: 30px">
+                        <button style="background-color:#ffffff; margin:auto" class="bg-blue-500 hover:bg-blue-700 text-white font-bold w-5 h-5 rounded-full">
+                        </button>
+
+                        <div style="display:flex;flex-direction:column; margin:auto; gap:10px">
+                            <div class="font-bold text-white text-xl">
+                                Swish
+                            </div>
+
+
+                            <div class="display:flex;flex-direction:row;">
+                                <p class="text-white text-xs">
+                                    Pay using your Swish account or credit card
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="display:flex;flex-direction:row; gap: 8px">
+                        <button style="background-color:#162C3E;border:1px solid #ffffff;" class="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                            xxxx
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div style="display:flex;flex-direction:row;justify-content:space-between; padding:30px;">
+                <div style="display:flex;flex-direction:row; gap: 30px">
+                    <button style="background-color:#146094; margin:auto" class="bg-blue-500 hover:bg-blue-700 text-white font-bold w-10 h-10 rounded-full">
+                    </button>
+                    <div style="display:flex;flex-direction:column; margin:auto; gap:10px">
+                        <div class="font-bold text-white text-xl">
+                            Add-ons
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
+
+
+        <div style="display:flex;flex-direction:column;padding:16px;border-radius:2px;margin-right:30px;margin-bottom:30px;">
+
+            <div style="background-color:#162c3e;display:flex;flex-direction:column;border-radius:2px;margin-right:30px;">
+
+                <div style="border-bottom:3px solid #104870;display:flex;flex-direction:column;padding:26px;border-radius:2px;">
+                    <div style="display:flex;flex-direction:row;padding-left:26px;padding-right:214px;padding:30px;" class="font-bold text-xl text-white">
+                        Order Summary
+                    </div>
+
+                    <div style="display:flex;flex-direction:row;margin:auto;">
+                        <div style="display:flex;flex-direction:row;">
+                            <button style="background-color:#ffffff;padding-right:55px;padding-left:55px;padding-bottom:5px;padding-top:5px;" class="mt-4 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                                <div class="font-bold text-xl text-black">
+                                    Yearly
+                                </div>
+                            </button>
+                        </div>
+
+                        <div style="display:flex;flex-direction:row;">
+                            <button style="background-color:#176EAB;padding-right:55px;padding-left:55px;padding-bottom:5px;padding-top:5px;" class="mt-4 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                                <div class="font-bold text-xl text-black">
+                                    Monthly
+                                </div>
+                            </button>
+                        </div>
+
+
+
+                    </div>
+
+                    <div style="display:flex;flex-direction:column;padding:16px;padding:30px;">
+                        <div style="display:flex;flex-direction:row;justify-content:space-between;padding:30px;padding:30px;">
+                            <div style="display:flex;flex-direction:row; gap: 209px">
+                                <div style="display:flex;flex-direction:row;gap:30px">
+                                    <div style="display:flex;flex-direction:column; margin:auto; gap:10px">
+                                        <div class="font-bold text-white text-xm">
+                                            Plan:
+                                        </div>
+                                    </div>
+                                    <button style="background-color:#ffffff" class="mt-4 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                                    </button>
+                                </div>
+
+                                <div style="display:flex;flex-direction:column; margin:auto; gap:10px">
+                                    <div class="font-bold text-white text-xs">
+                                        Edit
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div style="display:flex;flex-direction:row;justify-content:space-between;padding:30px;padding:30px;">
+                            <div style="display:flex;flex-direction:row; gap: 134px">
+                                <div style="display:flex;flex-direction:row; gap: 30px">
+                                    <button style="background-color:#ffffff" class="mt-4 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                                    </button>
+                                    <div style="display:flex;flex-direction:column; margin:auto; gap:10px">
+                                        <div class="font-bold text-white text-xs">
+                                            Unlimited Articles
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div style="display:flex;flex-direction:column; margin:auto; gap:10px">
+                                    <div class="font-bold text-white text-xs">
+                                        1000+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div style="display:flex;flex-direction:row;justify-content:space-between;padding:30px;padding:30px;">
+                            <div style="display:flex;flex-direction:row; gap: 220px">
+                                <div style="display:flex;flex-direction:row; gap: 30px">
+                                    <button style="background-color:#ffffff" class="mt-4 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                                    </button>
+                                    <div style="display:flex;flex-direction:column; margin:auto; gap:10px">
+                                        <div class="font-bold text-white text-xs">
+                                            6 month
+                                        </div>
+                                    </div>
+
+                                </div>
+
+
+                                <div style="display:flex;flex-direction:column; margin:auto; gap:10px">
+                                    <div class="font-bold text-white text-xs">
+                                        5
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div style="display:flex;flex-direction:row;justify-content:space-between;padding:30px;padding:30px;">
+                            <div style="display:flex;flex-direction:row; gap: 154px">
+
+                                <div style="display:flex;flex-direction:row;gap:30px">
+                                    <button style="background-color:#ffffff" class="mt-4 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                                    </button>
+                                    <div style="display:flex;flex-direction:column; margin:auto; gap:10px">
+                                        <div class="font-bold text-white text-xs">
+                                            Points Bonus
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div style="display:flex;flex-direction:column; margin:auto; gap:10px">
+                                    <div class="font-bold text-white text-xs">
+                                        +10000
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="border-bottom:3px solid #104870;display:flex;flex-direction:column;padding:26px;border-radius:2px;padding:30px;">
+                    <div style="display:flex;flex-direction:row;justify-content:space-between;padding:30px;">
+                        <div style="display:flex;flex-direction:row; gap: 231px">
+                            <div style="display:flex;flex-direction:column; margin:auto; gap:10px">
+                                <div class="font-bold text-white text-xl">
+                                    Regular Price
+                                </div>
+                            </div>
+
+                            <div style="display:flex;flex-direction:column; margin:auto; gap:10px">
+                                <div class="font-bold text-white text-xs">
+                                    99,99kr
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="display:flex;flex-direction:row;justify-content:space-between;padding:30px;">
+                        <div style="display:flex;flex-direction:row; gap: 194px">
+                            <div style="display:flex;flex-direction:column; margin:auto; gap:10px">
+                                <div class="font-bold text-white text-xl">
+                                    Discounted Price
+                                </div>
+                            </div>
+
+                            <div style="display:flex;flex-direction:column; margin:auto; gap:10px">
+                                <div class="font-bold text-white text-xs">
+                                    59,99kr
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="display:flex;flex-direction:row;justify-content:space-between;padding:30px;">
+                        <div style="display:flex;flex-direction:row; gap: 194px">
+                            <div style="display:flex;flex-direction:column; margin:auto; gap:10px">
+                                <div class="font-bold text-white text-xl">
+                                    Promo Code
+                                </div>
+                            </div>
+
+                            <button style="background-color:#ffffff; margin:auto" class="bg-blue-500 hover:bg-blue-700 text-white font-bold w-5 h-5 rounded-full">
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div style="display:flex;flex-direction:row;padding:30px;">
+
+                    <div style="display:flex;flex-direction:row; gap:205px;padding:30px;">
+                        <div style="display:flex;flex-direction:column; margin:auto; gap:10px">
+                            <div class="font-bold text-white text-xl">
+                                Total
+                            </div>
+                        </div>
+
+                        <div style="display:flex;flex-direction:column; margin:auto; gap:10px">
+                            <div class="font-bold text-white text-xl">
+                                59,99kr
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div style="display:flex;flex-direction:column;padding:16px;border-radius:2px;margin-right:30px;">
+                <button style="background-color:#176EAB;padding:30px;" class="mt-4 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                    Pay
+                </button>
+            </div>
+
+
+
+        </div>
+        
+        
+
     </div>
 
+</div>
 
-    <div style="display:flex;flex-direction:column;padding:16px;border-radius:2px;">
 
-        <div style="display:flex;flex-direction:column;padding:10px;width:250px;height:100px;">
+
+
+
+
+
+
+
+@*  Payment Button *@
+
+@*  <div class="container mx-auto px-4">
+
+        <button class="inline-block bg-blue-500 text-white font-bold py-2 px-4 rounded hover:bg-blue-700 transition duration-150 ease-in-out"
+        onclick="location.href='@Url.Action("Subscribe", "UserSubscribe")'">
+        Choose your way to pay
+        </button>
+
+        </div> *@
+@*  // <script>
+        //     document.getElementById('featureButton').addEventListener('click', function () {
+        //         // Use Razor syntax to generate the URL for the Subscribe page
+        //         window.location.href = '@Url.Page("/Subscribe")'; // For Razor Pages
+        //         // Or for MVC: window.location.href = '@Url.Action("ActionName", "ControllerName")';
+        //     });
+        // </script> *@
+
+@* <div style="display:flex;flex-direction:column;padding:10px;width:250px;height:100px;">
 
             <div class="bg-white py-24 sm:py-32">
                 <div class="mx-auto max-w-7xl px-6 lg:px-8">
@@ -129,49 +404,5 @@ includes ArticleId, you would simply use the model's property:
                 </div>
             </div>
 
-        </div>
-
-
-    </div>
-
-</div>
-
-        @*  Payment Button *@
-
-        @*  <div class="container mx-auto px-4">
-
-        <button class="inline-block bg-blue-500 text-white font-bold py-2 px-4 rounded hover:bg-blue-700 transition duration-150 ease-in-out"
-        onclick="location.href='@Url.Action("Subscribe", "UserSubscribe")'">
-        Choose your way to pay
-        </button>
-
         </div> *@
-        @*  // <script>
-        //     document.getElementById('featureButton').addEventListener('click', function () {
-        //         // Use Razor syntax to generate the URL for the Subscribe page
-        //         window.location.href = '@Url.Page("/Subscribe")'; // For Razor Pages
-        //         // Or for MVC: window.location.href = '@Url.Action("ActionName", "ControllerName")';
-        //     });
-        // </script> *@
-    </div>
-
-</div>
-
-<!--
-  This example requires some changes to your config:
-
-  ```
-  // tailwind.config.js
-  module.exports = {
-    // ...
-    plugins: [
-      // ...
-      require('tailwindcss/forms'),
-    ],
-  }
-  ```
--->
-
-
-
 
