@@ -89,14 +89,20 @@ namespace Gamma_News.Areas.Identity.Pages.Account.Manage
         }
         public async Task<string> upload_image_async(IFormFile file, User user)
         {
-            var allowedFormats = new[] { "image/jpeg", "image/png", "image/gif", "image/webp", "image/bmp" };
+            var allowed_formats = new[] { "image/jpeg", "image/png", "image/gif", "image/webp", "image/bmp" };
+            var max_file_size = 5 * 1024 * 1024;
 
             if (file == null || file.Length == 0)
             {
                 throw new ArgumentException("No file was uploaded.");
             }
 
-            if (!allowedFormats.Contains(file.ContentType))
+            if (file.Length > max_file_size)
+            {
+                throw new ArgumentException("The file you are trying upload is larger than 5MB");
+            }
+
+            if (!allowed_formats.Contains(file.ContentType))
             {
                 throw new ArgumentException("Invalid file format. Only WEBP, BMP, JPEG, PNG, and GIF images are allowed.");
             }
@@ -108,7 +114,7 @@ namespace Gamma_News.Areas.Identity.Pages.Account.Manage
 
             await using (var stream = file.OpenReadStream())
             {
-                blobClient.Upload(stream);
+                await blobClient.UploadAsync(stream, overwrite: true);
 
             }
             return blobClient.Uri.AbsoluteUri;
@@ -117,7 +123,7 @@ namespace Gamma_News.Areas.Identity.Pages.Account.Manage
         public async Task<string?> get_profile_image(User user)
 
         {
-            var profile_image = await _userManager.Users
+            var profile_image = await _db.Users
                 .Where(u => u.Id == user.Id)
                 .Select(u => u.profile_image)
                 .FirstOrDefaultAsync();
@@ -140,7 +146,7 @@ namespace Gamma_News.Areas.Identity.Pages.Account.Manage
             return Page();
         }
 
-        public async Task<IActionResult> OnPostAsync()
+        public async Task<IActionResult> OnPostAsync(IFormFile file)
         {
             var user = await _userManager.GetUserAsync(User);
             if (user == null)
@@ -165,7 +171,10 @@ namespace Gamma_News.Areas.Identity.Pages.Account.Manage
                 }
             }
 
-
+            if (file != null && file.Length > 0)
+            {
+                var result = await upload_image_async(file, user);
+            }
 
 
             await _signInManager.RefreshSignInAsync(user);
