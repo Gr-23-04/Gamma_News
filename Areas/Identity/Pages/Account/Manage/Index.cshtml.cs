@@ -97,7 +97,7 @@ namespace Gamma_News.Areas.Identity.Pages.Account.Manage
         }
         public async Task<string> upload_image_async(IFormFile input)
         {
-            var user_id = await _userManager.GetUserAsync(User);
+            var user = await _userManager.GetUserAsync(User);
             var allowedFormats = new[] { "image/jpeg", "image/png", "image/gif", "image/webp", "image/bmp" };
 
             if (input == null || input.Length == 0)
@@ -115,7 +115,7 @@ namespace Gamma_News.Areas.Identity.Pages.Account.Manage
             {
                 throw new ArgumentException("Invalid file format. Only WEBP, BMP, JPEG, PNG, and GIF images are allowed.");
             }
-            string blobName = $"{user_id.Id}_{input.FileName}";
+            string blobName = $"{user.Id}_{input.FileName}";
 
 
             BlobContainerClient containerClient = _blobServiceClient.GetBlobContainerClient("newssitesprofilepics");
@@ -123,6 +123,10 @@ namespace Gamma_News.Areas.Identity.Pages.Account.Manage
 
             await using (var stream = input.OpenReadStream())
             {
+
+
+
+
                 await blobClient.UploadAsync(stream, overwrite: true);
                 stream.Close();
 
@@ -150,7 +154,7 @@ namespace Gamma_News.Areas.Identity.Pages.Account.Manage
             {
                 return NotFound($"Unable to load user with ID '{_userManager.GetUserId(User)}'.");
             }
-            var profile_pic = get_profile_image(user);
+            var profile_pic = user.profile_image;
             if (profile_pic == null || user.profile_image == "M18.685 19.097A9.723 9.723 0 0021.75 12c0-5.385-4.365-9.75-9.75-9.75S2.25 6.615 2.25 12a9.723 9.723 0 003.065 7.097A9.716 9.716 0 0012 21.75a9.716 9.716 0 006.685-2.653zm-12.54-1.285A7.486 7.486 0 0112 15a7.486 7.486 0 015.855 2.812A8.224 8.224 0 0112 20.25a8.224 8.224 0 01-5.855-2.438zM15.75 9a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z")
             {
                 user.profile_image = "M18.685 19.097A9.723 9.723 0 0021.75 12c0-5.385-4.365-9.75-9.75-9.75S2.25 6.615 2.25 12a9.723 9.723 0 003.065 7.097A9.716 9.716 0 0012 21.75a9.716 9.716 0 006.685-2.653zm-12.54-1.285A7.486 7.486 0 0112 15a7.486 7.486 0 015.855 2.812A8.224 8.224 0 0112 20.25a8.224 8.224 0 01-5.855-2.438zM15.75 9a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z";
