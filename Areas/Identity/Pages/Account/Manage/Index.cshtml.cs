@@ -37,7 +37,6 @@ namespace Gamma_News.Areas.Identity.Pages.Account.Manage
         ///     directly from your code. This API may change or be removed in future releases.
         /// </summary>
 
-
         /// <summary>
         ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
         ///     directly from your code. This API may change or be removed in future releases.
@@ -96,8 +95,9 @@ namespace Gamma_News.Areas.Identity.Pages.Account.Manage
             };
 
         }
-        public async Task<string> upload_image_async(IFormFile input, User user)
+        public async Task<string> upload_image_async(IFormFile input)
         {
+            var user_id = await _userManager.GetUserAsync(User);
             var allowedFormats = new[] { "image/jpeg", "image/png", "image/gif", "image/webp", "image/bmp" };
 
             if (input == null || input.Length == 0)
@@ -115,7 +115,7 @@ namespace Gamma_News.Areas.Identity.Pages.Account.Manage
             {
                 throw new ArgumentException("Invalid file format. Only WEBP, BMP, JPEG, PNG, and GIF images are allowed.");
             }
-            string blobName = $"{user.Id}_{input.FileName}";
+            string blobName = $"{user_id.Id}_{input.FileName}";
 
 
             BlobContainerClient containerClient = _blobServiceClient.GetBlobContainerClient("newssitesprofilepics");
@@ -133,7 +133,7 @@ namespace Gamma_News.Areas.Identity.Pages.Account.Manage
         public async Task<string?> get_profile_image(User user)
 
         {
-            var profile_image = await _db.Users
+            var profile_image = await _userManager.Users
                 .Where(u => u.Id == user.Id)
                 .Select(u => u.profile_image)
                 .FirstOrDefaultAsync();
@@ -200,7 +200,16 @@ namespace Gamma_News.Areas.Identity.Pages.Account.Manage
             else
             {
 
-                var imageUrl = await upload_image_async(Input.profile_image, user);
+
+
+                string imageurl = await upload_image_async(Input.profile_image);
+                user.profile_image = imageurl;
+
+                _db.Attach(user);
+
+                _db.Entry(user).Property(u => u.profile_image).IsModified = true;
+
+                await _db.SaveChangesAsync();
 
                 await _signInManager.RefreshSignInAsync(user);
                 StatusMessage = "Your profile has been updated";
