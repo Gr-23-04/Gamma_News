@@ -4,10 +4,8 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 17.8.34525.116
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gamma_News", "Gamma_News.csproj", "{6F3B57A5-BBC9-4A0F-A62A-9283DF080B4F}"
-
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AzureFunctionBlobTriggered", "..\AzureFunctionBlobTriggered\AzureFunctionBlobTriggered.csproj", "{6ACB488E-EBC7-46C8-8AE8-C67D96BB9885}"
-
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -10,6 +10,8 @@ $(function () {
     var last_scroll = 0;
     var desk_menu = 0;
     var prof_menu = 0;
+    var cookie_choice = sessionStorage.getItem('cookie_choice');
+    var local_cookie_choice = localStorage.getItem('local_cookie_choice');
    
  
  
@@ -64,9 +66,10 @@ $(function () {
 
     $(window).on("load", function() {
 
-        var cookie_choice = sessionStorage.getItem('cookie_choice');
+        cookie_choice = sessionStorage.getItem('cookie_choice');
+        local_cookie_choice = localStorage.getItem('local_cookie_choice');
 
-        if (cookie_choice === 'true') {
+        if (cookie_choice === 'true' || local_cookie_choice === 'true') {
             $("#cookie_modal").hide();
 
         }
@@ -79,6 +82,7 @@ $(function () {
     });
 
     $("#cookie_yes").on("click", function (){
+        local_cookie_choice = localStorage.setItem('local_cookie_choice', 'true');
         $("#cookie_modal").hide("medium");
     });
 

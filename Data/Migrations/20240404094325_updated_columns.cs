@@ -5,23 +5,24 @@
 namespace Gamma_News.Data.Migrations
 {
     /// <inheritdoc />
-    public partial class newcolumn : Migration
+    public partial class updated_columns : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.AddColumn<DateTime>(
-                name: "DateOfBirth",
+            migrationBuilder.AddColumn<string>(
+                name: "profile_image",
                 table: "AspNetUsers",
-                type: "datetime2",
-                nullable: true);
+                type: "nvarchar(max)",
+                nullable: false,
+                defaultValue: "");
         }
 
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropColumn(
-                name: "DateOfBirth",
+                name: "profile_image",
                 table: "AspNetUsers");
         }
     }

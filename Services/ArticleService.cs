@@ -66,7 +66,7 @@ namespace Gamma_News.Services
 
             newArticle.Categories.Add(new SelectListItem { Text = "Local", Value = "1" });
             newArticle.Categories.Add(new SelectListItem { Text = "Enterainment", Value = "2" });
-            newArticle.Categories.Add(new SelectListItem { Text = "Sport", Value = "3" });
+            newArticle.Categories.Add(new SelectListItem { Text = "Anime", Value = "3" });
             newArticle.Categories.Add(new SelectListItem { Text = "Politics", Value = "4" });
             newArticle.Categories.Add(new SelectListItem { Text = "Sweden", Value = "5" });
             newArticle.Categories.Add(new SelectListItem { Text = "World", Value = "6" });
