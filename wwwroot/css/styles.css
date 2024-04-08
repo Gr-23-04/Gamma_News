@@ -1526,6 +1526,11 @@ select {
   border-style: double;
 }
 
+.border-\[\#EB6E4B\] {
+  --tw-border-opacity: 1;
+  border-color: rgb(235 110 75 / var(--tw-border-opacity));
+}
+
 .border-emerald-800 {
   --tw-border-opacity: 1;
   border-color: rgb(6 95 70 / var(--tw-border-opacity));
