@@ -24,14 +24,6 @@ module.exports = {
     ],
 
 
-    module.exports = {
-        theme: {
-            extend: {
-                colors: {
-                    'custom-blue': '#1c82ca', // You can name it whatever you like
-                },
-            },
-        },
-    }
+   
 
 }
