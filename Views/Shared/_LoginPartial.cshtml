@@ -4,12 +4,12 @@
 @inject UserManager<User> UserManager
 
 @{
-    User? user = await UserManager.GetUserAsync(User);
-    string? image = user.profile_image;
 }
 
 @if (SignInManager.IsSignedIn(User))
 {
+    User? user = await UserManager.GetUserAsync(User);
+    string? image = user.profile_image;
     @*   
     <div class="size-60">
 
