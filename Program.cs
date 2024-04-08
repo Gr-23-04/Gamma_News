@@ -69,6 +69,7 @@ namespace Gamma_News
             builder.Services.AddHttpClient<WeatherService>( );
             builder.Services.AddScoped<IArticleService , ArticleService>( );
             builder.Services.AddScoped<IStorageService, StorageService>();
+            builder.Services.AddScoped<IStockDataService, StockDataService>();
 
 
             //need to change the name based on the class in helper folder
