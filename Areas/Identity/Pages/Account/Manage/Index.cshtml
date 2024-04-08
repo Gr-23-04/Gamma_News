@@ -1,7 +1,13 @@
-﻿@page
+﻿@using Gamma_News.Models
+
+@page
 @model IndexModel
+@inject UserManager<User> UserManager
 @{
 
+
+    User? user = await UserManager.GetUserAsync(User);
+    string? image = user.profile_image;
     ViewData["Title"] = "Profile";
     ViewData["ActivePage"] = ManageNavPages.Index;
 }
