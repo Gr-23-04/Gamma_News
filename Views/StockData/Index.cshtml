@@ -1,13 +1,19 @@
 ﻿@model IEnumerable<StockData>
 
-
+<div class="col-3" style="padding-top:200px"></div>
+<style>
+    table, th, td {
+        border:1px solid white;
+        border-collapse: collapse;
+    }
+</style>
 
 <form>
     Region <input name="region" placeholder="Region" type="search" aria-label="Search" />
 </form>
 
 
-<table class="table">
+<table class="table" align="center" border="1" cellpadding="15" cellspacing="0" width="60%">
     <thead>
         <tr>
             <th>
@@ -48,5 +54,6 @@
 
         }
     </tbody>
+    
 </table>
 
