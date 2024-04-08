@@ -1,8 +1,8 @@
 ﻿using Gamma_News.Data;
+using Gamma_News.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using Gamma_News.Models;
 
 namespace Gamma_News.Controllers
 {
@@ -124,15 +124,15 @@ namespace Gamma_News.Controllers
 
         public IActionResult Subscribe()
         {
-            return View();        
+            return View();
         }
-       
+
         public IActionResult Create() //handles the logic when a user subscribes to an article. This action will
                                       //create a new Subscription instance linking the user with the article.
         {
             return View();
         }
 
-        
+
     }
 }

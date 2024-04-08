@@ -1,6 +1,7 @@
 using Gamma_News.Data;
 using Gamma_News.Models;
 using Gamma_News.Services;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Diagnostics;
@@ -16,13 +17,14 @@ namespace Gamma_News.Controllers
 
         private readonly ApplicationDbContext _db;
         private readonly IArticleService _articleService;
-
+        private readonly UserManager<User> user;
 
         public HomeController(ILogger<HomeController> logger, ApplicationDbContext db, IArticleService articleService)
 
         {
             _articleService = articleService;
             _logger = logger;
+            _db = db;
 
         }
 
@@ -32,6 +34,10 @@ namespace Gamma_News.Controllers
             return View(articles);
         }
 
+        public IActionResult Local()
+        {
+            return View();
+        }
 
 
         public IActionResult Privacy()
@@ -58,10 +64,6 @@ namespace Gamma_News.Controllers
 
         }
 
-        public IActionResult Local()
-        {
-            return View();
-        }
 
     }
 }
