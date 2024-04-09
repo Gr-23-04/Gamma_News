@@ -19,13 +19,13 @@
             </div>
 
             <div class="mt-10 mx-auto sm:w-auto sm:max-w-sm">
-                <form class="space-y-6" id="account" method="POST">
+                <form class="space-y-6  text-slate-300" id="account" method="POST">
                     <div class="relative">
                         <!---Email validation --->
                         <label asp-for="Input.Email" class="block form-label mb-2 text-sm font-medium leading-6 text-slate-300">Email address</label>
-                        <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
+                        <div asp-validation-summary="ModelOnly" class="text-danger text-slate-300 " role="alert"></div>
                         <input asp-for="Input.Email" type="email" autocomplete="email" required class="block w-full rounded-md border-0 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" placeholder="  Email" />
-                        <span asp-validation-for="Input.Email" class="text-danger"></span>
+                        <span asp-validation-for="Input.Email" class="text-danger text-slate-300 "></span>
                     </div>
 
                     <div>
@@ -43,7 +43,7 @@
                         </div>
                         <div class="mt-2">
                             <input asp-for="Input.Password" autocomplete="current-password" required class="block w-full rounded-md border-0 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" placeholder=" Password" />
-                            <span asp-validation-for="Input.Password" class="text-danger"></span>
+                            <span asp-validation-for="Input.Password" class="text-danger text-slate-300"></span>
                         </div>
                     </div>
                     <div class="checkbox mb-3  text-slate-300">

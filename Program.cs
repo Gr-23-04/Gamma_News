@@ -36,7 +36,7 @@ namespace Gamma_News
             builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
             builder.Services
-                .AddDefaultIdentity<User>(options => options.SignIn.RequireConfirmedAccount = false)
+                .AddDefaultIdentity<User>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddRoles<IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>();
             builder.Services.AddControllersWithViews();
@@ -69,6 +69,12 @@ namespace Gamma_News
             builder.Services.AddHttpClient<WeatherService>();
             builder.Services.AddScoped<IArticleService, ArticleService>();
             builder.Services.AddScoped<IStorageService, StorageService>();
+
+            builder.Services.ConfigureApplicationCookie(o =>
+            {
+                o.ExpireTimeSpan = TimeSpan.FromDays(5);
+                o.SlidingExpiration = true;
+            });
 
 
             //need to change the name based on the class in helper folder
