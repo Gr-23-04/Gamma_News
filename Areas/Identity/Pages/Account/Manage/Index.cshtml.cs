@@ -98,7 +98,8 @@ namespace Gamma_News.Areas.Identity.Pages.Account.Manage
         public async Task<string> upload_image_async(IFormFile input)
         {
             var user = await _userManager.GetUserAsync(User);
-            var allowedFormats = new[] { "image/jpeg", "image/png", "image/gif", "image/webp", "image/bmp" };
+            var allowedFormats = new[] { "image/jpeg", "image/png", "image/gif", "image/webp", "image/bmp" }; //make it impossible
+
 
             if (input == null || input.Length == 0)
             {
@@ -115,7 +116,7 @@ namespace Gamma_News.Areas.Identity.Pages.Account.Manage
             {
                 throw new ArgumentException("Invalid file format. Only WEBP, BMP, JPEG, PNG, and GIF images are allowed.");
             }
-            string blobName = $"{user.Id}_{input.FileName}";
+            string blobName = $"{user.Id}";
 
 
             BlobContainerClient containerClient = _blobServiceClient.GetBlobContainerClient("newssitesprofilepics");

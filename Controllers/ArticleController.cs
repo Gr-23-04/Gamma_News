@@ -20,8 +20,17 @@ namespace Gamma_News.Controllers
 
 
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
+
+
+
+
+            //var articles = await _articleService.GetAllArticles();
+
+            //article = articles.Where(a => a.Id == article.Id).Select(a => a).First();
+
+
 
             return View();
         }
