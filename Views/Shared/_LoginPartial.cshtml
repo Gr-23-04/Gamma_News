@@ -21,7 +21,7 @@
 
      <a  class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Hello @User.Identity?.Name!</a> 
  *@
-    if (image == "")
+    if (image == "" || image == null)
     {
 
         <div id="profile_container" class="">
