@@ -108,7 +108,7 @@ namespace Gamma_News.Areas.Identity.Pages.Account.Manage
 
             if (input.Length > 5 * 1024 * 1024)
             {
-                throw new ArgumentException("The image your trying to upload is larger than 5MB");
+                throw new ArgumentException("The image your trying to upload iss larger than 5MB");
 
             }
 

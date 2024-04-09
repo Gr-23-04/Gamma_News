@@ -8,7 +8,7 @@ namespace Gamma_News.Models
         public string LastName { get; set; } = string.Empty;
         public DateTime? DateOfBirth { get; set; }
 
-        public string? profile_image { get; set; }
+        public string profile_image { get; set; }
 
         //Subscription Information
         //· Id

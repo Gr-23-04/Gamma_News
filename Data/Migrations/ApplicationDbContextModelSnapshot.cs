@@ -86,6 +86,7 @@ namespace Gamma_News.Data.Migrations
                         .HasColumnType("nvarchar(256)");
 
                     b.Property<string>("profile_image")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
