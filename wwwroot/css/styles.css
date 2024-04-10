@@ -844,6 +844,14 @@ select {
   bottom: 0.375rem;
 }
 
+.bottom-2 {
+  bottom: 0.5rem;
+}
+
+.bottom-20 {
+  bottom: 5rem;
+}
+
 .bottom-24 {
   bottom: 6rem;
 }
@@ -858,6 +866,10 @@ select {
 
 .left-16 {
   left: 4rem;
+}
+
+.left-2 {
+  left: 0.5rem;
 }
 
 .left-28 {
@@ -1095,6 +1107,11 @@ select {
 
 .aspect-\[1155\/678\] {
   aspect-ratio: 1155/678;
+}
+
+.size-16 {
+  width: 4rem;
+  height: 4rem;
 }
 
 .size-20 {

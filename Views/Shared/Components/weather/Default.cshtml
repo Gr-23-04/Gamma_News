@@ -6,12 +6,12 @@
 @model Gamma_News.Models.Weather;
 
 
-    <div id="menu_weather_container" class="">
+    <div id="menu_weather_container" class="relative size-5/6 bottom-2">
         <div class=" hover:scale-105 relative transition" style="width: 40%">
             <a class="" asp-controller="Weather" asp-action="Index">
                 <p class="font-bold left-4 p-2 relative text-slate-300 top-3" style="margin-left:-21%; margin-top: -27%;">@Model.City</p>
 
-                <img class="scale-150" src="@Model.Icon.Url" style="/* margin-top: -35%; *//* margin-left: -60%; */">
+                <img class="scale-150 relative left-2" src="@Model.Icon.Url" style="/* margin-top: -35%; *//* margin-left: -60%; */">
                 <p class="font-bold left-4 relative text-slate-300 top-3" style="margin-left: 13%; margin-top: -20%">@Model.TemperatureC°C</p>
             </a>
               
