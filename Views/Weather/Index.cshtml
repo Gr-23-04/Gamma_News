@@ -1,8 +1,11 @@
 ﻿@model Weather
+<!DOCTYPE html>
 
- 
+@{
+}
+
     <script>
-        
+
         document.addEventListener('DOMContentLoaded', function () //This is an event listener that waits for the content of the web page to be fully loaded. Once the loading is complete (i.e., the Document Object Model (DOM) content is fully loaded), it will execute the function inside the curly braces.
         {
             updateWeather();//call updateweather when the page loads
@@ -38,10 +41,9 @@
                     console.error('Error fetching weather data:', error);
                     //Here you can handle the situation when the fetch request fails.
                 });
-        }
+        };
 
-        function updateBackgroundAndIcon(condition)
-        {//baseon condition.change the background and icon url
+        function updateBackgroundAndIcon(condition) {//baseon condition.change the background and icon url
             let backgroundUrl, iconUrl;// used to store  background image and icon based on the weather conditions.
             switch (condition) {
                 case 'Clear':
@@ -61,16 +63,19 @@
                     iconUrl = 'https://source.unsplash.com/80x80/?cloud';
                     break;
             }
-                document.querySelector('.weather-card').style.backgroundImage = `url(${backgroundUrl})`;
-                document.querySelector('.weather-icon').style.backgroundImage = `url(${iconUrl})`;
-        }
-        
-    </script>
+        document.querySelector('.weather-card').style.backgroundImage = `url(${backgroundUrl})`;
+        document.querySelector('.weather-icon').style.backgroundImage = `url(${iconUrl})`;
+        };
 
-        <div class="relative grid top-60">
-            <section class="weather-card">
-                <div class="weather-icon"></div>
-                <div class="weather-info bg-gray-900 bg-opacity-25 w-1/5 h-full">
+
+    </script>
+<html>
+        <body>
+<div class="grid">
+    <div class="weather-card">
+        <div class="weather-icon"></div>
+        <div class="weather-info bg-gray-900 bg-opacity-25 w-1/5 h-full">
+     
                     <h2>@Model.City</h2>
                     <p>@Model.TemperatureC°C</p>
                     <p>Humidity: @Model.Humidity%</p>
@@ -79,7 +84,15 @@
                     <p>@Model.Summary</p>
                     <img class="" src="@Model.Icon.Url" alt="@Model.Summary" />
 
-                </div>
-            </section>
         </div>
+    </div>
+</div>
 
+            
+        
+
+    
+        </body>
+
+
+</html>
