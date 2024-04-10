@@ -36,7 +36,8 @@ namespace Gamma_News.Controllers
 
         public IActionResult Local()
         {
-            return View();
+            var articles = _articleService.GetAllArticles().Result.ToList();
+            return View(articles);
         }
 
 
