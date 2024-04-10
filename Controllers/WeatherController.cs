@@ -16,9 +16,10 @@ namespace Gamma_News.Controllers
             var weather = await _weatherService.GetWeatherAsync(city);
             return View(weather);
         }
-        public IActionResult details()
+        public async Task<IActionResult> details(string city = "linköping")
         {
-            return View();
+            var weather = await _weatherService.GetWeatherAsync(city);
+            return View(weather);
         }
     }
 }
