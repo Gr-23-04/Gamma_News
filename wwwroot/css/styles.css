@@ -4664,6 +4664,37 @@ select {
   border-bottom-width: 1px;
 }
 
+/* styles.css */
+
+/* styles.css */
+
+.moving-border {
+  position: relative;
+  overflow: hidden;
+}
+
+.moving-border::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  background: -o-linear-gradient(from-rose-400 to-indigo-500 via-fuchsia-500);
+  animation: move 5s linear infinite;
+}
+
+@keyframes move {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
 .border-b-2 {
   border-bottom-width: 2px;
 }
