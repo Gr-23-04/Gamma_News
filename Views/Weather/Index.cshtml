@@ -1,11 +1,63 @@
 ﻿@model Weather
+
 <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-@{
-}
 
+
+    <title>Weather</title>
+    <style>
+
+        .weather-card {
+            background: url('https://source.unsplash.com/1600x900/?sunset') center center;
+            background-size: cover;
+            position: relative;
+            color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+        }
+
+            .weather-card::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+             
+                border-radius: 8px;
+            }
+
+        .weather-icon {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 80px;
+            height: 80px;
+            background: url('https://source.unsplash.com/80x80/?weather,cloudy') no-repeat center center;
+            background-size: cover;
+            border-radius: 50%;
+        }
+
+        .weather-info {
+            margin-left: 120px; /* Space for the weather icon */
+        }
+
+            .weather-info h2, .weather-info h3, .weather-info p {
+                margin: 0.5rem 0;
+                font-size: 1.5em; /* Larger text for better visibility */
+            }
+
+            .weather-info h2 {
+                font-size: 2.5em; /* Even larger size for temperature */
+            }
+    </style>
     <script>
-
         document.addEventListener('DOMContentLoaded', function () //This is an event listener that waits for the content of the web page to be fully loaded. Once the loading is complete (i.e., the Document Object Model (DOM) content is fully loaded), it will execute the function inside the curly braces.
         {
             updateWeather();//call updateweather when the page loads
@@ -13,7 +65,7 @@
         });
 
         function updateWeather() {
-            fetch('https://weatherapi.dreammaker-it.se/Forecast?city=linköping&lang=English')
+            fetch($'https://weatherapi.dreammaker-it.se/Forecast?city={city}&lang=English')
                 .then(response => response.json())
                 .then(data => {
                     document.querySelector('.weather-info h2').textContent = `${data.TemperatureC}°C`;
@@ -41,7 +93,7 @@
                     console.error('Error fetching weather data:', error);
                     //Here you can handle the situation when the fetch request fails.
                 });
-        };
+        }
 
         function updateBackgroundAndIcon(condition) {//baseon condition.change the background and icon url
             let backgroundUrl, iconUrl;// used to store  background image and icon based on the weather conditions.
@@ -63,36 +115,33 @@
                     iconUrl = 'https://source.unsplash.com/80x80/?cloud';
                     break;
             }
-        document.querySelector('.weather-card').style.backgroundImage = `url(${backgroundUrl})`;
-        document.querySelector('.weather-icon').style.backgroundImage = `url(${iconUrl})`;
-        };
-
-
+            document.querySelector('.weather-card').style.backgroundImage = `url(${backgroundUrl})`;
+            document.querySelector('.weather-icon').style.backgroundImage = `url(${iconUrl})`;
+        }
     </script>
-<html>
-        <body>
-<div class="grid">
-    <div class="weather-card">
-        <div class="weather-icon"></div>
-        <div class="weather-info bg-gray-900 bg-opacity-25 w-1/5 h-full">
-     
+</head>
+<body>
+    <main class="container ">
+        <div class="relative top-full">
+            <section class="relative top-60 weather-card ">
+
+                <div class="weather-info">
+                <div class=" bg-slate-950 bg-opacity-30 w-1/4 text-center">
                     <h2>@Model.City</h2>
                     <p>@Model.TemperatureC°C</p>
                     <p>Humidity: @Model.Humidity%</p>
                     <p>Wind Speed: @Model.WindSpeed km/h</p>
                     <p>Date: @Model.Date.ToString("dd-MM-yyyy")</p>
                     <p>@Model.Summary</p>
-                    <img class="" src="@Model.Icon.Url" alt="@Model.Summary" />
+                    <img class="relative left-16" src="@Model.Icon.Url" alt="@Model.Summary" />
+                </div>
 
+                </div>
+            </section>
         </div>
-    </div>
-</div>
 
-            
-        
-
-    
-        </body>
-
-
+    </main>
+    <footer class="container">
+    </footer>
+</body>
 </html>

@@ -11,7 +11,7 @@ namespace Gamma_News.Services
             _httpClient = httpClient;
         }
 
-        public async Task<Weather> GetWeatherAsync(string city = "linköping")
+        public async Task<Weather> GetWeatherAsync(string city = "Linkoping")
         {
             //string apiKey = "";//where is the api
             string requestUri = $"https://weatherapi.dreammaker-it.se/Forecast?city={city}&lang=English";

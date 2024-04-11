@@ -1,11 +1,11 @@
 module.exports = {
 
-    tailwindConfig: './styles/tailwind.config.js',
+    tailwindConfig: './tailwind.config.js',
 
     content: [
         './Pages/**/*.cshtml',
         './Views/**/*.cshtml',
-        './Manage/**/*.cshtml'
+        './Account/**/*.cshtml'
     ],
     theme: {
         extend: {},

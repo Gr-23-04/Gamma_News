@@ -1,0 +1,43 @@
+﻿@model List<Gamma_News.Models.ViewModels.Article>
+
+
+
+
+@if (Model != null)
+{
+    
+
+    
+    foreach(var art in Model)
+    {
+        
+
+         <a href="/Article/@art.Id">
+            <div class="w-full flex-col p-[80px] m-1.5 bg-[#162C3E] scale-125">
+                <div class="flex flex-row mb-2.5">
+                   
+                    <div class="flex flex-row p-2 w-[50%]">
+                      
+                        <div class="flex flex-row p-0 justify-between items-center">
+                            <h2 class="rounded px-4 py-2 text-xl font-bold text-slate-300">@art.Headline</h2>
+                            <p class="border-2 border-white px-4 py-2 font-bold text-slate-300 hover:bg-blue-700">
+                                READ MORE
+                            </p>
+                        </div>
+
+                        <div class="invisible select-all mt-4 text-xs font-bold text-white">
+                            <p>@art.Preview</p>
+                        </div>
+                    </div>
+               
+                    <div class="w-[50%] bg-white">
+                        <img class="h-96 w-full object-cover" src="@art.ImageLink" />
+                    </div>
+                </div>
+            </div>
+         </a>
+   
+
+
+    }   
+}
