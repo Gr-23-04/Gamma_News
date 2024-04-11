@@ -988,6 +988,10 @@ select {
   z-index: 50;
 }
 
+.z-\[1\] {
+  z-index: 1;
+}
+
 .-m-2 {
   margin: -0.5rem;
 }
@@ -6356,9 +6360,18 @@ select {
   .xl\:-top-6 {
     top: -1.5rem;
   }
+
+  .xl\:px-32 {
+    padding-left: 8rem;
+    padding-right: 8rem;
+  }
 }
 
 @media (prefers-color-scheme: dark) {
+  .dark\:bg-\[hsla\(0\2c 0\%\2c 5\%\2c 0\.55\)\] {
+    background-color: hsla(0,0%,5%,0.55);
+  }
+
   .dark\:text-neutral-300 {
     --tw-text-opacity: 1;
     color: rgb(212 212 212 / var(--tw-text-opacity));
