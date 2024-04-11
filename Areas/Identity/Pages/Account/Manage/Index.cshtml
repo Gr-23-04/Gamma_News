@@ -12,16 +12,78 @@
     ViewData["ActivePage"] = ManageNavPages.Index;
 }
 
+
 <div class="relative container mx-auto">
 
-<h3 class="relative place-content-center">@ViewData["Title"]</h3>
 
-<partial name="_StatusMessage" for="StatusMessage" />
-    <form enctype="multipart/form-data" id="profile-form" method="post" class="bg-gradient-to-tr from-sky-900 via-slate-800 to-sky-900 p-10 relative text-slate-300 top-80 border-4 border-orange-500 drop-shadow-2xl shadow-2xl " novalidate="novalidate">
+
+<div dir="rtl" class="container">
+
+    <div class="absolute -right-20 top-32 z-10 mx-auto">
+    </div>
+</div>
+
+
+<div class="relative">
+
+        <div class="animate-pulse -inset-1 absolute bg-gradient-to-r blur from-rose-400 h-full to-indigo-500 top-80 via-fuchsia-500">
+        </div>
+
+    <form enctype="multipart/form-data" id="profile-form" method="post" class="bg-gradient-to-tr from-sky-900 via-slate-800 to-sky-900 p-10 relative text-slate-300 top-80 drop-shadow-2xl shadow-2xl " novalidate="novalidate">
+
         <div class="container space-y-12 relative left-10">
             <div class="">
                 <h2 class="mx-auto text-3xl pb-1 font-semibold leading-7 text-slate-300">Profile</h2>
                 <p class="mt-1  leading-6 text-slate-300">This information will be displayed publicly so be careful what you share.</p>
+
+
+                <div dir="rtl">
+
+                        <div class="absolute">
+                            <label for="cover-photo" class="block absolute  text-lg mx-auto font-medium leading-6 text-slate-300">Cover photo</label>
+                            <div class="mt-2 flex justify-center rounded-lg border border-dashed border-gray-900/25 px-6 py-10">
+                                <div class="text-center ">
+                                    @if(user.profile_image == null )
+                                    {
+                                        
+                                    <svg class="relative bottom-5 mx-auto size-60 border-4 rounded-3xl border-indigo-500 text-slate-300" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                    <path fill-rule="evenodd" d="M1.5 6a2.25 2.25 0 012.25-2.25h16.5A2.25 2.25 0 0122.5 6v12a2.25 2.25 0 01-2.25 2.25H3.75A2.25 2.25 0 011.5 18V6zM3 16.06V18c0 .414.336.75.75.75h16.5A.75.75 0 0021 18v-1.94l-2.69-2.689a1.5 1.5 0 00-2.12 0l-.88.879.97.97a.75.75 0 11-1.06 1.06l-5.16-5.159a1.5 1.5 0 00-2.12 0L3 16.061zm10.125-7.81a1.125 1.125 0 112.25 0 1.125 1.125 0 01-2.25 0z" clip-rule="evenodd"></path>
+                                        </svg>
+                                    }
+                                    else if (user.profile_image != null)
+                                    {
+                                     
+                                      
+
+        <img class="relative rounded-full bottom-5 mx-auto size-60 border-8" src="@user.profile_image" />
+
+                                        
+                                    }
+
+                                   
+
+                                            <input asp-for="Input.profile_image" type="file" accept=".WEBP, .BMP, .JPEG, .PNG, .GIF" class="hidden select-all">
+                                    <div class="relative shadow-md shadow-sky-600 border-2 border-sky-500 rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white hover:bg-indigo-500 focus-visible:outline-indigo-600">
+                                       <div class="select-none">
+
+                                        Choose Profile Image
+                                       </div>
+
+                                    </div>
+                                            </input>
+                                  
+
+<partial name="_StatusMessage" for="StatusMessage" />
+
+                                    <div class="mt-4 flex text-sm leading-6 text-slate-300 relative">
+                                        <button asp-for="Input.profile_image" id="update-profile-button" type="submit" name="profile_image" class="relative mx-auto border-2 border-sky-500 rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-md shadow-sky-600 hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Upload</button>
+                                </div>
+                                    <p class="relative text-xs top-3 leading-5 text-gray-300">WEBP, BMP, JPEG, PNG, and GIF images up to 5MB</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
 
                 <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
                     <div class="sm:col-span-4">
@@ -41,58 +103,15 @@
                     <div class="col-span-full">
                         <label for="about" class="block text-lg font-medium leading-6 text-slate-300">About</label>
                         <div class="mt-2">
-                            <textarea id="about" name="about" rows="3" class="block w-full rounded-md border-0 py-1.5 text-slate-500 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-slate-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"></textarea>
+                            <textarea id="about" name="about" rows="3" class="block  w-[50%] rounded-md border-0 py-1.5 text-slate-500 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-slate-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"></textarea>
                         </div>
                         <p class="mt-3 text-sm leading-6 text-slate-300">Tell us about yourself.</p>
                     </div>
 
-                    <div class="col-span-full">
-                        <label for="photo" class="block text-sm font-medium leading-6 text-slate-300">Photo</label> 
-                        <div class="mt-2 flex items-center gap-x-3">
-
-                            <svg class="size-20 text-slate-300" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                                <path fill-rule="evenodd" d="@Model.Input.profile_image" clip-rule="evenodd" />
-                            </svg>
-
-                            <button type="button" class="rounded-md bg-white px-2.5 py-1.5 text-sm font-semibold text-slate-500 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-slate-50">Change</button>
-                            </>
-                        </div>
-
-                        <div class="col-span-full c">
-                            <label for="cover-photo" class="block  text-lg mx-auto font-medium leading-6 text-slate-300">Cover photo</label>
-                            <div class="mt-2 flex justify-center rounded-lg border border-dashed border-gray-900/25 px-6 py-10">
-                                <div class="text-center ">
-                                    @if(Model.Input.profile_image == null )
-                                    {
-                                        
-                                    <svg class="relative bottom-5 mx-auto size-60 border-4 rounded-3xl border-indigo-500 text-slate-300" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                                    <path fill-rule="evenodd" d="M1.5 6a2.25 2.25 0 012.25-2.25h16.5A2.25 2.25 0 0122.5 6v12a2.25 2.25 0 01-2.25 2.25H3.75A2.25 2.25 0 011.5 18V6zM3 16.06V18c0 .414.336.75.75.75h16.5A.75.75 0 0021 18v-1.94l-2.69-2.689a1.5 1.5 0 00-2.12 0l-.88.879.97.97a.75.75 0 11-1.06 1.06l-5.16-5.159a1.5 1.5 0 00-2.12 0L3 16.061zm10.125-7.81a1.125 1.125 0 112.25 0 1.125 1.125 0 01-2.25 0z" clip-rule="evenodd"></path>
-                                        </svg>
-                                    }
-                                    else
-                                    {
-                                     
-                                      
-                                    <div class="mx-auto h-12 w-12 text-slate-300" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-
-                                            <img src="@Model.Input.profile_image" />
-
-                                             </div>
-                                        
-                                    }
+                    
 
 
 
-                                    <input asp-for="Input.profile_image" type="file"  accept=".WEBP, .BMP, .JPEG, .PNG, .GIF" class="relative shadow-md shadow-sky-600   border-2 border-sky-500 rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white hover:bg-indigo-500  focus-visible:outline-indigo-600" />
-
-
-                                    <div class="mt-4 flex text-sm leading-6 text-slate-300 relative left-28">
-                                        <button asp-for="Input.profile_image" id="update-profile-button" type="submit" name="profile_image" class="border-2 border-sky-500 rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-md shadow-sky-600 hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Upload</button>
-                                </div>
-                                    <p class="relative text-xs top-3 leading-5 text-gray-300">WEBP, BMP, JPEG, PNG, and GIF images up to 5MB</p>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
 
@@ -232,15 +251,21 @@
                 <button id="update-profile-button" type="submit" class="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Save</button>
                 <button type="button" class="text-sm font-semibold leading-6 text-slate-300 hover:text-indigo-400">Cancel</button>
             </div>
-        </div>
     </form>
+</div>
+        </div>
+   
 
 </div>
 
 
 
 
+<div class="size-60">
 
+   @*  <partial name="_newsletter_partial"></partial> *@
+
+</div>
 
 @* <img class="absolute h-60 w-60 rounded-full z-50 border-8" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt=""> *@
 
