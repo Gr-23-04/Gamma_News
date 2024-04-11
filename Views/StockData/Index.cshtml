@@ -1,0 +1,59 @@
+﻿@model IEnumerable<StockData>
+
+<div class="col-3" style="padding-top:200px"></div>
+<style>
+    table, th, td {
+        border:1px solid white;
+        border-collapse: collapse;
+    }
+</style>
+
+<form>
+    Region <input name="region" placeholder="Region" type="search" aria-label="Search" />
+</form>
+
+
+<table class="table" align="center" border="1" cellpadding="15" cellspacing="0" width="60%">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Symbol)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Close)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PercentChange)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model != null)
+        {
+            foreach (var item in Model)
+            {
+
+                <tr>
+                    <td>
+                        @item.Name
+                    </td>
+                    <td>
+                        @item.Symbol
+                    </td>
+                    <td>
+                        @item.Close
+                    </td>
+                    <td>
+                        @item.PercentChange
+                    </td>
+                </tr>
+            }
+
+        }
+    </tbody>
+    
+</table>
+

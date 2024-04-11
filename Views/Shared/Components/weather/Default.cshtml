@@ -7,18 +7,19 @@
 
 
     <div id="menu_weather_container" class="">
-        <div class="-b hover:scale-105 relative transition" style="width: 40%">
-            <a class="" href="/Weather">
-                <p class="font-bold left-4 p-2 relative text-slate-300 top-3" style="margin-left:-21%; margin-top: -27%;">linköping</p>
+        <div class=" hover:scale-105 relative transition" style="width: 40%">
+            <a class="" asp-controller="Weather" asp-action="Index">
+                <p class="font-bold left-4 p-2 relative text-slate-300 top-3" style="margin-left:-21%; margin-top: -27%;">@Model.City</p>
 
-                <img class="scale-150" src="https://openweathermap.org/img/wn/04d@4x.png" style="/* margin-top: -35%; *//* margin-left: -60%; */">
-                <p class="font-bold left-4 relative text-slate-300 top-3" style="margin-left: 13%; margin-top: -20%">6°C</p>
-            </a><p>
-                <a class="" href="/Weather">
-                </a>
-            </p>
+                <img class="scale-150" src="@Model.Icon.Url" style="/* margin-top: -35%; *//* margin-left: -60%; */">
+                <p class="font-bold left-4 relative text-slate-300 top-3" style="margin-left: 13%; margin-top: -20%">@Model.TemperatureC°C</p>
+            </a>
+              
+             
+         
         </div>
     </div>
         
 
 }
+

@@ -27,7 +27,7 @@ namespace Gamma_News.Services
             blobClient.Upload(fileNameWithPath, true);
             return blobClient.Uri;
         }
-    
+
 
 
     }

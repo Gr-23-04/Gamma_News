@@ -3,8 +3,10 @@ using Gamma_News.Models.ViewModels;
 using Gamma_News.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+
 using Microsoft.EntityFrameworkCore;
 using Microsoft.VisualStudio.Web.CodeGenerators.Mvc.Templates.Blazor;
+
 
 namespace Gamma_News.Controllers
 {
@@ -22,9 +24,19 @@ namespace Gamma_News.Controllers
 
 
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            
+
+
+
+
+
+            //var articles = await _articleService.GetAllArticles();
+
+            //article = articles.Where(a => a.Id == article.Id).Select(a => a).First();
+
+
+
             return View();
         }
 
@@ -42,7 +54,7 @@ namespace Gamma_News.Controllers
             newArticle.ImageLink = _articleService.UploadImage(newArticle.Image).Result;
             _articleService.CreateArticle(newArticle);
             return View();
-           
+
         }
         [HttpGet]
         public IActionResult AddArticle()
@@ -75,8 +87,8 @@ namespace Gamma_News.Controllers
         //    return View();
         //}
 
-     
-        
+
+
 
 
 

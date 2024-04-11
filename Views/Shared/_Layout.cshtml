@@ -15,11 +15,16 @@
     <script src="~/js/site.js" asp-append-version="true"></script>
     
 </head>
-<body class="bg-gradient-to-r from-[#04193ab4] via-sky-900 to-[#04193ab4] font-sans">
+<body class="bg-gradient-to-r from-[#04193ab4] via-sky-900 to-[#04193ab4] font-sans"> 
 
     <header class="">
         <div class="scroll"></div>
+
+    
+
     <partial name="_Menu"></partial>
+        
+        
 
     
 
@@ -35,20 +40,10 @@
     
         <main>
 
-        @if (ManageNavPages.Index != ManageNavPages.Index)
-        {
-            <div class="relative top-60">
-                <partial name="_ManageNav" />
-            </div>
-            @RenderBody()
-            ;
-        }
-        else
-        {
+       
 
             @RenderBody()
-            ;
-        }
+         
         </main>
    
 
