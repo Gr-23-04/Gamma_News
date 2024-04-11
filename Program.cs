@@ -108,6 +108,9 @@ namespace Gamma_News
                 pattern: "{controller=Home}/{action=Index}/{id?}");
             app.MapRazorPages();
 
+
+
+
             app.Run();
         }
     }
