@@ -1,0 +1,47 @@
+﻿@model Gamma_News.Models.ViewModels.Article
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+
+
+<div class="container my-24 mx-auto md:px-6">
+    <!-- Section: Design Block -->
+    <section class="mb-32">
+        <!-- Jumbotron -->
+        <div class="container mx-auto text-center lg:text-left xl:px-32">
+            <div class="flex grid items-center lg:grid-cols-2">
+                <div class="mb-12 lg:mb-0">
+                    <div
+                        class="relative z-[1] block rounded-lg bg-[hsla(0,0%,100%,0.55)] px-6 py-12 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] backdrop-blur-[30px] dark:bg-[hsla(0,0%,5%,0.55)] dark:shadow-black/20 md:px-12 lg:-mr-14">
+                        <h2 class="mb-8 text-3xl font-bold">@Model.Headline</h2>
+                        <p class="mb-8 pb-2 text-neutral-500 dark:text-neutral-300 lg:pb-0">
+                            @Html.Raw(Model.Content)
+                        </p>
+                        <div class="card-footer text-muted">
+                            Published: @Model.CreatedDate.ToString("MMMM dd, yyyy")
+                            @if (Model.Category != null)
+                            {
+                                 @Model.Category.Name
+                            }
+                        </div>
+                      
+                    </div>
+                </div>
+
+                <div>
+                    <!-- Dynamically set the image from the model -->
+                    @if (!string.IsNullOrEmpty(Model.ImageLink))
+                    {
+                        <img src="@Model.ImageLink"
+                            class="w-full rounded-lg shadow-lg dark:shadow-black/20" alt="Article Image" />
+                    }
+                </div>
+            </div>
+        </div>
+        <!-- Jumbotron -->
+    </section>
+    <!-- Section: Design Block -->
+</div>
+

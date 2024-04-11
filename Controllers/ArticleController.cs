@@ -4,6 +4,10 @@ using Gamma_News.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
+using Microsoft.EntityFrameworkCore;
+using Microsoft.VisualStudio.Web.CodeGenerators.Mvc.Templates.Blazor;
+
+
 namespace Gamma_News.Controllers
 {
     public class ArticleController : Controller
@@ -11,10 +15,10 @@ namespace Gamma_News.Controllers
         private readonly ApplicationDbContext _db;
 
         private readonly IArticleService _articleService;
-        public ArticleController(IArticleService articleService)
+        public ArticleController(IArticleService articleService, ApplicationDbContext db)
         {
             _articleService = articleService;
-
+            _db = db;
         }
 
 
@@ -22,6 +26,7 @@ namespace Gamma_News.Controllers
 
         public async Task<IActionResult> Index()
         {
+
 
 
 
@@ -61,6 +66,26 @@ namespace Gamma_News.Controllers
 
         }
 
+        public async Task<IActionResult> Details(int? id) 
+        {
+            
+            if (id == null) 
+            {
+                return NotFound();
+            }
+
+            var article = await _db.Articles.FirstOrDefaultAsync(m => m.Id == id);
+            if (article == null)
+            {
+                return NotFound();
+            }
+
+            return View(article);
+        }
+        //public IActionResult Details() 
+        //{
+        //    return View();
+        //}
 
 
 
