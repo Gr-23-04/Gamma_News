@@ -7,46 +7,73 @@
     var hasExternalLogins = (await SignInManager.GetExternalAuthenticationSchemesAsync()).Any();
 }
 
-<div class="relative flex justify-between">
+<div class="relative flex gap-x-6 justify-between">
 
+        <div class=" group relative">
+            <div class="absolute scale-105 -inset-1 bg-gradient-to-r from-rose-400 via-fuchsia-500 to-indigo-500 opacity-0 blur transition duration-800 group-hover:opacity-100">
+            </div>
+        <button class="nav-link @ManageNavPages.IndexNavClass(ViewContext) w-100 visible opacity-100 btn btn-lg btn-primary relative mx-auto flex min-h-14 max-h-14  min-w-32 items-center justify-center text-lg font-bold text-slate-300 shadow-md shadow-gray-900 bg-gradient-to-r via-sky-900 font-sans" id="profile" asp-page="./Index">Profile</button>
+        </div>
     
-        <a class="nav-link @ManageNavPages.IndexNavClass(ViewContext) relative w-full mx-auto text-center p-3 px-10 btn btn-lg btn-primary rounded-md border-y-2 border-sky-900 border-opacity-50 text-sm font-bold text-slate-300 shadow-md shadow-gray-900 hover:border-sky-400 leading-10 top-16" id="profile" asp-page="./Index">Profile</a>
-    
+
+
+        <div class=" group relative">
+            <div class="absolute scale-105 -inset-1 bg-gradient-to-r from-rose-400 via-fuchsia-500 to-indigo-500 opacity-0 blur transition duration-800 group-hover:opacity-100">
+            </div>
+        <a class="nav-link @ManageNavPages.SettingsNavClass(ViewContext) w-100 visible opacity-100 btn btn-lg btn-primary relative mx-auto flex min-h-14 max-h-14  min-w-32 items-center justify-center text-lg font-bold text-slate-300 shadow-md shadow-gray-900 bg-gradient-to-r via-sky-900 font-sans" id="settings" asp-page="./Settings">Settings</a>
+        </div>
 
 
 
-        <a class="nav-link @ManageNavPages.SettingsNavClass(ViewContext) relative mx-auto text-center p-3 px-10 w-full btn btn-lg btn-primary rounded-md border-y-4 border-sky-900 border-opacity-50 text-sm font-bold text-slate-300 shadow-md shadow-gray-900 hover:border-sky-400 leading-10 top-16" id="settings" asp-page="./Settings">Settings</a>
 
+        <div class=" group relative">
+            <div class="absolute scale-105 -inset-1 bg-gradient-to-r from-rose-400 via-fuchsia-500 to-indigo-500 opacity-0 blur transition duration-800 group-hover:opacity-100">
+            </div>
+        <a class="nav-link @ManageNavPages.EmailNavClass(ViewContext) w-100 visible opacity-100 btn btn-lg btn-primary relative mx-auto flex min-h-14 max-h-14  min-w-32 items-center justify-center text-lg font-bold text-slate-300 shadow-md shadow-gray-900 bg-gradient-to-r via-sky-900 font-sans" id="email" asp-page="./Email">Email</a>
+        </div>
 
-
-
-        <a class="nav-link @ManageNavPages.EmailNavClass(ViewContext) relative mx-auto text-center p-3 px-10 w-full btn btn-lg btn-primary rounded-md border-y-2 border-sky-900 border-opacity-50 text-sm font-bold text-slate-300 shadow-md shadow-gray-900 hover:border-sky-800 leading-10 top-16" id="email" asp-page="./Email">Email</a>
 
 
 
  
+        <div class=" group relative">
+            <div class="absolute scale-105 -inset-1 bg-gradient-to-r from-rose-400 via-fuchsia-500 to-indigo-500 opacity-0 blur transition duration-800 group-hover:opacity-100">
+            </div>
+        <a class="nav-link @ManageNavPages.ChangePasswordNavClass(ViewContext) w-100 visible opacity-100 btn btn-lg btn-primary relative mx-auto flex min-h-14 max-h-14  min-w-32 items-center justify-center text-lg font-bold text-slate-300 shadow-md shadow-gray-900 bg-gradient-to-r via-sky-900 font-sans" id="change-password" asp-page="./ChangePassword">Password</a>
+        </div>
 
-        <a class="nav-link @ManageNavPages.ChangePasswordNavClass(ViewContext) relative mx-auto text-center p-3 w-full btn btn-lg btn-primary rounded-md border-y-2 border-sky-900 border-opacity-50 text-sm font-bold text-slate-300 shadow-md shadow-gray-900 hover:border-sky-800 leading-10 top-10" id="change-password" asp-page="./ChangePassword">Password</a>
 
 
 
 @if (hasExternalLogins)
 {
 
+            <div class=" group relative">
+                <div class="absolute scale-105 -inset-1 bg-gradient-to-r from-rose-400 via-fuchsia-500 to-indigo-500 opacity-0 blur transition duration-800 group-hover:opacity-100">
+                </div>
+            <a id="external-login" class="nav-link @ManageNavPages.ExternalLoginsNavClass(ViewContext) w-100 visible opacity-100 btn btn-lg btn-primary relative mx-auto flex min-h-14 max-h-14  min-w-32 items-center justify-center text-lg font-bold text-slate-300 shadow-md shadow-gray-900 bg-gradient-to-r via-sky-900 font-sans" asp-page="./ExternalLogins">External logins</a>
+            </div>
 
-            <a id="external-login" class="nav-link @ManageNavPages.ExternalLoginsNavClass(ViewContext) relative mx-auto text-center p-3 px-10 w-full btn btn-lg btn-primary rounded-md border-y-2 border-sky-900 border-opacity-50 text-sm font-bold text-slate-300 shadow-md shadow-gray-900 hover:border-sky-800 leading-10 top-16" asp-page="./ExternalLogins">External logins</a>
 
    
 }
 
+        <div class=" group relative">
+            <div class="absolute scale-105 -inset-1 bg-gradient-to-r from-rose-400 via-fuchsia-500 to-indigo-500 opacity-0 blur transition duration-800 group-hover:opacity-100">
+            </div>
+        <a class="nav-link @ManageNavPages.TwoFactorAuthenticationNavClass(ViewContext) w-100 visible opacity-100 btn btn-lg btn-primary relative mx-auto flex min-h-14 max-h-14  min-w-32 items-center justify-center text-lg font-bold text-slate-300 shadow-md shadow-gray-900 bg-gradient-to-r via-sky-900 font-sans" id="two-factor" asp-page="./TwoFactorAuthentication">Two-factor</a>
+        </div>
 
-        <a class="nav-link @ManageNavPages.TwoFactorAuthenticationNavClass(ViewContext) relative mx-auto text-center p-3 px-10 w-full btn btn-lg btn-primary rounded-md border-y-2 border-sky-900 border-opacity-50 text-sm font-bold text-slate-300 shadow-md shadow-gray-900 hover:border-sky-800 leading-10 top-16" id="two-factor" asp-page="./TwoFactorAuthentication">Two-factor</a>
 
 
 
 
+        <div class=" group relative">
+            <div class="absolute scale-105 -inset-1 bg-gradient-to-r from-rose-400 via-fuchsia-500 to-indigo-500 opacity-0 blur transition duration-800 group-hover:opacity-100">
+            </div>
+        <a class="nav-link @ManageNavPages.PersonalDataNavClass(ViewContext) w-100 visible opacity-100 btn btn-lg btn-primary relative mx-auto flex min-h-14 max-h-14  min-w-32 items-center justify-center text-lg font-bold text-slate-300 shadow-md shadow-gray-900 bg-gradient-to-r via-sky-900 font-sans" id="personal-data" asp-page="./PersonalData">Personal data</a>
+        </div>
 
-        <a class="nav-link @ManageNavPages.PersonalDataNavClass(ViewContext) relative mx-auto text-center p-3 px-10 w-full btn btn-lg btn-primary rounded-md border-y-2 border-sky-900 border-opacity-50 text-sm font-bold text-slate-300 shadow-md shadow-gray-900 hover:border-sky-800 leading-10 top-16" id="personal-data" asp-page="./PersonalData">Personal data</a>
 
 
 
