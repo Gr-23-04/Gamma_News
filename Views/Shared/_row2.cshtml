@@ -5,11 +5,6 @@
 
 }
 
-
-
-
-
-
 <!-- Container for demo purpose -->
 <div class="container mx-auto my-24 md:px-6">
     <!-- Section: Design Block -->
@@ -18,7 +13,7 @@
         @* basic div *@
             @if (Model != null)
             {
-                @foreach (var article in Model)
+            @foreach (var article in Model.Where(a => a.CategoryId == 1))
                 {
                     <a href="/Article/@article.Id">
                         <div class="grid gap-6 lg:grid-rows-2 xl:gap-x-12">

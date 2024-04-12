@@ -1,11 +1,9 @@
 ﻿@model List<Gamma_News.Models.ViewModels.Article>
-@{
 
 
-
-}
-
-
+@* .Where(u => u.Id == user.Id)
+                .Select(u => u.profile_image)
+                .FirstOrDefaultAsync(); *@
 
 <div style="background-color:#162C3E;display:flex;flex-direction:column;height:80vh;padding:80px;margin-bottom:150px;" class="w-full">
     <!-- Container for demo purpose -->
@@ -16,28 +14,24 @@
             @* basic div *@
             @if (Model != null)
             {
-                @foreach (var article in Model)
+                @foreach (var article in Model.Where(a=>a.CategoryId==6)) //look for all
                 {
-                    <a href="/Article/@article.Id">
+                    <a href="/Article/@article.Id"> @*this is not the adress used anymore*@
                         <div class="grid gap-6 lg:grid-rows-2 xl:gap-x-12">
                             <div class="mb-6 lg:mb-0">
-                                <div class="shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] relative block rounded-lg dark:bg-neutral-700">
+                                <div class="relative block rounded-lg shadow-lg dark:bg-neutral-700">
                                     <div class="flex">
                                         @* image *@
                                         <div class="flex">
                                             <div class="relative mx-4 -mt-4 overflow-hidden rounded-lg bg-cover bg-no-repeat shadow-lg dark:shadow-black/20" data-te-ripple-init data-te-ripple-color="light">
-                                                <img src="@article.ImageLink" class="w-full" />
-                                                @* <a href="#!">
-                                        <div class="opacity-0 bg-[hsla(0,0%,98.4%,.15)] absolute bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden bg-fixed transition duration-300 ease-in-out hover:opacity-100">
-                                        <img src="@article.ImageLink" class="w-full" />
-                                        </div>
-                                        </a> *@
+                                                <img src="@article.ImageLink" class="h-full w-full object-cover" />
+                                               
                                             </div>
                                         </div>
                                         @* text *@
                                         <div class="p-6 text-white">
                                             <h5 class="mb-3 text-left text-lg font-bold">@article.Headline</h5>
-                                            <p class="mb-4 text-left text-white">
+                                            <p class="mb-4 text-left">
                                                 <small>
                                                     Anna Maria Doe
                                                     Published
@@ -48,7 +42,7 @@
                                                 @article.Preview
                                             </p>
                                             @* ReadMore link *@
-                                            <a href="#!" data-te-ripple-init data-te-ripple-color="light" class="bg-primary shadow-[0_4px_9px_-4px_#3b71ca] inline-block rounded-full px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]">
+                                            <a href="#" class="bg-primary rounded-full px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white transition duration-150 ease-in-out hover:bg-primary-600">
                                                 Read
                                                 more
                                             </a>
@@ -70,7 +64,121 @@
 </div>
 
 
+<!-- Container for demo purpose -->
+<div class="container mx-auto my-24 md:px-6">
+    <!-- Section: Design Block -->
+    <section class="mb-32 text-center">
+        <!-- Single article -->
+        <div class="mb-12 flex flex-wrap justify-center">
+            <div class="shrink-0 grow-0 w-full basis-auto px-3 md:w-10/12">
+                <div class="relative mb-6 overflow-hidden rounded-lg bg-cover bg-no-repeat shadow-lg dark:shadow-black/20"
+                     data-te-ripple-init data-te-ripple-color="light">
+                    <img src="https://mdbcdn.b-cdn.net/img/new/slides/080.jpg" class="w-full" />
+                    <a href="#!">
+                        <div class="opacity-0 bg-[hsla(0,0%,98.4%,.15)] absolute bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden bg-fixed transition duration-300 ease-in-out hover:opacity-100">
+                        </div>
+                    </a>
+                </div>
+            </div>
 
+            <div class="shrink-0 grow-0 w-full basis-auto px-3 md:w-8/12 xl:w-6/12">
+                <h5 class="mb-3 text-lg font-bold">
+                    This is a very long post title
+                </h5>
+                <p class="mb-4 text-neutral-500 dark:text-neutral-300">
+                    <small>
+                        Published <u>15.01.2022</u> by
+                        <a href="#!">Anna Maria Doe</a>
+                    </small>
+                </p>
+                <p class="mb-6">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa
+                    atque hic, officiis blanditiis accusantium veritatis ullam?
+                    Maiores atque autem velit officiis molestiae voluptates suscipit
+                    eligendi, vero expedita sequi, doloremque modi?
+                </p>
+                <a data-te-ripple-init data-te-ripple-color="light"
+                   class="bg-primary shadow-[0_4px_9px_-4px_#3b71ca] inline-block rounded-full px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]"
+                   href="" role="button">Read more</a>
+            </div>
+        </div>
+        <!-- Single article -->
+        <!-- Single article -->
+        <div class="mb-12 flex flex-wrap justify-center">
+            <div class="shrink-0 grow-0 w-full basis-auto px-3 md:w-10/12">
+                <div class="relative mb-6 overflow-hidden rounded-lg bg-cover bg-no-repeat shadow-lg dark:shadow-black/20"
+                     data-te-ripple-init data-te-ripple-color="light">
+                    <img src="https://mdbcdn.b-cdn.net/img/new/slides/100.jpg" class="w-full" />
+                    <a href="#!">
+                        <div class="opacity-0 bg-[hsla(0,0%,98.4%,.15)] absolute bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden bg-fixed transition duration-300 ease-in-out hover:opacity-100">
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="shrink-0 grow-0 w-full basis-auto px-3 md:w-8/12 xl:w-6/12">
+                <h5 class="mb-3 text-lg font-bold">
+                    This is a very long post title
+                </h5>
+
+                <p class="mb-4 text-neutral-500 dark:text-neutral-300">
+                    <small>
+                        Published <u>14.01.2022</u> by
+                        <a href="#!">Anna Maria Doe</a>
+                    </small>
+                </p>
+                <p class="mb-6">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa
+                    atque hic, officiis blanditiis accusantium veritatis ullam?
+                    Maiores atque autem velit officiis molestiae voluptates suscipit
+                    eligendi, vero expedita sequi, doloremque modi?
+                </p>
+                <a data-te-ripple-init data-te-ripple-color="light"
+                   class="bg-primary shadow-[0_4px_9px_-4px_#3b71ca] inline-block rounded-full px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]"
+                   href="" role="button">Read more</a>
+            </div>
+        </div>
+        <!-- Single article -->
+        <!-- Single article -->
+        <div class="mb-12 flex flex-wrap justify-center">
+            <div class="shrink-0 grow-0 w-full basis-auto px-3 md:w-10/12">
+                <div class="relative mb-6 overflow-hidden rounded-lg bg-cover bg-no-repeat shadow-lg dark:shadow-black/20"
+                     data-te-ripple-init data-te-ripple-color="light">
+                    <img src="https://mdbcdn.b-cdn.net/img/new/slides/101.jpg" class="w-full" />
+                    <a href="#!">
+                        <div class="opacity-0 bg-[hsla(0,0%,98.4%,.15)] absolute bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden bg-fixed transition duration-300 ease-in-out hover:opacity-100">
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="shrink-0 grow-0 w-full basis-auto px-3 md:w-8/12 xl:w-6/12">
+                <h5 class="mb-3 text-lg font-bold">
+                    This is a very long post title
+                </h5>
+
+                <p class="mb-4 text-neutral-500 dark:text-neutral-300">
+                    <small>
+                        Published <u>13.01.2022</u> by
+                        <a href="#!">Anna Maria Doe</a>
+                    </small>
+                </p>
+                <p class="mb-6">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa
+                    atque hic, officiis blanditiis accusantium veritatis ullam?
+                    Maiores atque autem velit officiis molestiae voluptates suscipit
+                    eligendi, vero expedita sequi, doloremque modi?
+                </p>
+                <a data-te-ripple-init data-te-ripple-color="light"
+                   class="bg-primary shadow-[0_4px_9px_-4px_#3b71ca] inline-block rounded-full px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]"
+                   href="" role="button">Read more</a>
+            </div>
+        </div>
+        <!-- Single article -->
+    </section>
+    <!-- Section: Design Block -->
+</div>
+<!-- Container for demo purpose -->
 
 
 
