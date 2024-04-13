@@ -23,7 +23,7 @@ namespace Gamma_News.Helper
 
             message.Sender = MailboxAddress.Parse(_configuration["SenderEmail"]);
 
-            message.Sender.Name = _configuration["SenderName"];
+            message.Sender.Name = _configuration["Omega News"];
 
             message.To.Add(MailboxAddress.Parse(email));
 
