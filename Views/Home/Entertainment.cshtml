@@ -2,7 +2,7 @@
 
 
 
-<div class="container mx-auto my-24 md:px-6">
+<div class="relative top-60 container mx-auto md:px-6">
     <!-- Section: Design Block -->
     <section class="mb-32 text-center flex-row flex p-4">
         @* basic div *@
@@ -10,7 +10,7 @@
         {
             @foreach (var article in Model.Where(a => a.CategoryId == 2))
             {
-                <a href="/Article/@article.Id">
+             
                     <div class="grid gap-6 lg:grid-rows-2 xl:gap-x-12 ">
                         <div class="mb-6 lg:mb-0">
                             <div class="shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] relative block rounded-lg">
@@ -39,7 +39,7 @@
                                         @article.Preview
                                     </p>
                                     @* ReadMore link *@
-                                    <a href="#!" data-te-ripple-init data-te-ripple-color="light" class="bg-primary shadow-[0_4px_9px_-4px_#3b71ca] inline-block rounded-full px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]">
+                                <a href="/Article/Details/@article.Id" data-te-ripple-init data-te-ripple-color="light" class="bg-primary shadow-[0_4px_9px_-4px_#3b71ca] inline-block rounded-full px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]">
                                         Read
                                         more
                                     </a>
@@ -47,7 +47,7 @@
                             </div>
                         </div>
                     </div>
-                </a>
+                
             }
         }
     </section>

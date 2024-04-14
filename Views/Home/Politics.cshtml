@@ -9,8 +9,8 @@
 @* row4 template *@
 @foreach (var article in Model.Where(a => a.CategoryId == 4))
 {
-    <a href="/Article/@article.Id">
-        <div class="container mx-auto my-24 md:px-6">
+    <a href="/Article/Details/@article.Id">
+        <div class="relative container top-60 mx-auto md:px-6">
             <!-- Section: Design Block -->
             <section class="mb-32 text-center">
                 <div class="flex justify-center">
