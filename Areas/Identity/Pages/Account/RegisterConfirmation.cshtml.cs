@@ -1,7 +1,7 @@
 ﻿// Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 #nullable disable
-
+using Gamma_News.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI.Services;
@@ -15,10 +15,10 @@ namespace Gamma_News.Areas.Identity.Pages.Account
     [AllowAnonymous]
     public class RegisterConfirmationModel : PageModel
     {
-        private readonly UserManager<IdentityUser> _userManager;
+        private readonly UserManager<User> _userManager;
         private readonly IEmailSender _sender;
 
-        public RegisterConfirmationModel(UserManager<IdentityUser> userManager, IEmailSender sender)
+        public RegisterConfirmationModel(UserManager<User> userManager, IEmailSender sender)
         {
             _userManager = userManager;
             _sender = sender;
@@ -44,6 +44,7 @@ namespace Gamma_News.Areas.Identity.Pages.Account
 
         public async Task<IActionResult> OnGetAsync(string email, string returnUrl = null)
         {
+
             if (email == null)
             {
                 return RedirectToPage("/Index");
@@ -58,8 +59,8 @@ namespace Gamma_News.Areas.Identity.Pages.Account
 
             Email = email;
             // Once you add a real email sender, you should remove this code that lets you confirm the account
-            DisplayConfirmAccountLink = true;
-            if (DisplayConfirmAccountLink)
+
+            if (user.EmailConfirmed != true)
             {
                 var userId = await _userManager.GetUserIdAsync(user);
                 var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);
@@ -67,7 +68,7 @@ namespace Gamma_News.Areas.Identity.Pages.Account
                 EmailConfirmationUrl = Url.Page(
                     "/Account/ConfirmEmail",
                     pageHandler: null,
-                    values: new { area = "Identity", userId = userId, code = code, returnUrl = returnUrl },
+                    values: new { area = "Identity", userId = userId, code = true, returnUrl = returnUrl },
                     protocol: Request.Scheme);
             }
 
