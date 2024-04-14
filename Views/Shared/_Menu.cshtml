@@ -20,8 +20,9 @@
                         
             </div>
         </div>
+
         <!---Subscription button--->
-                <div class="relative bg-gray-100 bottom-1.5 mx-auto">
+        <div class="relative bg-gray-100 bottom-1.5 mx-auto">
                     <div class="relative container mx-auto px-4 top-24">
 
                         <button class="absolute mx-auto inline-block bg-blue-500 text-white font-bold py-2 px-4 rounded hover:bg-blue-700 transition duration-150 ease-in-out"
@@ -39,12 +40,11 @@
                     </script>
                 </div>
 
-
         <div dir="rtl">
-        <div class="">
-                <div class="absolute right-16 z-40">
-        <partial name="_LoginPartial"></partial>
-        </div>
+            <div class="">
+                    <div class="absolute right-16 z-40">
+                    <partial name="_LoginPartial"></partial>
+            </div>
         </div>
         </div>
         <div class="lg:hidden">
@@ -103,7 +103,7 @@
                                 </svg>
                             </div>
                             <div class="flex-auto">
-                                <a href="#" class="block text-lg font-bold text-white hover:text-slate-900">
+                                <a class="block text-lg font-bold text-white hover:text-slate-900" asp-controller="Home" asp-action="Entertainment">
                                     Entertainment
                                     <span class="absolute inset-0"></span>
                                 </a>
@@ -117,7 +117,7 @@
                                 </svg>
                             </div>
                             <div class="flex-auto">
-                                <a href="#" class="block text-lg font-bold text-white hover:text-slate-900">
+                                <a class="block text-lg font-bold text-white hover:text-slate-900" asp-controller="Home" asp-action="Anime">
                                     Anime
                                     <span class="absolute inset-0"></span>
                                 </a>
@@ -131,11 +131,11 @@
                                 </svg>
                             </div>
                             <div class="flex-auto">
-                                <a href="#" class="block text-lg font-bold text-white hover:text-slate-900">
+                                <a class="block text-lg font-bold text-white hover:text-slate-900" asp-controller="Home" asp-action="Politics">
                                     Politics
                                     <span class="absolute inset-0"></span>
                                 </a>
-                                <p class="mt-1 text-gray-500">You you should vote for and why</p>
+                                <p class="mt-1 text-gray-500">You you should vote for and why</p>i 
                             </div>
                         </div>
                         <div class="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-gray-50">
@@ -151,6 +151,23 @@
                                 </a>
                                 <a class="block hover:text-slate-400">
                                     <p class="font-semibold text-gray-500">See if you can solve todays puzzle</p>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-gray-50">
+                            <div class="flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">
+                                <svg class="h-6 w-6 text-gray-600 group-hover:text-indigo-600" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99" />
+                                </svg>
+                            </div>
+                            <div class="flex-auto">
+                                <a class="block text-lg font-bold text-white hover:text-slate-900" asp-controller="Home" asp-action="World">
+                                    World
+                                    <span class="absolute inset-0"></span>
+                                </a>
+                                <a class="block hover:text-slate-400">
+                                    <p class="font-semibold text-gray-500">World</p>
                                 </a>
                             </div>
                         </div>
