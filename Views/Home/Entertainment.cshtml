@@ -6,50 +6,50 @@
     <!-- Section: Design Block -->
     <section class="mb-32 text-center flex-row flex p-4">
         @* basic div *@
-            @if (Model != null)
-            {
+        @if (Model != null)
+        {
             @foreach (var article in Model.Where(a => a.CategoryId == 2))
-                {
-                   <a href="/Article/@article.Id">
-                        <div class="grid gap-6 lg:grid-rows-2 xl:gap-x-12 ">
-                            <div class="mb-6 lg:mb-0">
-                                <div class="shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] relative block rounded-lg">
-                                    @* image *@
-                                    <div class="flex">
-                                        <div class="relative mx-4 -mt-4 overflow-hidden bg-cover bg-no-repeat shadow-lg dark:shadow-black/20" data-te-ripple-init data-te-ripple-color="light">
-                                            <img src="@article.ImageLink" class="w-full" />
-                                            <a href="#!">
-                                                <div class="opacity-0 bg-[hsla(0,0%,98.4%,.15)] absolute bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden bg-fixed transition duration-300 ease-in-out hover:opacity-100">
-                                                    <img src="@article.ImageLink" class="w-full" />
-                                                </div>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    @* text *@
-                                    <div class="p-6">
-                                        <h5 class="mb-3 text-lg font-bold text-white">@article.Headline</h5>
-                                        <p class="mb-4 text-gray-300 dark:text-neutral-300">
-                                            <small>
-                                                Anna Maria Doe
-                                                Published
-                                                <u>13.01.2022</u>
-                                            </small>
-                                        </p>
-                                        <p class="mb-4 pb-2 text-white">
-                                            @article.Preview
-                                        </p>
-                                        @* ReadMore link *@
-                                        <a href="#!" data-te-ripple-init data-te-ripple-color="light" class="bg-primary shadow-[0_4px_9px_-4px_#3b71ca] inline-block rounded-full px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]">
-                                            Read
-                                            more
+            {
+                <a href="/Article/@article.Id">
+                    <div class="grid gap-6 lg:grid-rows-2 xl:gap-x-12 ">
+                        <div class="mb-6 lg:mb-0">
+                            <div class="shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] relative block rounded-lg">
+                                @* image *@
+                                <div class="flex">
+                                    <div class="relative mx-4 -mt-4 overflow-hidden bg-cover bg-no-repeat shadow-lg dark:shadow-black/20" data-te-ripple-init data-te-ripple-color="light">
+                                        <img src="@article.ImageLink" class="w-full" />
+                                        <a href="#!">
+                                            <div class="opacity-0 bg-[hsla(0,0%,98.4%,.15)] absolute bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden bg-fixed transition duration-300 ease-in-out hover:opacity-100">
+                                                <img src="@article.ImageLink" class="w-full" />
+                                            </div>
                                         </a>
                                     </div>
                                 </div>
+                                @* text *@
+                                <div class="p-6">
+                                    <h5 class="mb-3 text-lg font-bold text-white">@article.Headline</h5>
+                                    <p class="mb-4 text-gray-300 dark:text-neutral-300">
+                                        <small>
+                                            Anna Maria Doe
+                                            Published
+                                            <u>13.01.2022</u>
+                                        </small>
+                                    </p>
+                                    <p class="mb-4 pb-2 text-white">
+                                        @article.Preview
+                                    </p>
+                                    @* ReadMore link *@
+                                    <a href="#!" data-te-ripple-init data-te-ripple-color="light" class="bg-primary shadow-[0_4px_9px_-4px_#3b71ca] inline-block rounded-full px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]">
+                                        Read
+                                        more
+                                    </a>
+                                </div>
                             </div>
                         </div>
-                   </a> 
-                }
+                    </div>
+                </a>
             }
+        }
     </section>
     <!-- Section: Design Block -->
 </div>
