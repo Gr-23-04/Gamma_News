@@ -40,7 +40,35 @@ namespace Gamma_News.Controllers
             return View(articles);
         }
 
+        public IActionResult Sweden()
+        {
+            var articles = _articleService.GetAllArticles().Result.ToList();
+            return View(articles);
+        }
 
+        public IActionResult Entertainment()
+        {
+            var articles = _articleService.GetAllArticles().Result.ToList();
+            return View(articles);
+        }
+
+        public IActionResult Anime()
+        {
+            var articles = _articleService.GetAllArticles().Result.ToList();
+            return View(articles);
+        }
+
+        public IActionResult Politics()
+        {
+            var articles = _articleService.GetAllArticles().Result.ToList();
+            return View(articles);
+        }
+
+        public IActionResult World()
+        {
+            var articles = _articleService.GetAllArticles().Result.ToList();
+            return View(articles);
+        }
         public IActionResult Privacy()
         {
             return View();
