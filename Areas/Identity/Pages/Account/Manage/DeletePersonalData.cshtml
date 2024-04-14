@@ -7,13 +7,13 @@
 
 <h3>@ViewData["Title"]</h3>
 
-<div class="alert alert-warning" role="alert">
-    <p>
+<div class="alert alert-warning absolute top-80" role="alert">
+    <p class="relative left-28 text-slate-300">
         <strong>Deleting this data will permanently remove your account, and this cannot be recovered.</strong>
     </p>
 </div>
 
-<div>
+<div class="absolute top-60 text-2xl left-28 text-slate-300">
     <form id="delete-user" method="post">
         <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
         @if (Model.RequirePassword)
