@@ -1,7 +1,7 @@
 ﻿@using Gamma_News.Components
 @using Gamma_News.Controllers
 @{
-    <nav id="main_menu" class="-mt-4 bg-gradient-to-r border-b-2 border-double border-opacity-30 border-sky-500 fixed from-gray-800 mx-auto rounded-b-3xl scale-75 sm:py-8 to-gray-800 via-sky-950 w-screen z-20" style="" aria-label="Global">
+    <nav id="main_menu" class="bg-gradient-to-r border-b-2 border-double border-opacity-30 border-sky-500 fixed from-gray-800 mx-auto rounded-b-3xl scale-100 sm:py-8 to-gray-800 via-sky-950 w-screen z-20" style="" aria-label="Global">
         <div class="">
             <a href="#" class="">
                 <span class="sr-only">Omega News</span>
@@ -218,8 +218,8 @@
                 <div class="absolute scale-105 -inset-1 rounded-full bg-gradient-to-r from-rose-400 via-fuchsia-500 to-indigo-500 opacity-0 blur transition duration-800 group-hover:opacity-100">
                 </div>
 
-                <button href="#" class="w-100 visible opacity-100 btn btn-lg btn-primary relative mx-auto flex min-h-14 max-h-14  min-w-32 items-center justify-center rounded-full  text-lg font-bold text-slate-300 shadow-md shadow-gray-900 bg-gradient-to-r via-sky-900 font-sans">
-            About</button>
+                <a asp-controller="Home" asp-action="About" class="w-100 visible opacity-100 btn btn-lg btn-primary relative mx-auto flex min-h-14 max-h-14  min-w-32 items-center justify-center rounded-full  text-lg font-bold text-slate-300 shadow-md shadow-gray-900 bg-gradient-to-r via-sky-900 font-sans">
+            About</a>
 
             </div>
                 </div>
