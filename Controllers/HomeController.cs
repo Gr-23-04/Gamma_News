@@ -69,18 +69,7 @@ namespace Gamma_News.Controllers
         public IActionResult Subscribe()
         {
 
-            if (_userManager.GetUserId(User).Any())
-            {
-                var user = _userManager.GetUserName(User);
-                if (_db.Subscriptions.Where(x => x.UserName == user).Any())
-                {
-                   
-                   ViewBag.Message = "You already have a subscription, please enter 'My Account - Subscriptions' for further details.";
-                    
-                }
-            }
-
-            return View();
+           return View();
         }
 
         [HttpPost]
