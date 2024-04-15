@@ -5,7 +5,7 @@
     ViewData["Title"] = "";
 }
 
-<div class="relative flex mx-auto w-1/2">
+<div class="relative mx-auto w-1/2">
 
     <div class="relative mx-auto top-60">
 
@@ -61,7 +61,7 @@
                 </form>
                 <div class="absolute">
 
-                <p class="mt-10 text-center text-sm text-slate-300">
+                <p class="text-center text-sm text-slate-300">
                     Not a member?
                     <a href="#" class="font-semibold leading-6 text-indigo-400 hover:text-indigo-400">Start a 14 day free trial</a>
                 </p>
@@ -69,7 +69,7 @@
         </div>
         <div class="col-md-6 col-md-offset-2  text-slate-300">
             <section>
-                <h3>Use another service to log in.</h3>
+            
                 <hr />
                 @{
                     if ( ( Model.ExternalLogins?.Count ?? 0 ) == 0 )
