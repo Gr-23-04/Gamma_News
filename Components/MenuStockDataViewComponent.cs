@@ -4,7 +4,9 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Gamma_News.Components
 {
-    public class MenuStockDataViewComponent:ViewComponent
+
+    [ViewComponent(Name = "MenuStockData")]
+    public class MenuStockDataViewComponent : ViewComponent
     {
         private readonly IStockDataService _stockDataService;
 
@@ -63,7 +65,7 @@ namespace Gamma_News.Components
             //};
             return View("Index", data);
         }
-        
+
 
     }
 }

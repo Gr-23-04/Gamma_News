@@ -1,5 +1,5 @@
 using Gamma_News.Data;
-using Gamma_News.Helper_DONT_REMOVE_;
+using Gamma_News.Helper;
 using Gamma_News.Models;
 using Gamma_News.Services;
 using Microsoft.AspNetCore.Identity;
@@ -36,7 +36,7 @@ namespace Gamma_News
             builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
             builder.Services
-                .AddDefaultIdentity<User>(options => options.SignIn.RequireConfirmedAccount = false)
+                .AddDefaultIdentity<User>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddRoles<IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>();
             builder.Services.AddControllersWithViews();
@@ -75,8 +75,7 @@ namespace Gamma_News
             //need to change the name based on the class in helper folder
             builder.Services.AddTransient<IEmailSender, EmailHelper>();
 
-            //need to change the name based on the class in helper folder
-            builder.Services.AddTransient<IEmailSender, EmailHelper>();
+
 
 
             var app = builder.Build();

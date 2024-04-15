@@ -20,12 +20,12 @@ string? image = user.profile_image;
 
      <a  class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Hello @User.Identity?.Name!</a> 
  *@
-    @if (image == "" || image == null)
+    @if (image == null || image.StartsWith("M"))
     {
         <div id="profile_container" class="relative bottom-3">
-            <a id="drop_profile_button_desktop" type="button" class="transition hover:scale-105" style="" aria-expanded="false" aria-haspopup="false">
+            <a id="drop_profile_button_desktop" type="button" class="" style="" aria-expanded="false" aria-haspopup="false">
                 <g>
-                    <svg class="size-16 text-slate-300 rounded-full border-4 border-[#EB6E4B]" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <svg class="size-20 text-slate-300 rounded-full border-4 border-[#EB6E4B] transition hover:scale-105" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                         <path fill-rule="evenodd" d="M18.685 19.097A9.723 9.723 0 0021.75 12c0-5.385-4.365-9.75-9.75-9.75S2.25 6.615 2.25 12a9.723 9.723 0 003.065 7.097A9.716 9.716 0 0012 21.75a9.716 9.716 0 006.685-2.653zm-12.54-1.285A7.486 7.486 0 0112 15a7.486 7.486 0 015.855 2.812A8.224 8.224 0 0112 20.25a8.224 8.224 0 01-5.855-2.438zM15.75 9a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" clip-rule="evenodd"></path>
                     </svg>
                 </g>
@@ -39,13 +39,13 @@ string? image = user.profile_image;
         </div>
     }
 
-    else if (image != null)
+    else
     {
         <div id="profile_container" class="relative bottom-3">
 
             <a id="drop_profile_button_desktop" type="button" class="transition hover:scale-105" style="" aria-expanded="false" aria-haspopup="false">
                 <div class="size-20 text-slate-300" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                    <img class="size-20 rounded-full border-4 border-[#EB6E4B]" src="@user.profile_image" />
+                    <img class="size-20 rounded-full border-4 border-[#EB6E4B] transition hover:scale-105" src="@user.profile_image" />
                 </div>
             </a>
 
@@ -96,12 +96,16 @@ string? image = user.profile_image;
 
     else
     {
-    <div class="container md:visible" style="left: 130px">
-        <div class="relative w-14 h-14 text-center rounded-full nav-link btn btn-lg btn-primary border-2 border-sky-900 border-opacity-50 font-bold text-slate-300 shadow-md shadow-gray-900 hover:border-[#EB6E4B]" style="">
-            <a class="relative top-3 leading-1 text-center" style="" asp-area="Identity" asp-page="/Account/Login">Login</a>
-        </div> 
 
+    <div class=" group relative hover:scale-105">
+        <div class="absolute size-14 scale-105 rounded-full bg-gradient-to-r from-rose-400 via-fuchsia-500 to-indigo-500 opacity-0 blur transition duration-800 group-hover:opacity-100">
+        </div> 
+    <div class="container md:visible" style="left: 130px">
+                <a class="absolute size-14 py-3 text-center  rounded-full nav-link btn btn-lg btn-primary border-2 border-sky-900 border-opacity-50 font-bold text-slate-300 shadow-md shadow-gray-900 bg-gradient-to-br from-gray-800 via-sky-800 to-gray-800 hover:" asp-area="Identity" asp-page="/Account/Login">Login</a>
+        </div>
     </div>
+        
+
      }
 
 

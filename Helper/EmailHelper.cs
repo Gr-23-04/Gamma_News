@@ -1,4 +1,6 @@
-﻿using MailKit.Net.Smtp;
+﻿using Gamma_News.Models;
+using MailKit.Net.Smtp;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI.Services;
 using MimeKit;
 using MimeKit.Text;
@@ -8,14 +10,18 @@ namespace Gamma_News.Helper
     public class EmailHelper : IEmailSender
     {
         private readonly IConfiguration _configuration;
-        private string content;
+        private readonly UserManager<User> _user;
+        private string _content;
 
-        public EmailHelper(IConfiguration configuration)
+
+        public EmailHelper(IConfiguration configuration, UserManager<User> user)
         {
             _configuration = configuration;
+            _user = user;
+
         }
 
-        public Task SendEmailAsync(string email, string subject, string htmlMessage)
+        public async Task SendEmailAsync(string email, string subject, string htmlMessage)
         {
             string response = "";
 
@@ -31,9 +37,11 @@ namespace Gamma_News.Helper
 
             message.Subject = subject;
 
+            _content = htmlMessage;
+
             //We will say we are sending HTML. But there are options for plaintext etc.
 
-            message.Body = new TextPart(TextFormat.Html) { Text = content };
+            message.Body = new TextPart(TextFormat.Html) { Text = _content };
 
             //Be careful that the SmtpClient class is the one from Mailkit not the framework!
 
@@ -57,7 +65,7 @@ namespace Gamma_News.Helper
 
                     response = "Error trying to connect:" + ex.Message + " StatusCode: " + ex.StatusCode;
 
-                    return Task.FromResult(response);
+                    await Task.FromResult(response);
 
                 }
 
@@ -67,7 +75,7 @@ namespace Gamma_News.Helper
 
                     response = "Protocol error while trying to connect:" + ex.Message;
 
-                    return Task.FromResult(response);
+                    await Task.FromResult(response);
 
                 }
 
@@ -123,7 +131,7 @@ namespace Gamma_News.Helper
 
             }
 
-            return Task.CompletedTask;
+            await Task.CompletedTask;
         }
     }
 }

@@ -26,10 +26,10 @@
 
 <div class="relative">
 
-        <div class="animate-pulse -inset-1 absolute bg-gradient-to-r blur from-rose-400 h-full to-indigo-500 top-80 via-fuchsia-500">
+        <div class="absolute h-full blur top-80 -inset-1 bg-gradient-to-r from-rose-400 to-indigo-500 via-fuchsia-500">
         </div>
 
-    <form enctype="multipart/form-data" id="profile-form" method="post" class="bg-gradient-to-tr from-sky-900 via-slate-800 to-sky-900 p-10 relative text-slate-300 top-80 drop-shadow-2xl shadow-2xl " novalidate="novalidate">
+    <form enctype="multipart/form-data" id="profile-form" method="post" class="p-[80px] bg-gradient-to-tr from-sky-900 via-slate-800 to-sky-900 p-10 relative text-slate-300 top-80 drop-shadow-2xl shadow-2xl " novalidate="novalidate">
 
         <div class="container space-y-12 relative left-10">
             <div class="">
@@ -39,30 +39,38 @@
 
                 <div dir="rtl">
 
-                        <div class="absolute">
-                            <label for="cover-photo" class="block absolute  text-lg mx-auto font-medium leading-6 text-slate-300">Cover photo</label>
-                            <div class="mt-2 flex justify-center rounded-lg border border-dashed border-gray-900/25 px-6 py-10">
+                        <div class="bottom-5 relative right-11">
+                            <label for="cover-photo" class="absolute block bottom-20 font-medium leading-6 mx-auto text-lg text-slate-300 w-48">Cover photo</label>
+                            <div class="absolute border-dashed border-gray-900/25 flex justify-center px-8 right-16 rounded-lg">
                                 <div class="text-center ">
-                                    @if(user.profile_image == null )
-                                    {
-                                        
-                                    <svg class="relative bottom-5 mx-auto size-60 border-4 rounded-3xl border-indigo-500 text-slate-300" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                                    <path fill-rule="evenodd" d="M1.5 6a2.25 2.25 0 012.25-2.25h16.5A2.25 2.25 0 0122.5 6v12a2.25 2.25 0 01-2.25 2.25H3.75A2.25 2.25 0 011.5 18V6zM3 16.06V18c0 .414.336.75.75.75h16.5A.75.75 0 0021 18v-1.94l-2.69-2.689a1.5 1.5 0 00-2.12 0l-.88.879.97.97a.75.75 0 11-1.06 1.06l-5.16-5.159a1.5 1.5 0 00-2.12 0L3 16.061zm10.125-7.81a1.125 1.125 0 112.25 0 1.125 1.125 0 01-2.25 0z" clip-rule="evenodd"></path>
+                                    @if (image == null || image.StartsWith("M"))
+                                 {
+                                    <g>
+
+                                        <svg class="relative bottom-5 mx-auto size-60 border-4 rounded-3xl border-indigo-500 text-slate-300" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                    <path fill-rule="evenodd" d="M1.5 6a2.25 2.25 0 012.25-2.25h16.5A2.25 2.25 0 0122.5 6v12a2.25 2.25 0 01-2.25 2.25H3.75A2.25 2.25 0 011.5 18V6zM3 16.06V18c0 .414.336.75.75.75h16.5A.75.75 0 0021 18v-1.94l-2.69-2.689a1.5 1.5 0 00-2.12 0l-.88.879.97.97a.75.75 0 11-1.06 1.06l-5.16-5.159a1.5 1.5 0 00-2.12 0L3 16.061zm10.125-7.81a1.125 1.125 0 112.25 0 1.125 1.125 0 01-2.25 0z" clip-rule="evenodd">
+
+                                    </path>
                                         </svg>
-                                    }
-                                    else if (user.profile_image != null)
+                                    </g>         
+                               }
+                                   
+                                    
+
+
+                                    else 
                                     {
                                      
                                       
 
-        <img class="relative rounded-full bottom-5 mx-auto size-60 border-8" src="@user.profile_image" />
+        <img class="relative rounded-full bottom-5 mx-auto size-60 border-8" src="@image" />
 
                                         
                                     }
 
                                    
 
-                                            <input asp-for="Input.profile_image" type="file" accept=".WEBP, .BMP, .JPEG, .PNG, .GIF" class="hidden select-all">
+                                            <input asp-for="Input.profile_image" type="file" accept=".WEBP, .BMP, .JPEG, .PNG, .GIF" class="">
                                     <div class="relative shadow-md shadow-sky-600 border-2 border-sky-500 rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white hover:bg-indigo-500 focus-visible:outline-indigo-600">
                                        <div class="select-none">
 
@@ -70,7 +78,7 @@
                                        </div>
 
                                     </div>
-                                            </input>
+                                           
                                   
 
 <partial name="_StatusMessage" for="StatusMessage" />
@@ -89,7 +97,7 @@
                     <div class="sm:col-span-4">
                         <label for="username" class="block text-lg font-medium leading-6 text-slate-300">Username</label>
                         <div class="mt-2">
-                            <div class="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
+                            <div class="flex w-1/2 rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
                                 <span class="flex select-none items-center pl-3 text-slate-300 sm:text-sm"></span>
 
                                 <div class="form-floating mb-3">

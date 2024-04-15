@@ -7,17 +7,22 @@
 
 <h3>@ViewData["Title"]</h3>
 
-<div class="row">
+
+<div class="relative top-52">
+    <partial name="_ManageNav" />
+</div>
+
+<div class="absolute top-80 text-3xl text-center">
     <div class="col-md-6">
-        <p>Your account contains personal data that you have given us. This page allows you to download or delete that data.</p>
-        <p>
+        <p class="text-slate-300">Your account contains personal data that you have given us. This page allows you to download or delete that data.</p>
+        <p class="text-slate-300">
             <strong>Deleting this data will permanently remove your account, and this cannot be recovered.</strong>
         </p>
         <form id="download-data" asp-page="DownloadPersonalData" method="post">
-            <button class="btn btn-primary" type="submit">Download</button>
+            <button class=" max-w-xs top-14 visible opacity-100 btn btn-lg btn-primary relative mx-auto flex min-h-14 max-h-14  min-w-32 items-center justify-center text-lg font-bold text-slate-300 shadow-md shadow-gray-900 bg-gradient-to-r via-sky-900 font-sans  " type="submit">Download</button>
         </form>
         <p>
-            <a id="delete" asp-page="DeletePersonalData" class="btn btn-danger">Delete</a>
+            <a id="delete" asp-page="DeletePersonalData" class=" max-w-xs top-28 visible opacity-100 btn btn-lg btn-primary relative mx-auto flex min-h-14 max-h-14  min-w-32 items-center justify-center text-lg font-bold text-slate-300 shadow-md shadow-gray-900 bg-gradient-to-r via-sky-900 font-sans ">Delete</a>
         </p>
     </div>
 </div>

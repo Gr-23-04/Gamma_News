@@ -12,7 +12,54 @@ $(function () {
     var prof_menu = 0;
     var cookie_choice = sessionStorage.getItem('cookie_choice');
     var local_cookie_choice = localStorage.getItem('local_cookie_choice');
+
+
+    var swiper = new Swiper(".mySwiper", {
+        loop: true,
+        spaceBetween: -10,
+        slidesPerView: 3,
+        watchSlidesProgress: true,
+    });
+    var swiper2 = new Swiper(".mySwiper2", {
+        loop: true,
+        spaceBetween: 32,
+        thumbs: {
+            swiper: swiper,
+        },
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+    });
    
+            var swiper = new Swiper(".teamswiper", {
+                slidesPerView: 1,
+            spaceBetween: 32,
+            centeredSlides: false,
+            slidesPerGroupSkip: 1,
+            grabCursor: true,
+            loop: true,
+            keyboard: {
+                enabled: true,
+            },
+            breakpoints: {
+                769: {
+                slidesPerView: 2,
+            slidesPerGroup: 1,
+                },
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+            },
+            scrollbar: {
+                el: ".swiper-scrollbar",
+            },
+            pagination: {
+                el: ".swiper-pagination",
+            type: "fraction",
+            },
+        });
  
  
     $("#drop_menu_button_desktop").on("click", function() {
