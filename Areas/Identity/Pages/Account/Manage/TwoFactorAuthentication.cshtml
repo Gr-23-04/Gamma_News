@@ -8,6 +8,12 @@
 
 <partial name="_StatusMessage" for="StatusMessage" />
 <h3>@ViewData["Title"]</h3>
+
+<div class="relative top-52">
+    <partial name="_ManageNav" />
+</div>
+
+
 @{
     var consentFeature = HttpContext.Features.Get<ITrackingConsentFeature>();
     @if (consentFeature?.CanTrack ?? true)
