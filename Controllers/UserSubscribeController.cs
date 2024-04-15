@@ -122,17 +122,79 @@ namespace Gamma_News.Controllers
             return View();
         }
 
-        public IActionResult Subscribe()
-        {
-            return View();
-        }
-
+        
         public IActionResult Create() //handles the logic when a user subscribes to an article. This action will
                                       //create a new Subscription instance linking the user with the article.
         {
             return View();
         }
 
+        private readonly ApplicationDbContext _db;
+        public IActionResult Subscribe()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Subscribe(int plan)
+        {
+
+            Subscription sub = new Subscription();
+            sub.SubscriptionTypeId = plan;
+            sub.Created = DateTime.Now;
+            sub.User = _db.Users.Where(x => x.UserName == User.Identity.Name).FirstOrDefault();
+            sub.Active = true;
+
+
+            if (plan == 1)
+            {
+                sub.Price = 5;
+                sub.Expires = DateTime.Now.AddDays(30);
+            }
+            else
+            {
+                sub.Price = 50;
+                sub.Expires = DateTime.Now.AddYears(1);
+            }
+
+            sub.PaymentComplete = true;
+            _db.Users.Where(x => x.Email == User.Identity.Name).FirstOrDefault();
+            _db.SaveChanges();
+
+
+            return RedirectToAction("ThankYou");
+
+        }
+
+        public IActionResult ThankYou()
+        {
+            return View();
+        }
+
 
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
