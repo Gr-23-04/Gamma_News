@@ -12,11 +12,6 @@ namespace Gamma_News.Models
 
         public string? profile_image { get; set; }
 
-        public bool IsPremium { get; set; }
-
-        [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
-        public DateTime DOB { get; set; }
         public virtual ICollection<Subscription> Subscriptions { get; set; }
        
 
